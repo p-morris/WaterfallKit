@@ -15,12 +15,33 @@ import Foundation
      
      - Parameters:
      - mediator: The `VideoAdMediator` responsible for the callback.
-     - ad: A `VideoAd` object ready for display.
+     - advert: A `VideoAd` object ready for display.
      */
-    func mediator(_ mediator: VideoAdMediator, didLoad ad: VideoAd)
+    func mediator(_ mediator: VideoAdMediator, didLoad advert: VideoAd)
+    /**
+     Executed when the mediator successfully loads a prioritized video ad.
+     
+     - Parameters:
+     - mediator: The `VideoAdMediator` responsible for the callback.
+     - error: An `Error` that occured.
+     */
     func mediator(_ mediator: VideoAdMediator, loadFailedWith error: Error)
 }
 
+/// Used for parsing a set of ad networks and requesting adverts.
 @objc class VideoAdMediator: NSObject {
-    
+    /// The prioritized network settings to use for this ad request
+    let settings: VideoAdNetworkSettings
+    /// The object that acts as the delegate of `VideoAdMediator`
+    weak var delegate: VideoAdMediatorDelegate?
+    /**
+     Initializes a new `VideoAdMediator` object.
+     
+     - Parameters:
+     - settings: The network settings for the ad networks to be used for ad requests.
+     - Returns: An initialized `VideoAdMediator` object that will use `settings` to request appropraite ads as prioritized.
+     */
+    init(settings: VideoAdNetworkSettings) {
+        self.settings = settings
+    }
 }

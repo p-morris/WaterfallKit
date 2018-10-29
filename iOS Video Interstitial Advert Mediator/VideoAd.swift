@@ -17,21 +17,21 @@ import UIKit
      - Parameters:
      - ad: The `VideoAd` responsible for the callback.
      */
-    @objc optional func videoAdDidAppear(_ ad: VideoAd)
+    @objc optional func videoAdDidAppear(_ advert: VideoAd)
     /**
      Executed after the interstatial has been fully dismissed and is no long visible.
      
      - Parameters:
      - ad: The `VideoAd` responsible for the callback.
      */
-    @objc optional func videoAdDidDismiss(_ ad: VideoAd)
+    @objc optional func videoAdDidDismiss(_ advert: VideoAd)
     /**
      Executed when presenting the video ad modally has failed.
      
      - Parameters:
      - ad: The `VideoAd` responsible for the callback.
      */
-    @objc optional func videoAdDidFailToPresent(_ ad: VideoAd)
+    @objc optional func videoAdDidFailToPresent(_ advert: VideoAd)
     /**
      Executed when the interstatial advert is clicked. Depending on the
      advert, this may cause a context shift to another application, and the
@@ -40,7 +40,7 @@ import UIKit
      - Parameters:
      - ad: The `VideoAd` responsible for the callback.
      */
-    @objc optional func videoAdDidReceiveClick(_ ad: VideoAd)
+    @objc optional func videoAdDidReceiveClick(_ advert: VideoAd)
 }
 
 /// An interstital video advert.

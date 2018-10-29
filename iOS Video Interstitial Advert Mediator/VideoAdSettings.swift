@@ -33,7 +33,7 @@ Settings object which holds client's account details for all ad networks. Provid
  */
 @objc final class VideoAdNetworkSettings: NSObject {
     /// Encapsulates the required account details for each ad network
-    private enum NetworkType {
+    enum NetworkType {
         case adColony(appID: String, zoneIDs: [String])
         case appLovin(sdkKey: String)
         case vungle(appID: String, placementID: String)
@@ -43,14 +43,15 @@ Settings object which holds client's account details for all ad networks. Provid
         case inMobi(accountID: String, gdprConsent: Bool)
         case mopub(adUnitID: String)
     }
-    /// Contains all initialized settings
-    private var settings: [NetworkType] = []
+    /// Contains all initialized ad network settings. Order determines ad priority.
+    private (set) var settings: [NetworkType] = []
     /**
      Initializes the AdColony ad network.
      
      - Parameters:
      - appID: Your AdColony app ID.
      - zoneIDs: An array of `String` objects representing your AdColony zone IDs.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAdColony(appID: String, zoneIDs: [String]) -> Self {
         settings.append(.adColony(appID: appID, zoneIDs: zoneIDs))
@@ -59,8 +60,8 @@ Settings object which holds client's account details for all ad networks. Provid
     /**
      Initializes the AppLovin ad network.
      
-     - Parameters:
-     - sdkKey: Your AppLovin sdk key.
+     - Parameter sdkKey: Your AppLovin sdk key.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAppLovin(sdkKey: String) -> Self {
         settings.append(.appLovin(sdkKey: sdkKey))
@@ -72,6 +73,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Parameters:
      - appID: Your Vungle app ID.
      - placementID: Your Vungle placement ID.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeVungle(appID: String, placementID: String) -> Self {
         settings.append(.vungle(appID: appID, placementID: placementID))
@@ -83,6 +85,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Parameters:
      - appID: Your Admob app ID.
      - adUnitID: Your Admob ad unit ID.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAdMob(appID: String, adUnitID: String) -> Self {
         settings.append(.admob(appID: appID, adUnitID: adUnitID))
@@ -94,6 +97,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Parameters:
      - appID: Your Chartboost app ID.
      - appSignature: Your Chartboost app signature.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeChartboost(appID: String, appSignature: String) -> Self {
         settings.append(.chartboost(appID: appID, appSignature: appSignature))
@@ -102,8 +106,8 @@ Settings object which holds client's account details for all ad networks. Provid
     /**
      Initializes the IronSource ad network.
      
-     - Parameters:
-     - appKey: Your IronSource app key.
+     - Parameters appKey: Your IronSource app key.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeIronSource(appKey: String) -> Self {
         settings.append(.ironSource(appKey: appKey))
@@ -115,6 +119,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Parameters:
      - accountID: Your InMobi account ID.
      - gdprConsent: Pass `true` if you have user's consent to collect user data, `false` otherwise.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeInMobi(accountID: String, gdprConsent: Bool) -> Self {
         settings.append(.inMobi(accountID: accountID, gdprConsent: gdprConsent))
@@ -123,8 +128,8 @@ Settings object which holds client's account details for all ad networks. Provid
     /**
      Initializes the Mopub ad network.
      
-     - Parameters:
-     - adUnitID: Your Mopub add unit ID.
+     - Parameter adUnitID: Your Mopub add unit ID.
+     - Returns: The VideoAdNetworkSettings object.
      */
     func initializeMoPub(adUnitID: String) -> Self {
         settings.append(.mopub(adUnitID: adUnitID))

@@ -8,7 +8,39 @@
 
 import Foundation
 
-@objc protocol VideoAdNetwork {
+/// Used to instantiate `VideoAdNetwork` instances.
+struct VideoAdNetworkFactory {
+    /**
+     Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
+     receives as an argument.
+     
+     - Parameters:
+     - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for
+     - Returns: An object conforming to `VideoAdNetwork`.
+     */
+    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork {
+        switch type {
+        case let .adColony(appID, zoneIDs):
+            return AdColonyVideoAdNetwork(appID: appID, zoneIDs: zoneIDs)
+        case let .admob(appID, adUnitID):
+            return AdMobVideoAdNetwork(appID: appID, adUnitID: adUnitID)
+        case let .appLovin(sdkKey):
+            return AppLovinVideoAdNetwork(sdkKey: sdkKey)
+        case let .chartboost(appID, appSignature):
+            return ChartboostVideoAdNetwork(appID: appID, appSignature: appSignature)
+        case let .inMobi(accountID, gdprConsent):
+            return InMobiVideoAdNetwork(accountID: accountID, gdprConsent: gdprConsent)
+        case let .ironSource(appKey):
+            return IronSourceVideoAdNetwork(appKey: appKey)
+        case let .mopub(adUnitID):
+            return MopubVideoAdNetwork(adUnitID: adUnitID)
+        case let .vungle(appID, placementID):
+            return VungleVideoAdNetwork(appID: appID, placementID: placementID)
+        }
+    }
+}
+
+protocol VideoAdNetwork {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
     var delegate: VideoAdNetworkDelegate? { get set }
     /**
@@ -18,7 +50,7 @@ import Foundation
 }
 
 /// Provides callbacks for AdNetwork request events.
-@objc protocol VideoAdNetworkDelegate {
+protocol VideoAdNetworkDelegate: class {
     /**
      Executed when the ad network request is fulfilled.
      
@@ -26,7 +58,7 @@ import Foundation
      - adNetwork: The `VideoAdNetwork` responsible for the callback.
      - ad: A `VideoAd` object ready for display.
      */
-    func adNetwork(_ adNetwork: VideoAdNetwork, didLoad ad: VideoAd)
+    func adNetwork(_ adNetwork: VideoAdNetwork, didLoad advert: VideoAd)
     /**
      Executed when the ad network request either fails, or is unfulfilled.
      
