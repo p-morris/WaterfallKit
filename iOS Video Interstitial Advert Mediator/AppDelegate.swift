@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let settings = VideoAdNetworkSettings()
+            .initializeAdColony(appID: "Pete", zoneIDs: ["Hello"])
+            .initializeMoPub(adUnitID: "helo")
+            .initializeAdMob(appID: "dsdasd", adUnitID: "dasdasdsad")
+            .initializeMoPub(adUnitID: "adsdasdasd")
+        let mediator = VideoAdMediator(settings: settings)
+        mediator.requestAds()
         return true
     }
 }

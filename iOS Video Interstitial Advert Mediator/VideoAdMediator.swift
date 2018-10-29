@@ -32,6 +32,8 @@ import Foundation
 @objc class VideoAdMediator: NSObject {
     /// The prioritized network settings to use for this ad request
     let settings: VideoAdNetworkSettings
+    /// The factory used to create ad network instances
+    private let factory: VideoAdNetworkFactory
     /// The object that acts as the delegate of `VideoAdMediator`
     weak var delegate: VideoAdMediatorDelegate?
     /**
@@ -39,9 +41,18 @@ import Foundation
      
      - Parameters:
      - settings: The network settings for the ad networks to be used for ad requests.
-     - Returns: An initialized `VideoAdMediator` object that will use `settings` to request appropraite ads as prioritized.
+     - factory: The `AdNetworkFactory` to be used to instantiate ad networks.
+     - Returns: An initialized `VideoAdMediator` object that will use `settings`
+     to request appropraite ads as prioritized.
      */
-    init(settings: VideoAdNetworkSettings) {
+    init(settings: VideoAdNetworkSettings, factory: VideoAdNetworkFactory = InterstitialVideoAdNetworkFactory()) {
         self.settings = settings
+        self.factory = factory
+    }
+    func requestAds() {
+        settings.networkTypes.forEach {
+            let network = factory.createAdNetwork(type: $0)
+            network.requestAd()
+        }
     }
 }

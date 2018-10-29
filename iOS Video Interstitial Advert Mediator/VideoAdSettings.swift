@@ -44,7 +44,7 @@ Settings object which holds client's account details for all ad networks. Provid
         case mopub(adUnitID: String)
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
-    private (set) var settings: [NetworkType] = []
+    private (set) var networkTypes: [NetworkType] = []
     /**
      Initializes the AdColony ad network.
      
@@ -54,7 +54,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAdColony(appID: String, zoneIDs: [String]) -> Self {
-        settings.append(.adColony(appID: appID, zoneIDs: zoneIDs))
+        networkTypes.append(.adColony(appID: appID, zoneIDs: zoneIDs))
         return self
     }
     /**
@@ -64,7 +64,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAppLovin(sdkKey: String) -> Self {
-        settings.append(.appLovin(sdkKey: sdkKey))
+        networkTypes.append(.appLovin(sdkKey: sdkKey))
         return self
     }
     /**
@@ -76,7 +76,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeVungle(appID: String, placementID: String) -> Self {
-        settings.append(.vungle(appID: appID, placementID: placementID))
+        networkTypes.append(.vungle(appID: appID, placementID: placementID))
         return self
     }
     /**
@@ -88,7 +88,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeAdMob(appID: String, adUnitID: String) -> Self {
-        settings.append(.admob(appID: appID, adUnitID: adUnitID))
+        networkTypes.append(.admob(appID: appID, adUnitID: adUnitID))
         return self
     }
     /**
@@ -100,7 +100,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeChartboost(appID: String, appSignature: String) -> Self {
-        settings.append(.chartboost(appID: appID, appSignature: appSignature))
+        networkTypes.append(.chartboost(appID: appID, appSignature: appSignature))
         return self
     }
     /**
@@ -110,7 +110,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeIronSource(appKey: String) -> Self {
-        settings.append(.ironSource(appKey: appKey))
+        networkTypes.append(.ironSource(appKey: appKey))
         return self
     }
     /**
@@ -122,7 +122,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeInMobi(accountID: String, gdprConsent: Bool) -> Self {
-        settings.append(.inMobi(accountID: accountID, gdprConsent: gdprConsent))
+        networkTypes.append(.inMobi(accountID: accountID, gdprConsent: gdprConsent))
         return self
     }
     /**
@@ -132,7 +132,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - Returns: The VideoAdNetworkSettings object.
      */
     func initializeMoPub(adUnitID: String) -> Self {
-        settings.append(.mopub(adUnitID: adUnitID))
+        networkTypes.append(.mopub(adUnitID: adUnitID))
         return self
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to instantiate `VideoAdNetwork` instances.
-struct VideoAdNetworkFactory {
+protocol VideoAdNetworkFactory {
     /**
      Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
      receives as an argument.
@@ -18,6 +18,10 @@ struct VideoAdNetworkFactory {
      - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for
      - Returns: An object conforming to `VideoAdNetwork`.
      */
+    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork
+}
+
+extension VideoAdNetworkFactory {
     func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork {
         switch type {
         case let .adColony(appID, zoneIDs):
@@ -39,6 +43,9 @@ struct VideoAdNetworkFactory {
         }
     }
 }
+
+/// Used to instantiate `VideoAdNetwork` instances for interstitatial video ads.
+class InterstitialVideoAdNetworkFactory: VideoAdNetworkFactory { }
 
 protocol VideoAdNetwork {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
