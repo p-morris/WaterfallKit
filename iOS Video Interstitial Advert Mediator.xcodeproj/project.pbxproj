@@ -15,6 +15,7 @@
 		72F11806218314FF00C3C805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F11804218314FF00C3C805 /* LaunchScreen.storyboard */; };
 		72F11811218314FF00C3C805 /* iOS_Video_Interstitial_Advert_MediatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F11810218314FF00C3C805 /* iOS_Video_Interstitial_Advert_MediatorTests.swift */; };
 		72F1181E218315FA00C3C805 /* VideoAdMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F1181D218315FA00C3C805 /* VideoAdMediatorDelegate.swift */; };
+		72F689852186D56A0035C76C /* VideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		72F11810218314FF00C3C805 /* iOS_Video_Interstitial_Advert_MediatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Video_Interstitial_Advert_MediatorTests.swift; sourceTree = "<group>"; };
 		72F11812218314FF00C3C805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F1181D218315FA00C3C805 /* VideoAdMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdMediatorDelegate.swift; sourceTree = "<group>"; };
+		72F689842186D56A0035C76C /* VideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				72F11804218314FF00C3C805 /* LaunchScreen.storyboard */,
 				72F11807218314FF00C3C805 /* Info.plist */,
 				72F1181D218315FA00C3C805 /* VideoAdMediatorDelegate.swift */,
+				72F689842186D56A0035C76C /* VideoAdNetwork.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
 			);
 			path = "iOS Video Interstitial Advert Mediator";
@@ -207,6 +210,7 @@
 				72F117FE218314FE00C3C805 /* ViewController.swift in Sources */,
 				72F1181E218315FA00C3C805 /* VideoAdMediatorDelegate.swift in Sources */,
 				72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */,
+				72F689852186D56A0035C76C /* VideoAdNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
