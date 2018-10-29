@@ -16,6 +16,7 @@
 		72F11811218314FF00C3C805 /* iOS_Video_Interstitial_Advert_MediatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F11810218314FF00C3C805 /* iOS_Video_Interstitial_Advert_MediatorTests.swift */; };
 		72F689852186D56A0035C76C /* VideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetwork.swift */; };
 		72F689872186FE980035C76C /* VideoAdMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689862186FE980035C76C /* VideoAdMediator.swift */; };
+		72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898A2187005C0035C76C /* VideoAdSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		72F11812218314FF00C3C805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F689842186D56A0035C76C /* VideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetwork.swift; sourceTree = "<group>"; };
 		72F689862186FE980035C76C /* VideoAdMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdMediator.swift; sourceTree = "<group>"; };
+		72F6898A2187005C0035C76C /* VideoAdSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				72F11802218314FF00C3C805 /* Assets.xcassets */,
 				72F11804218314FF00C3C805 /* LaunchScreen.storyboard */,
 				72F11807218314FF00C3C805 /* Info.plist */,
+				72F6898A2187005C0035C76C /* VideoAdSettings.swift */,
 				72F689862186FE980035C76C /* VideoAdMediator.swift */,
 				72F689842186D56A0035C76C /* VideoAdNetwork.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
+				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				72F689872186FE980035C76C /* VideoAdMediator.swift in Sources */,
 				72F117FE218314FE00C3C805 /* ViewController.swift in Sources */,
 				72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */,
