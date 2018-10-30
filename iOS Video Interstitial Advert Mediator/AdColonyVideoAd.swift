@@ -44,11 +44,9 @@ class AdColonyVideoAd: VideoAd {
     }
     /**
      Displays the AdColony interstial ad modally.
-     
-     - Parameters:
-     - viewController: The `UIViewController` from which the advert should be modally presented.
+     - Note: AdColony ads are presented modally from `viewController`.
      */
-    func display(from viewController: UIViewController) {
+    func display(from viewController: UIViewController, or keyWindow: UIWindow) {
         interstitial.show(withPresenting: viewController)
     }
 }

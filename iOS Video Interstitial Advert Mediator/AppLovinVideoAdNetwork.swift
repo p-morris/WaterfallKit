@@ -8,15 +8,49 @@
 
 import Foundation
 
-class AppLovinVideoAdNetwork: VideoAdNetwork {
+/// Used for making interstitial video ad requests to the AdColony network
+class AppLovinVideoAdNetwork: NSObject, VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    /// The AppLovin SDK key.
+    let sdkKey: String
+    /// The AppLovin SDK instance
+    private let appLovin: ALSdk?
+    /**
+     Initializes a new `AppLovinVideoAdNetwork` object.
+     
+     - Parameters:
+     - sdkKey: The AppLovin SDK key to use for ad requests.
+     - Returns: An initialized `AppLovinVideoAdNetwork` object.
+     */
     init(sdkKey: String) {
-        print("AppLovin initializer")
+        self.sdkKey = sdkKey
+        appLovin = ALSdk.shared(withKey: sdkKey)
     }
+    /// Makes an interstitial video ad request using the AppLovin SDK.
     func requestAd() {
-        print()
+        appLovin?.adService.loadNextAd(.sizeInterstitial(), andNotify: self)
     }
+    /**
+     Compares `self` with `anotherAdNetwork`. `AppLovinVideoAdNetwork` objects are considered
+     equal if they have an equal `sdkKey` property.
+     - Parameters:
+     - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
+     */
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
-        return true
+        guard let anotherAdNetwork = anotherAdNetwork as? AppLovinVideoAdNetwork else { return false }
+        return sdkKey == anotherAdNetwork.sdkKey
+    }
+}
+
+/// Used to implement delegate callbacks for AppLovin SDK ad loading events
+extension AppLovinVideoAdNetwork: ALAdLoadDelegate {
+    func adService(_ adService: ALAdService, didLoad advert: ALAd) {
+        if let appLovin = appLovin {
+            let appLovinAd = AppLovinVideoAd(appLovinAd: advert, interstitial: ALInterstitialAd.init(sdk: appLovin))
+            delegate?.adNetwork(self, didLoad: appLovinAd)
+        }
+    }
+    func adService(_ adService: ALAdService, didFailToLoadAdWithError code: Int32) {
+        delegate?.adNetwork(self, didFailToLoad: NSError(domain: "AppLovinNoFill", code: Int(code), userInfo: nil))
     }
 }

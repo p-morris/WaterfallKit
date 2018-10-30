@@ -1,0 +1,51 @@
+//
+//  AppLovinVideoAd.swift
+//  iOS Video Interstitial Advert Mediator
+//
+//  Created by Peter Morris on 30/10/2018.
+//  Copyright © 2018 Pete Morris. All rights reserved.
+//
+
+import Foundation
+
+/// Used for displaying and invoking delegate callbacks for AppLovin interstial videos ads.
+class AppLovinVideoAd: NSObject, VideoAd {
+    weak var delegate: VideoAdDelegate?
+    /// The AppLovin advert to display.
+    private let appLovinAd: ALAd
+    /// The AppLovin interstitial that will be reponsible for rendering the advert.
+    private let interstitial: ALInterstitialAd
+    /**
+     Initializes a new `AppLovinVideoAd` object.
+     
+     - Parameters:
+     - appLovinAd: The AppLovin advert object to display.
+     - interstitial: The AppLovin interstitial used to render the ad.
+     - Returns: An initialized `AppLovinVideoAd` object.
+     */
+    init(appLovinAd: ALAd, interstitial: ALInterstitialAd) {
+        self.appLovinAd = appLovinAd
+        self.interstitial = interstitial
+    }
+    /**
+     Displays the AppLovin interstial ad modally.
+     - Note: AppLovin ads are rendered over the top of `keyWindow`.
+     */
+    func display(from viewController: UIViewController, or keyWindow: UIWindow) {
+        interstitial.adDisplayDelegate = self
+        interstitial.showOver(keyWindow, andRender: appLovinAd)
+    }
+}
+
+/// Used to implement delegate callbacks for AppLovin SDK display events
+extension AppLovinVideoAd: ALAdDisplayDelegate {
+    func ad(_ advert: ALAd, wasDisplayedIn view: UIView) {
+        delegate?.videoAdDidAppear?(self)
+    }
+    func ad(_ advert: ALAd, wasHiddenIn view: UIView) {
+        delegate?.videoAdDidDismiss?(self)
+    }
+    func ad(_ advert: ALAd, wasClickedIn view: UIView) {
+        delegate?.videoAdDidReceiveClick?(self)
+    }
+}

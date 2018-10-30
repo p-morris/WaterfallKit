@@ -23,6 +23,11 @@
 		720347A621885B4300918FB5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720347A521885B4300918FB5 /* WebKit.framework */; };
 		720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */; };
 		7209221521886AB800E6AC03 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221421886AB800E6AC03 /* AdColony.framework */; };
+		7209221921887BFA00E6AC03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221821887BF900E6AC03 /* CoreGraphics.framework */; };
+		7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221A21887C0D00E6AC03 /* UIKit.framework */; };
+		7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221C21887C1900E6AC03 /* libz.tbd */; };
+		7209221F21887C9100E6AC03 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221E21887C9100E6AC03 /* AppLovinSDK.framework */; };
+		7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */; };
 		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
@@ -70,6 +75,11 @@
 		720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Video Interstitial Advert Mediator-Bridging-Header.h"; sourceTree = "<group>"; };
 		720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyVideoAd.swift; sourceTree = "<group>"; };
 		7209221421886AB800E6AC03 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		7209221821887BF900E6AC03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7209221A21887C0D00E6AC03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7209221C21887C1900E6AC03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7209221E21887C9100E6AC03 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
+		7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAd.swift; sourceTree = "<group>"; };
 		72AA361A2186CC45004A3ECB /* VideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAd.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +108,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */,
+				7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */,
+				7209221921887BFA00E6AC03 /* CoreGraphics.framework in Frameworks */,
 				720347A621885B4300918FB5 /* WebKit.framework in Frameworks */,
 				720347A421885B3B00918FB5 /* WatchConnectivity.framework in Frameworks */,
 				720347A221885B3300918FB5 /* SystemConfiguration.framework in Frameworks */,
@@ -107,6 +120,7 @@
 				7203479C21885B1B00918FB5 /* MobileCoreServices.framework in Frameworks */,
 				7203479A21885B1300918FB5 /* MessageUI.framework in Frameworks */,
 				7203479821885B0A00918FB5 /* JavaScriptCore.framework in Frameworks */,
+				7209221F21887C9100E6AC03 /* AppLovinSDK.framework in Frameworks */,
 				7203479621885B0300918FB5 /* CoreTelephony.framework in Frameworks */,
 				7203479421885AFB00918FB5 /* CoreMedia.framework in Frameworks */,
 				7203479221885AF200918FB5 /* AVFoundation.framework in Frameworks */,
@@ -129,6 +143,9 @@
 		7203478A21885ACF00918FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7209221C21887C1900E6AC03 /* libz.tbd */,
+				7209221A21887C0D00E6AC03 /* UIKit.framework */,
+				7209221821887BF900E6AC03 /* CoreGraphics.framework */,
 				720347A521885B4300918FB5 /* WebKit.framework */,
 				720347A321885B3B00918FB5 /* WatchConnectivity.framework */,
 				720347A121885B3300918FB5 /* SystemConfiguration.framework */,
@@ -182,6 +199,7 @@
 				72F6898D218716A50035C76C /* AdColonyVideoAdNetwork.swift */,
 				720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */,
 				72F6898F2187175F0035C76C /* AppLovinVideoAdNetwork.swift */,
+				7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */,
 				72F68991218717B20035C76C /* AdMobVideoAdNetwork.swift */,
 				72F68993218718280035C76C /* ChartboostVideoAdNetwork.swift */,
 				72F68995218718830035C76C /* InMobiVideoAdNetwork.swift */,
@@ -189,6 +207,7 @@
 				72F68999218719150035C76C /* MopubVideoAdNetwork.swift */,
 				72F6899B218719680035C76C /* VungleVideoAdNetwork.swift */,
 				720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
+				7209221E21887C9100E6AC03 /* AppLovinSDK.framework */,
 				7209221421886AB800E6AC03 /* AdColony.framework */,
 			);
 			path = "iOS Video Interstitial Advert Mediator";
@@ -330,6 +349,7 @@
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleVideoAdNetwork.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
+				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
 				72F68996218718830035C76C /* InMobiVideoAdNetwork.swift in Sources */,
 				72F6899A218719150035C76C /* MopubVideoAdNetwork.swift in Sources */,
 				72F689872186FE980035C76C /* VideoAdMediator.swift in Sources */,
@@ -506,6 +526,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 				);
 				INFOPLIST_FILE = "iOS Video Interstitial Advert Mediator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,6 +555,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 				);
