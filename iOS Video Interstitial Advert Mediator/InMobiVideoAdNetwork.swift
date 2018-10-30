@@ -14,7 +14,7 @@ class InMobiVideoAdNetwork: VideoAdNetwork {
         print("InMobi initializer")
     }
     func requestAd() {
-        
+        print()
     }
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
         return true

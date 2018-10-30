@@ -34,7 +34,7 @@ Settings object which holds client's account details for all ad networks. Provid
 @objc final class VideoAdNetworkSettings: NSObject {
     /// Encapsulates the required account details for each ad network
     enum NetworkType {
-        case adColony(appID: String, zoneIDs: [String])
+        case adColony(appID: String, zoneID: String)
         case appLovin(sdkKey: String)
         case vungle(appID: String, placementID: String)
         case admob(appID: String, adUnitID: String)
@@ -53,8 +53,8 @@ Settings object which holds client's account details for all ad networks. Provid
      - zoneIDs: An array of `String` objects representing your AdColony zone IDs.
      - Returns: The VideoAdNetworkSettings object.
      */
-    func initializeAdColony(appID: String, zoneIDs: [String]) -> Self {
-        networkTypes.append(.adColony(appID: appID, zoneIDs: zoneIDs))
+    func initializeAdColony(appID: String, zoneID: String) -> Self {
+        networkTypes.append(.adColony(appID: appID, zoneID: zoneID))
         return self
     }
     /**

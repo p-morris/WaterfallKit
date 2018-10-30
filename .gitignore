@@ -66,3 +66,19 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+.DS_Store
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/Current
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyZone.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyUserMetadata.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyTypes.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyOptions.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyNativeAdView.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyInterstitial.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyEventTracker.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyAppOptions.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyAdRequestError.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColonyAdOptions.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/Headers/AdColony.h
+iOS Video Interstitial Advert Mediator/AdColony.framework/Versions/A/AdColony
+iOS Video Interstitial Advert Mediator/AdColony.framework/Headers
+iOS Video Interstitial Advert Mediator/AdColony.framework/AdColony

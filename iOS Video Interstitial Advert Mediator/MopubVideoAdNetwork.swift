@@ -14,7 +14,7 @@ class MopubVideoAdNetwork: VideoAdNetwork {
         print("Mopub initializer")
     }
     func requestAd() {
-        
+        print()
     }
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
         return true

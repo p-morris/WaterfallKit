@@ -14,7 +14,7 @@ class VungleVideoAdNetwork: VideoAdNetwork {
         print("Vungle initializer")
     }
     func requestAd() {
-        
+        print()
     }
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
         return true

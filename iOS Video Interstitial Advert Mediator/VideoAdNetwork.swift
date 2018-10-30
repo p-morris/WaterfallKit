@@ -24,8 +24,8 @@ protocol VideoAdNetworkFactory {
 extension VideoAdNetworkFactory {
     func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork {
         switch type {
-        case let .adColony(appID, zoneIDs):
-            return AdColonyVideoAdNetwork(appID: appID, zoneIDs: zoneIDs)
+        case let .adColony(appID, zoneID):
+            return AdColonyVideoAdNetwork(appID: appID, zoneID: zoneID)
         case let .admob(appID, adUnitID):
             return AdMobVideoAdNetwork(appID: appID, adUnitID: adUnitID)
         case let .appLovin(sdkKey):

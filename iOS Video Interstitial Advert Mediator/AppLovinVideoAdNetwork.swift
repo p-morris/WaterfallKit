@@ -14,7 +14,7 @@ class AppLovinVideoAdNetwork: VideoAdNetwork {
         print("AppLovin initializer")
     }
     func requestAd() {
-        
+        print()
     }
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
         return true
