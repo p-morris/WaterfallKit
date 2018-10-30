@@ -14,6 +14,9 @@ class IronSourceVideoAdNetwork: VideoAdNetwork {
         print("IronSource initializer")
     }
     func requestAd() {
-        print("IronSource Ad Requested")
+        
+    }
+    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+        return true
     }
 }

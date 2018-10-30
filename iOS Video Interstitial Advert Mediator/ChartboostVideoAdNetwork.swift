@@ -14,6 +14,9 @@ class ChartboostVideoAdNetwork: VideoAdNetwork {
         print("Chartboost initializer")
     }
     func requestAd() {
-        print("Chartboost Ad Requested")
+        
+    }
+    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+        return true
     }
 }

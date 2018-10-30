@@ -47,6 +47,7 @@ extension VideoAdNetworkFactory {
 /// Used to instantiate `VideoAdNetwork` instances for interstitatial video ads.
 class InterstitialVideoAdNetworkFactory: VideoAdNetworkFactory { }
 
+/// Used to represent a video ad network
 protocol VideoAdNetwork {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
     var delegate: VideoAdNetworkDelegate? { get set }
@@ -54,6 +55,14 @@ protocol VideoAdNetwork {
      Sends a request to the ad network for a advert.
      */
     func requestAd()
+    /**
+     Tests `anotherAdNetwork` to see if it is the same object as `self`.
+     
+     - Parameters:
+     - anotherAdNetwork: The `VideoAdNetwork` to compare.
+     - Returns: `true` is anotherAdNetwork is the same ad network as `self`, `false` otherwise.
+     */
+    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool
 }
 
 /// Provides callbacks for AdNetwork request events.
@@ -74,4 +83,34 @@ protocol VideoAdNetworkDelegate: class {
      - error: An `Error` representing the problem that occured.
      */
     func adNetwork(_ adNetwork: VideoAdNetwork, didFailToLoad error: Error)
+}
+
+/// Used to add functionality to `Array` where its elements are `VideoAdNetwork` objects.
+extension Array where Element == VideoAdNetwork {
+    /**
+     Iterates through the array looking for the first instance of `network`.
+     
+     - Parameters:
+     - network: The `VideoAdNetwork` to search for.
+     - Returns: The first index of `network` within the array, or `nil` if not found.
+     */
+    func index(ofNetwork network: VideoAdNetwork) -> Int? {
+        for (index, network) in enumerated() {
+            if network.isEqual(to: network) {
+                return index
+            }
+        }
+        return nil
+    }
+    /**
+     Removes the first instance of `network`.
+     
+     - Parameters:
+     - network: The `VideoAdNetwork` to remove the first instance of.
+     */
+    mutating func remove(network: VideoAdNetwork) {
+        if let index = index(ofNetwork: network) {
+            remove(at: index)
+        }
+    }
 }

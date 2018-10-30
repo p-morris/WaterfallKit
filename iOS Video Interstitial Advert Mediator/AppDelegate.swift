@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, VideoAdMediatorDelegate {
 
     var window: UIWindow?
 
@@ -21,7 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .initializeAdMob(appID: "dsdasd", adUnitID: "dasdasdsad")
             .initializeMoPub(adUnitID: "adsdasdasd")
         let mediator = VideoAdMediator(settings: settings)
+        mediator.delegate = self
         mediator.requestAds()
         return true
+    }
+    
+    func mediator(_ mediator: VideoAdMediator, didLoad adverts: [VideoAd]) {
+        //
+    }
+    
+    func mediator(_ mediator: VideoAdMediator, loadFailedWith error: Error) {
+        //
     }
 }
