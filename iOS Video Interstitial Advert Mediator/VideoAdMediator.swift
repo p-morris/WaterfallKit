@@ -100,12 +100,12 @@ extension VideoAdMediator: VideoAdNetworkDelegate {
     func adNetwork(_ adNetwork: VideoAdNetwork, didLoad advert: VideoAd) {
         advert.priority = adNetwork.priority
         adverts.append(advert)
-        pendingAdNetworkRequests.remove(network: adNetwork)
+        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
     }
     /**
      Removes the failed pending request.
      */
     func adNetwork(_ adNetwork: VideoAdNetwork, didFailToLoad error: Error) {
-        pendingAdNetworkRequests.remove(network: adNetwork)
+        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
     }
 }

@@ -90,29 +90,12 @@ protocol VideoAdNetworkDelegate: class {
 /// Used to add functionality to `Array` where its elements are `VideoAdNetwork` objects.
 extension Array where Element == VideoAdNetwork {
     /**
-     Iterates through the array looking for the first instance of `network`.
-     
-     - Parameters:
-     - network: The `VideoAdNetwork` to search for.
-     - Returns: The first index of `network` within the array, or `nil` if not found.
-     */
-    func index(ofNetwork network: VideoAdNetwork) -> Int? {
-        for (index, network) in enumerated() {
-            if network.isEqual(to: network) {
-                return index
-            }
-        }
-        return nil
-    }
-    /**
      Removes the first instance of `network`.
-     
+
      - Parameters:
      - network: The `VideoAdNetwork` to remove the first instance of.
      */
-    mutating func remove(network: VideoAdNetwork) {
-        if let index = index(ofNetwork: network) {
-            remove(at: index)
-        }
+    func removing(network: VideoAdNetwork) -> Array {
+        return filter { !$0.isEqual(to: network) }
     }
 }

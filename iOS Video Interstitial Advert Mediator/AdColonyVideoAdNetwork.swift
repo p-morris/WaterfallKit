@@ -10,10 +10,20 @@ import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
 class AdColonyVideoAdNetwork: VideoAdNetwork {
+    /// Used to encapsulate String literals associated with `AdColonyVideoAdNetwork`
+    private enum AdColonyAdError {
+        static let TimeOut = "The request timed out"
+    }
+    /// The object that acts as the delegate of the `AdColonyVideoAdNetwork`.
     weak var delegate: VideoAdNetworkDelegate?
+    /// The priority of the network's ads for display purposes
     var priority = 0
     /// The zone ID to request an advert for
     private let zoneID: String
+    /// The timer used to timeout the request if no response is received.
+    /// - Note: Required to a bug with the AdColony SDK where completion isn't made when
+    /// provided app ID is invalid.
+    private var timeoutTimer: Timer?
     /// Indicates whether the AdColony SDK is ready to make ad requests.
     /// - Note: Executes a pending ad request if one was made before the AdColony SDK
     /// became ready to make requests.
@@ -48,7 +58,17 @@ class AdColonyVideoAdNetwork: VideoAdNetwork {
      - zoneID: The AdColony zone ID to use for ad requests.
      */
     private func configure(appID: String, zoneIDs: [String]) {
-        AdColony.configure(withAppID: appID, zoneIDs: zoneIDs, options: nil) { _ in
+        let options = AdColonyAppOptions()
+        options.disableLogging = true
+        timeoutTimer = Timer.scheduledTimer(
+            timeInterval: 5,
+            target: self,
+            selector: #selector(timeout),
+            userInfo: nil,
+            repeats: false
+        )
+        AdColony.configure(withAppID: appID, zoneIDs: zoneIDs, options: options) { _ in
+            self.timeoutTimer?.invalidate()
             self.ready = true
         }
     }
@@ -78,5 +98,10 @@ class AdColonyVideoAdNetwork: VideoAdNetwork {
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? AdColonyVideoAdNetwork else { return false }
         return self.zoneID == anotherAdNetwork.zoneID
+    }
+    /// Invalidates the request and notifies the delegate
+    @objc func timeout() {
+        let error = NSError(domain: AdColonyAdError.TimeOut, code: -1, userInfo: nil)
+        delegate?.adNetwork(self, didFailToLoad: error)
     }
 }
