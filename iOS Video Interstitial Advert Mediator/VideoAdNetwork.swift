@@ -51,6 +51,8 @@ class InterstitialVideoAdNetworkFactory: VideoAdNetworkFactory { }
 protocol VideoAdNetwork {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
     var delegate: VideoAdNetworkDelegate? { get set }
+    /// The priority of the network for display purposes
+    var priority: Int { get set }
     /**
      Sends a request to the ad network for a advert.
      */

@@ -10,6 +10,7 @@ import Foundation
 
 class IronSourceVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(appKey: String) {
         print("IronSource initializer")
     }

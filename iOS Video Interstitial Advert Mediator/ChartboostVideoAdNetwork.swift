@@ -10,6 +10,7 @@ import Foundation
 
 class ChartboostVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(appID: String, appSignature: String) {
         print("Chartboost initializer")
     }

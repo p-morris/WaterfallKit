@@ -69,8 +69,9 @@ import Foundation
      */
     func requestAds() {
         guard !adRequestsPending else { return }
-        settings.networkTypes.forEach {
-            var network = factory.createAdNetwork(type: $0)
+        for (index, networkType) in settings.networkTypes.enumerated() {
+            var network = factory.createAdNetwork(type: networkType)
+            network.priority = index
             pendingAdNetworkRequests.append(network)
             network.delegate = self
             network.requestAd()
@@ -82,6 +83,7 @@ import Foundation
     private func notifyDelegate() {
         guard !adRequestsPending else { return }
         if adverts.count > 0 {
+            adverts.sort { $0.priority < $1.priority }
             delegate?.mediator(self, didLoad: adverts)
             adverts.removeAll()
         } else {
@@ -92,10 +94,17 @@ import Foundation
 }
 
 extension VideoAdMediator: VideoAdNetworkDelegate {
+    /**
+     Assigns advert priority, ads to the adverts array and removes the pending request.
+     */
     func adNetwork(_ adNetwork: VideoAdNetwork, didLoad advert: VideoAd) {
+        advert.priority = adNetwork.priority
         adverts.append(advert)
         pendingAdNetworkRequests.remove(network: adNetwork)
     }
+    /**
+     Removes the failed pending request.
+     */
     func adNetwork(_ adNetwork: VideoAdNetwork, didFailToLoad error: Error) {
         pendingAdNetworkRequests.remove(network: adNetwork)
     }

@@ -11,6 +11,7 @@ import Foundation
 /// Used for making interstitial video ad requests to the AdColony network
 class AdColonyVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     /// The zone ID to request an advert for
     private let zoneID: String
     /// Indicates whether the AdColony SDK is ready to make ad requests.

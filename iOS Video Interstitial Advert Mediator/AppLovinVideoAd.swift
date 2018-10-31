@@ -11,6 +11,8 @@ import Foundation
 /// Used for displaying and invoking delegate callbacks for AppLovin interstial videos ads.
 class AppLovinVideoAd: NSObject, VideoAd {
     weak var delegate: VideoAdDelegate?
+    /// The priority of the ad for display purposes
+    var priority = 0
     /// The AppLovin advert to display.
     private let appLovinAd: ALAd
     /// The AppLovin interstitial that will be reponsible for rendering the advert.

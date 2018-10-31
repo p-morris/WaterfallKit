@@ -11,6 +11,7 @@ import Foundation
 /// Used for making interstitial video ad requests to the AdColony network
 class AppLovinVideoAdNetwork: NSObject, VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     /// The AppLovin SDK key.
     let sdkKey: String
     /// The AppLovin SDK instance

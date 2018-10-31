@@ -10,6 +10,7 @@ import Foundation
 
 class VungleVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(appID: String, placementID: String) {
         print("Vungle initializer")
     }

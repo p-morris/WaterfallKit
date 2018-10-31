@@ -10,6 +10,7 @@ import Foundation
 
 class AdMobVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(appID: String, adUnitID: String) {
         print("AdMob initializer")
     }

@@ -10,6 +10,7 @@ import Foundation
 
 class MopubVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(adUnitID: String) {
         print("Mopub initializer")
     }

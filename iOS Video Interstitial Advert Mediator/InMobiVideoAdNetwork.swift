@@ -10,6 +10,7 @@ import Foundation
 
 class InMobiVideoAdNetwork: VideoAdNetwork {
     weak var delegate: VideoAdNetworkDelegate?
+    var priority = 0
     init(accountID: String, gdprConsent: Bool) {
         print("InMobi initializer")
     }

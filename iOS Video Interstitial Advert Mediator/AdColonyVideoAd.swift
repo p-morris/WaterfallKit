@@ -11,6 +11,8 @@ import Foundation
 /// Used for displaying and invoking delegate callbacks for AdColony interstial videos ads.
 class AdColonyVideoAd: VideoAd {
     weak var delegate: VideoAdDelegate?
+    /// The priority of the ad for display purposes
+    var priority = 0
     /// The AdColony interstial advert
     private let interstitial: AdColonyInterstitial
     /**

@@ -47,6 +47,8 @@ import UIKit
 @objc protocol VideoAd {
     /// The object that acts as the delegate of the `VideoAd`.
     var delegate: VideoAdDelegate? { get set }
+    /// The priority of ad for display.
+    var priority: Int { get set }
     /**
      Presents the interstial advert modally from the specified `UIViewController`, or `UIWindow`.
      
