@@ -9,6 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
+/// Used for displaying and invoking delegate callbacks for Admob interstial videos ads.
 class AdMobVideoAd: NSObject, VideoAd {
     /// The object that acts as the delegate of the `AdMobVideoAd`.
     weak var delegate: VideoAdDelegate?

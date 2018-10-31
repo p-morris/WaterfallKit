@@ -8,16 +8,95 @@
 
 import Foundation
 
-class ChartboostVideoAdNetwork: VideoAdNetwork {
+/// Used for making interstitial video ad requests to the Chartboost network
+class ChartboostVideoAdNetwork: NSObject, VideoAdNetwork {
+    /// Used to encapsulate `String` literals related to errors loading
+    /// Charboost interstitial adverts
+    private enum ChartboostAdError {
+        static let initializationFailed = "Chartboost SDK failed to initialize"
+        static let noFill = "Chartboost failed to load interstitial advert"
+    }
+    /// The object that acts as the delegate of the `ChartboostVideoAdNetwork`.
     weak var delegate: VideoAdNetworkDelegate?
+    /// The priority of the network's ads for display purposes
     var priority = 0
+    /// Indicates whether the Chartboost SDK is ready to make ad requests.
+    /// - Note: Executes a pending ad request if one was made before the Chartboost SDK
+    /// became ready to make requests.
+    private var ready = false {
+        didSet {
+            if pendingAdRequest {
+                pendingAdRequest = false
+                requestAd()
+            }
+        }
+    }
+    /// Indicates whether an ad request was received before the AdColony SDK
+    /// was ready to make requests.
+    private var pendingAdRequest = false
+    /// The Chartboost app ID used to make requests
+    private let appID: String
+    /// The Chartboost app signature used to make requests
+    private let appSignature: String
+    /**
+     Initializes a new `ChartboostVideoAdNetwork` object.
+     
+     - Parameters:
+     - appID: The Chartboost application ID to use for ad requests.
+     - appSignature: The Chartboost app signature to use for ad request.
+     - Returns: An initialized `ChartboostVideoAdNetwork` object.
+     */
     init(appID: String, appSignature: String) {
-        print("Chartboost initializer")
+        self.appID = appID
+        self.appSignature = appSignature
+        super.init()
+        Chartboost.setPIDataUseConsent(.Unknown)
+        Chartboost.setLoggingLevel(.off)
+        Chartboost.start(withAppId: appID, appSignature: appSignature, delegate: self)
     }
+    /**
+     Makes an interstitial video ad request using the Chartboost SDK.
+     - Note: If the Chartboost SDK is not yet initialized at the time of invocation,
+     the request will be enqueued for execution when the Chartboost SDK is ready. Only one
+     request may be enqueued at a time.
+     */
     func requestAd() {
-       print()
+        guard ready else {
+            pendingAdRequest = true
+            return
+        }
+       Chartboost.cacheInterstitial(CBLocationDefault)
     }
+    /**
+     Compares `self` with `anotherAdNetwork`. `ChartboostVideoAdNetwork` objects are considered
+     equal if they have equal `appID`, `appSignature` and `ready` properties.
+     - Parameters:
+     - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
+     */
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
-        return true
+        guard let anotherAdNetwork = anotherAdNetwork as? ChartboostVideoAdNetwork else { return false }
+        return self.appID == anotherAdNetwork.appID
+            && self.appSignature == anotherAdNetwork.appSignature
+            && self.ready == anotherAdNetwork.ready
+    }
+}
+
+/// Used to implement delegate callbacks for Chartboost SDK ad loading events
+extension ChartboostVideoAdNetwork: ChartboostDelegate {
+    func didInitialize(_ status: Bool) {
+        if status {
+            ready = status
+        } else {
+            pendingAdRequest = false
+            let error = NSError(domain: ChartboostAdError.noFill, code: -1, userInfo: nil)
+            delegate?.adNetwork(self, didFailToLoad: error)
+        }
+    }
+    func didCacheInterstitial(_ location: String!) {
+        delegate?.adNetwork(self, didLoad: ChartboostVideoAd())
+    }
+    func didFail(toLoadInterstitial location: String!, withError error: CBLoadError) {
+        let error = NSError(domain: ChartboostAdError.initializationFailed, code: Int(error.rawValue), userInfo: nil)
+        delegate?.adNetwork(self, didFailToLoad: error)
     }
 }

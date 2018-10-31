@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let settings = VideoAdNetworkSettings()
+            .initializeChartboost(appID: "5bd976e57565ee60e0a466d4",
+                                  appSignature: "1494c01152664f847872cb19ece5adc81fba78b7")
             .initializeAdMob(appID: "ca-app-pub-3940256099942544~1458002511",
                              adUnitID: "ca-app-pub-3940256099942544/4411468910")
             .initializeAppLovin(

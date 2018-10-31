@@ -9,6 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
+/// Used for making interstitial video ad requests to the Admob network
 class AdMobVideoAdNetwork: NSObject, VideoAdNetwork {
     /// The object that acts as the delegate of the `AdMobVideoAdNetwork`.
     weak var delegate: VideoAdNetworkDelegate?
