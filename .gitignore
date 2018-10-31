@@ -257,3 +257,16 @@ iOS Video Interstitial Advert Mediator/Chartboost.framework/Versions/A/Headers/C
 iOS Video Interstitial Advert Mediator/Chartboost.framework/Versions/A/Headers/Chartboost.h
 iOS Video Interstitial Advert Mediator/Chartboost.framework/Versions/A/Headers/ChartboostDelegate.h
 iOS Video Interstitial Advert Mediator/Chartboost.framework/Versions/Current
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMBanner.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMBannerDelegate.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMCommonConstants.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMInterstitial.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMInterstitialDelegate.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMNative.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMNativeDelegate.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMRequestStatus.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/IMSdk.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/InMobiSDK.h
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Info.plist
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/InMobiSDK
+iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Modules/module.modulemap

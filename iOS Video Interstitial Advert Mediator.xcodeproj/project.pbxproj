@@ -34,6 +34,7 @@
 		725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */; };
 		725B69302189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692E2189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework */; };
 		725B69312189BB1A0038FDD3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692F2189BB1A0038FDD3 /* Chartboost.framework */; };
+		725B69352189BD9F0038FDD3 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69342189BD9E0038FDD3 /* InMobiSDK.framework */; };
 		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
@@ -92,6 +93,7 @@
 		725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAd.swift; sourceTree = "<group>"; };
 		725B692E2189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CHAMoatMobileAppKit.framework; sourceTree = "<group>"; };
 		725B692F2189BB1A0038FDD3 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		725B69342189BD9E0038FDD3 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
 		72AA361A2186CC45004A3ECB /* VideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAd.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				7203479021885AE500918FB5 /* AudioToolbox.framework in Frameworks */,
 				7203478E21885ADE00918FB5 /* AdSupport.framework in Frameworks */,
 				7203478C21885ACF00918FB5 /* libz.1.2.5.tbd in Frameworks */,
+				725B69352189BD9F0038FDD3 /* InMobiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +229,7 @@
 				72F68999218719150035C76C /* MopubVideoAdNetwork.swift */,
 				72F6899B218719680035C76C /* VungleVideoAdNetwork.swift */,
 				720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
+				725B69342189BD9E0038FDD3 /* InMobiSDK.framework */,
 				725B692E2189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework */,
 				725B692F2189BB1A0038FDD3 /* Chartboost.framework */,
 				725B69242189ADB10038FDD3 /* GoogleMobileAds.framework */,
@@ -558,6 +562,8 @@
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 				);
 				INFOPLIST_FILE = "iOS Video Interstitial Advert Mediator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,6 +591,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
