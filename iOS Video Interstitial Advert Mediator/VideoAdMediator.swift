@@ -30,6 +30,11 @@ import Foundation
 
 /// Used for parsing a set of ad networks and requesting adverts.
 @objc class VideoAdMediator: NSObject {
+    /// Used to encapsulate `String` literals related to errors loading
+    /// video ads
+    private enum VideoAdMediatorError {
+        static let noFill = "VideoAdMediatorNoFill"
+    }
     /// The prioritized network settings to use for this ad request
     let settings: VideoAdNetworkSettings
     /// The factory used to create ad network instances
@@ -87,7 +92,7 @@ import Foundation
             delegate?.mediator(self, didLoad: adverts)
             adverts.removeAll()
         } else {
-            let error = NSError(domain: "VideoAdMediatorNoFillErrorDomain", code: -1, userInfo: nil)
+            let error = NSError(domain: VideoAdMediatorError.noFill, code: -1, userInfo: nil)
             delegate?.mediator(self, loadFailedWith: error)
         }
     }
