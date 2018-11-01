@@ -33,6 +33,9 @@
 		724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E33218AEA26004472DA /* MediaPlayer.framework */; };
 		724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E35218AEA2E004472DA /* QuartzCore.framework */; };
 		724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0E37218AF1B7004472DA /* VungleVideoAd.swift */; };
+		724C0E3A218AFB0E004472DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E39218AFB0E004472DA /* CoreLocation.framework */; };
+		724C0E3C218AFB22004472DA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E3B218AFB22004472DA /* SafariServices.framework */; };
+		724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
 		725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B69222189971B0038FDD3 /* AdMobVideoAd.swift */; };
 		725B69252189ADB10038FDD3 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69242189ADB10038FDD3 /* GoogleMobileAds.framework */; };
 		725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692A2189AFD50038FDD3 /* Foundation.framework */; };
@@ -53,7 +56,6 @@
 		72F689902187175F0035C76C /* AppLovinVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898F2187175F0035C76C /* AppLovinVideoAdNetwork.swift */; };
 		72F68992218717B20035C76C /* AdMobVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F68991218717B20035C76C /* AdMobVideoAdNetwork.swift */; };
 		72F68994218718280035C76C /* ChartboostVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F68993218718280035C76C /* ChartboostVideoAdNetwork.swift */; };
-		72F6899A218719150035C76C /* MopubVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F68999218719150035C76C /* MopubVideoAdNetwork.swift */; };
 		72F6899C218719680035C76C /* VungleVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6899B218719680035C76C /* VungleVideoAdNetwork.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,9 @@
 		724C0E33218AEA26004472DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		724C0E35218AEA2E004472DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		724C0E37218AF1B7004472DA /* VungleVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleVideoAd.swift; sourceTree = "<group>"; };
+		724C0E39218AFB0E004472DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		724C0E3B218AFB22004472DA /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		724C0FE9218B097F004472DA /* TimeOutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutTimer.swift; sourceTree = "<group>"; };
 		725B69222189971B0038FDD3 /* AdMobVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoAd.swift; sourceTree = "<group>"; };
 		725B69242189ADB10038FDD3 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		725B692A2189AFD50038FDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,7 +124,6 @@
 		72F6898F2187175F0035C76C /* AppLovinVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAdNetwork.swift; sourceTree = "<group>"; };
 		72F68991218717B20035C76C /* AdMobVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoAdNetwork.swift; sourceTree = "<group>"; };
 		72F68993218718280035C76C /* ChartboostVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAdNetwork.swift; sourceTree = "<group>"; };
-		72F68999218719150035C76C /* MopubVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MopubVideoAdNetwork.swift; sourceTree = "<group>"; };
 		72F6899B218719680035C76C /* VungleVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleVideoAdNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,13 +132,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */,
+				724C0E3C218AFB22004472DA /* SafariServices.framework in Frameworks */,
+				724C0E3A218AFB0E004472DA /* CoreLocation.framework in Frameworks */,
 				724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */,
 				724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */,
 				724C0E32218AE961004472DA /* CFNetwork.framework in Frameworks */,
 				725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */,
 				725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */,
 				7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */,
-				7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */,
 				725B69252189ADB10038FDD3 /* GoogleMobileAds.framework in Frameworks */,
 				7209221921887BFA00E6AC03 /* CoreGraphics.framework in Frameworks */,
 				725B69312189BB1A0038FDD3 /* Chartboost.framework in Frameworks */,
@@ -172,6 +178,8 @@
 		7203478A21885ACF00918FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				724C0E3B218AFB22004472DA /* SafariServices.framework */,
+				724C0E39218AFB0E004472DA /* CoreLocation.framework */,
 				724C0E35218AEA2E004472DA /* QuartzCore.framework */,
 				724C0E33218AEA26004472DA /* MediaPlayer.framework */,
 				724C0E31218AE960004472DA /* CFNetwork.framework */,
@@ -230,6 +238,7 @@
 				72F689862186FE980035C76C /* VideoAdMediator.swift */,
 				72F689842186D56A0035C76C /* VideoAdNetwork.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
+				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
 				72F6898D218716A50035C76C /* AdColonyVideoAdNetwork.swift */,
 				720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */,
 				72F6898F2187175F0035C76C /* AppLovinVideoAdNetwork.swift */,
@@ -238,7 +247,6 @@
 				725B69222189971B0038FDD3 /* AdMobVideoAd.swift */,
 				72F68993218718280035C76C /* ChartboostVideoAdNetwork.swift */,
 				725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */,
-				72F68999218719150035C76C /* MopubVideoAdNetwork.swift */,
 				72F6899B218719680035C76C /* VungleVideoAdNetwork.swift */,
 				724C0E37218AF1B7004472DA /* VungleVideoAd.swift */,
 				720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
@@ -386,11 +394,11 @@
 				725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */,
 				720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */,
 				725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */,
+				724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */,
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleVideoAdNetwork.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
-				72F6899A218719150035C76C /* MopubVideoAdNetwork.swift in Sources */,
 				72F689872186FE980035C76C /* VideoAdMediator.swift in Sources */,
 				72F117FE218314FE00C3C805 /* ViewController.swift in Sources */,
 				724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */,
@@ -577,11 +585,16 @@
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/MOAT",
 				);
 				INFOPLIST_FILE = "iOS Video Interstitial Advert Mediator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/Avid",
 				);
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
@@ -617,11 +630,16 @@
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/MOAT",
 				);
 				INFOPLIST_FILE = "iOS Video Interstitial Advert Mediator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/Avid",
 				);
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",

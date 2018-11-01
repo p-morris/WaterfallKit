@@ -83,6 +83,7 @@ class VungleVideoAdNetwork: NSObject, VideoAdNetwork {
         do {
             try vungleSDK.loadPlacement(withID: placementID)
         } catch {
+            self.ready = false
             delegate?.adNetwork(self, didFailToLoad: error)
         }
     }
@@ -110,6 +111,8 @@ extension VungleVideoAdNetwork: VungleSDKDelegate {
         delegate?.adNetwork(self, didFailToLoad: error)
     }
     func vungleAdPlayabilityUpdate(_ isAdPlayable: Bool, placementID: String?, error: Error?) {
-        delegate?.adNetwork(self, didLoad: VungleVideoAd(placementID: self.placementID, vungleSDK: vungleSDK))
+        guard let ready = ready, ready else { return }
+        let advert = VungleVideoAd(placementID: placementID ?? self.placementID, vungleSDK: vungleSDK)
+        delegate?.adNetwork(self, didLoad: advert)
     }
 }

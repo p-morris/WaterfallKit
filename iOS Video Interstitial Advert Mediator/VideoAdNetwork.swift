@@ -32,8 +32,6 @@ extension VideoAdNetworkFactory {
             return AppLovinVideoAdNetwork(sdkKey: sdkKey)
         case let .chartboost(appID, appSignature):
             return ChartboostVideoAdNetwork(appID: appID, appSignature: appSignature)
-        case let .mopub(adUnitID):
-            return MopubVideoAdNetwork(adUnitID: adUnitID)
         case let .vungle(appID, placementID):
             return VungleVideoAdNetwork(appID: appID, placementID: placementID)
         }
@@ -61,6 +59,27 @@ protocol VideoAdNetwork {
      - Returns: `true` is anotherAdNetwork is the same ad network as `self`, `false` otherwise.
      */
     func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool
+}
+
+/// Used to add timeout functionality to a video ad network
+protocol TimeOutableVideoAdNetwork: class, VideoAdNetwork {
+    /// The timer used to timeout the request
+    var timeoutTimer: TimeOutTimer { get }
+    /// Called when the timeout timer fires
+    func timeOut()
+}
+
+/// Default implementation for TimeOutable
+extension TimeOutableVideoAdNetwork {
+    /// The Error domain for a timeout error.
+    private var timeOutError: String {
+        return "RequestTimedOutErrorDomain"
+    }
+    /// Notifies the delegate that the timeout has occured
+    func timeOut() {
+        let error = NSError(domain: timeOutError, code: -1, userInfo: nil)
+        delegate?.adNetwork(self, didFailToLoad: error)
+    }
 }
 
 /// Provides callbacks for AdNetwork request events.

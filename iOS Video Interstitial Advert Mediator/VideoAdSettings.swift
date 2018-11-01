@@ -39,7 +39,6 @@ Settings object which holds client's account details for all ad networks. Provid
         case vungle(appID: String, placementID: String)
         case admob(appID: String, adUnitID: String)
         case chartboost(appID: String, appSignature: String)
-        case mopub(adUnitID: String)
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
     private (set) var networkTypes: [NetworkType] = []
@@ -99,16 +98,6 @@ Settings object which holds client's account details for all ad networks. Provid
      */
     func initializeChartboost(appID: String, appSignature: String) -> Self {
         networkTypes.append(.chartboost(appID: appID, appSignature: appSignature))
-        return self
-    }
-    /**
-     Initializes the Mopub ad network.
-     
-     - Parameter adUnitID: Your Mopub add unit ID.
-     - Returns: The VideoAdNetworkSettings object.
-     */
-    func initializeMoPub(adUnitID: String) -> Self {
-        networkTypes.append(.mopub(adUnitID: adUnitID))
         return self
     }
 }
