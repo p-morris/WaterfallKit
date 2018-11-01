@@ -32,10 +32,6 @@ extension VideoAdNetworkFactory {
             return AppLovinVideoAdNetwork(sdkKey: sdkKey)
         case let .chartboost(appID, appSignature):
             return ChartboostVideoAdNetwork(appID: appID, appSignature: appSignature)
-        case let .inMobi(accountID, gdprConsent):
-            return InMobiVideoAdNetwork(accountID: accountID, gdprConsent: gdprConsent)
-        case let .ironSource(appKey):
-            return IronSourceVideoAdNetwork(appKey: appKey)
         case let .mopub(adUnitID):
             return MopubVideoAdNetwork(adUnitID: adUnitID)
         case let .vungle(appID, placementID):

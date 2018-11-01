@@ -270,3 +270,8 @@ iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Headers/InMobiSDK.h
 iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Info.plist
 iOS Video Interstitial Advert Mediator/InMobiSDK.framework/InMobiSDK
 iOS Video Interstitial Advert Mediator/InMobiSDK.framework/Modules/module.modulemap
+iOS Video Interstitial Advert Mediator/VungleSDK.framework/Headers/VungleSDK.h
+iOS Video Interstitial Advert Mediator/VungleSDK.framework/Headers/VungleSDKCreativeTracking.h
+iOS Video Interstitial Advert Mediator/VungleSDK.framework/Headers/VungleSDKHeaderBidding.h
+iOS Video Interstitial Advert Mediator/VungleSDK.framework/Info.plist
+iOS Video Interstitial Advert Mediator/VungleSDK.framework/VungleSDK

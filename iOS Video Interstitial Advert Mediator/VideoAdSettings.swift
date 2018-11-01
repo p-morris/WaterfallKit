@@ -39,8 +39,6 @@ Settings object which holds client's account details for all ad networks. Provid
         case vungle(appID: String, placementID: String)
         case admob(appID: String, adUnitID: String)
         case chartboost(appID: String, appSignature: String)
-        case ironSource(appKey: String)
-        case inMobi(accountID: String, gdprConsent: Bool)
         case mopub(adUnitID: String)
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
@@ -101,28 +99,6 @@ Settings object which holds client's account details for all ad networks. Provid
      */
     func initializeChartboost(appID: String, appSignature: String) -> Self {
         networkTypes.append(.chartboost(appID: appID, appSignature: appSignature))
-        return self
-    }
-    /**
-     Initializes the IronSource ad network.
-     
-     - Parameters appKey: Your IronSource app key.
-     - Returns: The VideoAdNetworkSettings object.
-     */
-    func initializeIronSource(appKey: String) -> Self {
-        networkTypes.append(.ironSource(appKey: appKey))
-        return self
-    }
-    /**
-     Initializes the InMobi ad network.
-     
-     - Parameters:
-     - accountID: Your InMobi account ID.
-     - gdprConsent: Pass `true` if you have user's consent to collect user data, `false` otherwise.
-     - Returns: The VideoAdNetworkSettings object.
-     */
-    func initializeInMobi(accountID: String, gdprConsent: Bool) -> Self {
-        networkTypes.append(.inMobi(accountID: accountID, gdprConsent: gdprConsent))
         return self
     }
     /**

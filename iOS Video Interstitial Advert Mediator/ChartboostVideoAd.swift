@@ -15,7 +15,7 @@ class ChartboostVideoAd: NSObject, VideoAd {
     /// The priority of the ad for display purposes
     var priority = 0
     /**
-     Displays the Admob interstial ad modally.
+     Displays the Chartboost interstial ad modally.
      - Note: The implementation details are private for Chartboost interstitials. It can't be
      guaranteed which controller the interstitial will be presented from, or whether it will be
      rendered over the top of the `keyWindow`.
