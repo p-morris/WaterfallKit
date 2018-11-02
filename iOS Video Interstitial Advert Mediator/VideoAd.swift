@@ -9,6 +9,23 @@
 import Foundation
 import UIKit
 
+/// An interstital video advert.
+@objc protocol VideoAd {
+    /// The object that acts as the delegate of the `VideoAd`.
+    var delegate: VideoAdDelegate? { get set }
+    /// The priority of ad for display.
+    var priority: Int { get set }
+    /**
+     Presents the interstial advert modally from the specified `UIViewController`, or `UIWindow`.
+     
+     - Parameters:
+     - from: The `UIViewController` that the interstatial advert should be presented from.
+     - keyWindow: The key `UIWindow` of the application. Some ad networks require the ad to be
+     presented over the window instead of over a view controller.
+     */
+    func display(from viewController: UIViewController, or keyWindow: UIWindow)
+}
+
 /// Provides callbacks for interstatial advert events.
 @objc protocol VideoAdDelegate {
     /**
@@ -41,21 +58,4 @@ import UIKit
      - ad: The `VideoAd` responsible for the callback.
      */
     @objc optional func videoAdDidReceiveClick(_ advert: VideoAd)
-}
-
-/// An interstital video advert.
-@objc protocol VideoAd {
-    /// The object that acts as the delegate of the `VideoAd`.
-    var delegate: VideoAdDelegate? { get set }
-    /// The priority of ad for display.
-    var priority: Int { get set }
-    /**
-     Presents the interstial advert modally from the specified `UIViewController`, or `UIWindow`.
-     
-     - Parameters:
-     - from: The `UIViewController` that the interstatial advert should be presented from.
-     - keyWindow: The key `UIWindow` of the application. Some ad networks require the ad to be
-     presented over the window instead of over a view controller.
-     */
-    func display(from viewController: UIViewController, or keyWindow: UIWindow)
 }

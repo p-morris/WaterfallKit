@@ -43,6 +43,7 @@
 		725B69302189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692E2189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework */; };
 		725B69312189BB1A0038FDD3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692F2189BB1A0038FDD3 /* Chartboost.framework */; };
 		725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */; };
+		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
 		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
@@ -107,6 +108,7 @@
 		725B692E2189BB1A0038FDD3 /* CHAMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CHAMoatMobileAppKit.framework; sourceTree = "<group>"; };
 		725B692F2189BB1A0038FDD3 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
 		72AA361A2186CC45004A3ECB /* VideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAd.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				72F6898A2187005C0035C76C /* VideoAdSettings.swift */,
 				72F689862186FE980035C76C /* VideoAdLoader.swift */,
 				72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */,
+				728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
 				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
 				72F6898D218716A50035C76C /* AdColonyAdapter.swift */,
@@ -399,6 +402,7 @@
 				72F6899C218719680035C76C /* VungleAdapter.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
+				728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */,
 				72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */,
 				72F117FE218314FE00C3C805 /* ViewController.swift in Sources */,
 				724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */,
