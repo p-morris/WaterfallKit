@@ -42,7 +42,7 @@ import Foundation
     /// The object that acts as the delegate of `VideoAdMediator`
     weak var delegate: VideoAdLoaderDelegate?
     /// Number of network requests currently in process
-    private var pendingAdNetworkRequests: [VideoAdNetwork] = [] {
+    private var pendingAdNetworkRequests: [VideoAdNetworkAdapter] = [] {
         didSet {
             if pendingAdNetworkRequests.count == 0 {
                 notifyDelegate()
@@ -98,11 +98,11 @@ import Foundation
     }
 }
 
-extension VideoAdLoader: VideoAdNetworkDelegate {
+extension VideoAdLoader: VideoAdNetworkAdapterDelegate {
     /**
      Assigns advert priority, ads to the adverts array and removes the pending request.
      */
-    func adNetwork(_ adNetwork: VideoAdNetwork, didLoad advert: VideoAd) {
+    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didLoad advert: VideoAd) {
         advert.priority = adNetwork.priority
         adverts.append(advert)
         pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
@@ -110,7 +110,7 @@ extension VideoAdLoader: VideoAdNetworkDelegate {
     /**
      Removes the failed pending request.
      */
-    func adNetwork(_ adNetwork: VideoAdNetwork, didFailToLoad error: Error) {
+    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didFailToLoad error: Error) {
         pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
     }
 }

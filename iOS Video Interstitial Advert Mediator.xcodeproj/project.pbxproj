@@ -49,7 +49,7 @@
 		72F11801218314FE00C3C805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F117FF218314FE00C3C805 /* Main.storyboard */; };
 		72F11803218314FF00C3C805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F11802218314FF00C3C805 /* Assets.xcassets */; };
 		72F11806218314FF00C3C805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F11804218314FF00C3C805 /* LaunchScreen.storyboard */; };
-		72F689852186D56A0035C76C /* VideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetwork.swift */; };
+		72F689852186D56A0035C76C /* VideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */; };
 		72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689862186FE980035C76C /* VideoAdLoader.swift */; };
 		72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898A2187005C0035C76C /* VideoAdSettings.swift */; };
 		72F6898E218716A50035C76C /* AdColonyVideoAdNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898D218716A50035C76C /* AdColonyVideoAdNetwork.swift */; };
@@ -117,7 +117,7 @@
 		72F11807218314FF00C3C805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F1180C218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Video Interstitial Advert MediatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F11812218314FF00C3C805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72F689842186D56A0035C76C /* VideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetwork.swift; sourceTree = "<group>"; };
+		72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapter.swift; sourceTree = "<group>"; };
 		72F689862186FE980035C76C /* VideoAdLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdLoader.swift; sourceTree = "<group>"; };
 		72F6898A2187005C0035C76C /* VideoAdSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdSettings.swift; sourceTree = "<group>"; };
 		72F6898D218716A50035C76C /* AdColonyVideoAdNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyVideoAdNetwork.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 				72F11807218314FF00C3C805 /* Info.plist */,
 				72F6898A2187005C0035C76C /* VideoAdSettings.swift */,
 				72F689862186FE980035C76C /* VideoAdLoader.swift */,
-				72F689842186D56A0035C76C /* VideoAdNetwork.swift */,
+				72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
 				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
 				72F6898D218716A50035C76C /* AdColonyVideoAdNetwork.swift */,
@@ -407,7 +407,7 @@
 				72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */,
 				72F689902187175F0035C76C /* AppLovinVideoAdNetwork.swift in Sources */,
 				72F68994218718280035C76C /* ChartboostVideoAdNetwork.swift in Sources */,
-				72F689852186D56A0035C76C /* VideoAdNetwork.swift in Sources */,
+				72F689852186D56A0035C76C /* VideoAdNetworkAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

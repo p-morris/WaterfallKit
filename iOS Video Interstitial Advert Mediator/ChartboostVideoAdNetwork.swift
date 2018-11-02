@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the Chartboost network
-class ChartboostVideoAdNetwork: NSObject, TimeOutableVideoAdNetwork {
+class ChartboostVideoAdNetwork: NSObject, TimeOutableVideoAdNetworkAdapter {
     /// The timer used to timeout the request if no response is received.
     /// - Note: Required to a bug with the Chartboost SDK where completion isn't made when
     /// provided app ID is invalid.
@@ -21,7 +21,7 @@ class ChartboostVideoAdNetwork: NSObject, TimeOutableVideoAdNetwork {
         static let noFill = "Chartboost failed to load interstitial advert"
     }
     /// The object that acts as the delegate of the `ChartboostVideoAdNetwork`.
-    weak var delegate: VideoAdNetworkDelegate?
+    weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes
     var priority = 0
     /// Indicates whether the Chartboost SDK is ready to make ad requests.
@@ -79,7 +79,7 @@ class ChartboostVideoAdNetwork: NSObject, TimeOutableVideoAdNetwork {
      - Parameters:
      - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
      */
-    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? ChartboostVideoAdNetwork else { return false }
         return self.appID == anotherAdNetwork.appID
             && self.appSignature == anotherAdNetwork.appSignature

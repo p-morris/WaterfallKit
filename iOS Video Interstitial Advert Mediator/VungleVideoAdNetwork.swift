@@ -9,9 +9,9 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the Vungle network
-class VungleVideoAdNetwork: NSObject, VideoAdNetwork {
+class VungleVideoAdNetwork: NSObject, VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `ChartboostVideoAdNetwork`.
-    weak var delegate: VideoAdNetworkDelegate?
+    weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes.
     var priority = 0
     /// The Vungle application ID.
@@ -93,7 +93,7 @@ class VungleVideoAdNetwork: NSObject, VideoAdNetwork {
      - Parameters:
      - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
      */
-    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? VungleVideoAdNetwork else { return false }
         return self.appID == anotherAdNetwork.appID
             && self.placementID == anotherAdNetwork.placementID

@@ -10,9 +10,9 @@ import Foundation
 import GoogleMobileAds
 
 /// Used for making interstitial video ad requests to the Admob network
-class AdMobVideoAdNetwork: NSObject, VideoAdNetwork {
+class AdMobVideoAdNetwork: NSObject, VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `AdMobVideoAdNetwork`.
-    weak var delegate: VideoAdNetworkDelegate?
+    weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes
     var priority = 0
     /// The `GADInterstitial` responsible for displaying the advert.
@@ -44,7 +44,7 @@ class AdMobVideoAdNetwork: NSObject, VideoAdNetwork {
      - Parameters:
      - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
      */
-    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? AdMobVideoAdNetwork else { return false }
         return interstitial == anotherAdNetwork.interstitial
     }

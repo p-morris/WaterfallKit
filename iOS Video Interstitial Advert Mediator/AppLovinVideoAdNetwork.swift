@@ -9,9 +9,9 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
-class AppLovinVideoAdNetwork: NSObject, VideoAdNetwork {
+class AppLovinVideoAdNetwork: NSObject, VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `AppLovinVideoAdNetwork`.
-    weak var delegate: VideoAdNetworkDelegate?
+    weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes
     var priority = 0
     /// The AppLovin SDK key.
@@ -39,7 +39,7 @@ class AppLovinVideoAdNetwork: NSObject, VideoAdNetwork {
      - Parameters:
      - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
      */
-    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool {
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? AppLovinVideoAdNetwork else { return false }
         return sdkKey == anotherAdNetwork.sdkKey
     }

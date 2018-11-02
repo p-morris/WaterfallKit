@@ -15,7 +15,7 @@ class TimeOutTimer {
     init(timeOutIn: TimeInterval) {
         self.timeOutIn = timeOutIn
     }
-    func startTimeOut(notify timeoutable: TimeOutableVideoAdNetwork) {
+    func startTimeOut(notify timeoutable: TimeOutableVideoAdNetworkAdapter) {
         timer = Timer.scheduledTimer(withTimeInterval: timeOutIn, repeats: false, block: { _ in
             timeoutable.timeOut()
         })

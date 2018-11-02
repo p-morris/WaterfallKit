@@ -18,11 +18,11 @@ protocol VideoAdNetworkFactory {
      - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for
      - Returns: An object conforming to `VideoAdNetwork`.
      */
-    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork
+    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter
 }
 
 extension VideoAdNetworkFactory {
-    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetwork {
+    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter {
         switch type {
         case let .adColony(appID, zoneID):
             return AdColonyVideoAdNetwork(appID: appID, zoneID: zoneID)
@@ -42,9 +42,9 @@ extension VideoAdNetworkFactory {
 class InterstitialVideoAdNetworkFactory: VideoAdNetworkFactory { }
 
 /// Used to represent a video ad network
-protocol VideoAdNetwork {
+protocol VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
-    var delegate: VideoAdNetworkDelegate? { get set }
+    var delegate: VideoAdNetworkAdapterDelegate? { get set }
     /// The priority of the network for display purposes
     var priority: Int { get set }
     /**
@@ -58,11 +58,11 @@ protocol VideoAdNetwork {
      - anotherAdNetwork: The `VideoAdNetwork` to compare.
      - Returns: `true` is anotherAdNetwork is the same ad network as `self`, `false` otherwise.
      */
-    func isEqual(to anotherAdNetwork: VideoAdNetwork) -> Bool
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool
 }
 
 /// Used to add timeout functionality to a video ad network
-protocol TimeOutableVideoAdNetwork: class, VideoAdNetwork {
+protocol TimeOutableVideoAdNetworkAdapter: class, VideoAdNetworkAdapter {
     /// The timer used to timeout the request
     var timeoutTimer: TimeOutTimer { get }
     /// Called when the timeout timer fires
@@ -70,7 +70,7 @@ protocol TimeOutableVideoAdNetwork: class, VideoAdNetwork {
 }
 
 /// Default implementation for TimeOutable
-extension TimeOutableVideoAdNetwork {
+extension TimeOutableVideoAdNetworkAdapter {
     /// The Error domain for a timeout error.
     private var timeOutError: String {
         return "RequestTimedOutErrorDomain"
@@ -83,7 +83,7 @@ extension TimeOutableVideoAdNetwork {
 }
 
 /// Provides callbacks for AdNetwork request events.
-protocol VideoAdNetworkDelegate: class {
+protocol VideoAdNetworkAdapterDelegate: class {
     /**
      Executed when the ad network request is fulfilled.
      
@@ -91,7 +91,7 @@ protocol VideoAdNetworkDelegate: class {
      - adNetwork: The `VideoAdNetwork` responsible for the callback.
      - ad: A `VideoAd` object ready for display.
      */
-    func adNetwork(_ adNetwork: VideoAdNetwork, didLoad advert: VideoAd)
+    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didLoad advert: VideoAd)
     /**
      Executed when the ad network request either fails, or is unfulfilled.
      
@@ -99,18 +99,18 @@ protocol VideoAdNetworkDelegate: class {
      - adNetwork: The `VideoAdNetwork` responsible for the callback.
      - error: An `Error` representing the problem that occured.
      */
-    func adNetwork(_ adNetwork: VideoAdNetwork, didFailToLoad error: Error)
+    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didFailToLoad error: Error)
 }
 
 /// Used to add functionality to `Array` where its elements are `VideoAdNetwork` objects.
-extension Array where Element == VideoAdNetwork {
+extension Array where Element == VideoAdNetworkAdapter {
     /**
      Removes the first instance of `network`.
 
      - Parameters:
      - network: The `VideoAdNetwork` to remove the first instance of.
      */
-    func removing(network: VideoAdNetwork) -> Array {
+    func removing(network: VideoAdNetworkAdapter) -> Array {
         return filter { !$0.isEqual(to: network) }
     }
 }
