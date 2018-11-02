@@ -1,5 +1,5 @@
 //
-//  VideoAdMediator.swift
+//  VideoAdLoader.swift
 //  iOS Video Interstitial Advert Mediator
 //
 //  Created by Peter Morris on 29/10/2018.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Provides callbacks for waterfalled VideoMediator requests
-@objc protocol VideoAdMediatorDelegate {
+/// Provides callbacks for prioritized VideoAdLoader requests
+@objc protocol VideoAdLoaderDelegate {
     /**
      Executed when the mediator successfully loads a prioritized video ad.
      
@@ -17,7 +17,7 @@ import Foundation
      - mediator: The `VideoAdMediator` responsible for the callback.
      - advert: A `VideoAd` object ready for display.
      */
-    func mediator(_ mediator: VideoAdMediator, didLoad adverts: [VideoAd])
+    func mediator(_ mediator: VideoAdLoader, didLoad adverts: [VideoAd])
     /**
      Executed when the mediator successfully loads a prioritized video ad.
      
@@ -25,22 +25,22 @@ import Foundation
      - mediator: The `VideoAdMediator` responsible for the callback.
      - error: An `Error` that occured.
      */
-    func mediator(_ mediator: VideoAdMediator, loadFailedWith error: Error)
+    func mediator(_ mediator: VideoAdLoader, loadFailedWith error: Error)
 }
 
 /// Used for parsing a set of ad networks and requesting adverts.
-@objc class VideoAdMediator: NSObject {
+@objc class VideoAdLoader: NSObject {
     /// Used to encapsulate `String` literals related to errors loading
     /// video ads
-    private enum VideoAdMediatorError {
-        static let noFill = "VideoAdMediatorNoFill"
+    private enum VideoAdLoaderError {
+        static let noFill = "VideoAdLoaderNoFill"
     }
     /// The prioritized network settings to use for this ad request
     let settings: VideoAdNetworkSettings
     /// The factory used to create ad network instances
     private let factory: VideoAdNetworkFactory
     /// The object that acts as the delegate of `VideoAdMediator`
-    weak var delegate: VideoAdMediatorDelegate?
+    weak var delegate: VideoAdLoaderDelegate?
     /// Number of network requests currently in process
     private var pendingAdNetworkRequests: [VideoAdNetwork] = [] {
         didSet {
@@ -92,13 +92,13 @@ import Foundation
             delegate?.mediator(self, didLoad: adverts)
             adverts.removeAll()
         } else {
-            let error = NSError(domain: VideoAdMediatorError.noFill, code: -1, userInfo: nil)
+            let error = NSError(domain: VideoAdLoaderError.noFill, code: -1, userInfo: nil)
             delegate?.mediator(self, loadFailedWith: error)
         }
     }
 }
 
-extension VideoAdMediator: VideoAdNetworkDelegate {
+extension VideoAdLoader: VideoAdNetworkDelegate {
     /**
      Assigns advert priority, ads to the adverts array and removes the pending request.
      */

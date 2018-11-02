@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var mediator: VideoAdMediator!
+    var mediator: VideoAdLoader!
     let runloop = RunLoop.main
     var timer: Timer!
     override func viewDidLoad() {
@@ -27,18 +27,18 @@ class ViewController: UIViewController {
             //.initializeAdMob(appID: "ca-app-pub-3940256099942544~1458002511", adUnitID: "ca-app-pub-3940256099942544/4411468910")
             //.initializeAppLovin(sdkKey: "sft8Tn2LETCqO7mlIdrehAIZl6We08AU_U_ikaTDxvfp-E_NgytxsQdRrB8hi5olXC5DLvzHgtVOQlwb4tQ76D")
             //.initializeAdColony(appID: "appd829e808336f4c31a0", zoneID: "vz5ae8090ed15442be8b")
-        mediator = VideoAdMediator(settings: settings)
+        mediator = VideoAdLoader(settings: settings)
         mediator.delegate = self
         mediator.requestAds()
     }
 
 }
 
-extension ViewController: VideoAdMediatorDelegate {
-    func mediator(_ mediator: VideoAdMediator, didLoad adverts: [VideoAd]) {
+extension ViewController: VideoAdLoaderDelegate {
+    func mediator(_ mediator: VideoAdLoader, didLoad adverts: [VideoAd]) {
         adverts.first?.display(from: self, or: UIApplication.shared.keyWindow!)
     }
-    func mediator(_ mediator: VideoAdMediator, loadFailedWith error: Error) {
+    func mediator(_ mediator: VideoAdLoader, loadFailedWith error: Error) {
         print(error)
     }
 }
