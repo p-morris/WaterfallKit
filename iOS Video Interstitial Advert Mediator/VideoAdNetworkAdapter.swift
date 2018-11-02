@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to represent a video ad network
-protocol VideoAdNetworkAdapter {
+protocol VideoAdNetworkAdapter: class {
     /// The object that acts as the delegate of the `VideoAdNetwork`.
     var delegate: VideoAdNetworkAdapterDelegate? { get set }
     /// The priority of the network for display purposes
@@ -29,7 +29,7 @@ protocol VideoAdNetworkAdapter {
 }
 
 /// Used to add timeout functionality to a video ad network
-protocol TimeOutableVideoAdNetworkAdapter: class, VideoAdNetworkAdapter {
+protocol TimeOutableVideoAdNetworkAdapter: VideoAdNetworkAdapter {
     /// The timer used to timeout the request
     var timeoutTimer: TimeOutTimer { get }
     /// Called when the timeout timer fires

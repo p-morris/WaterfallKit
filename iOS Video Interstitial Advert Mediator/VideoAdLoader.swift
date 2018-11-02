@@ -75,7 +75,7 @@ import Foundation
     func requestAds() {
         guard !adRequestsPending else { return }
         for (index, networkType) in settings.networkTypes.enumerated() {
-            var network = factory.createAdapter(type: networkType)
+            let network = factory.createAdapter(type: networkType)
             network.priority = index
             pendingAdNetworkRequests.append(network)
             network.delegate = self
