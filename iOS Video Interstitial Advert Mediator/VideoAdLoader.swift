@@ -38,7 +38,7 @@ import Foundation
     /// The prioritized network settings to use for this ad request
     let settings: VideoAdNetworkSettings
     /// The factory used to create ad network instances
-    private let factory: VideoAdNetworkFactory
+    private let factory: VideoAdNetworkAdapterFactory
     /// The object that acts as the delegate of `VideoAdMediator`
     weak var delegate: VideoAdLoaderDelegate?
     /// Number of network requests currently in process
@@ -64,7 +64,7 @@ import Foundation
      - Returns: An initialized `VideoAdMediator` object that will use `settings`
      to request appropraite ads as prioritized.
      */
-    init(settings: VideoAdNetworkSettings, factory: VideoAdNetworkFactory = InterstitialVideoAdNetworkFactory()) {
+    init(settings: VideoAdNetworkSettings, factory: VideoAdNetworkAdapterFactory = InterstitialAdapterFactory()) {
         self.settings = settings
         self.factory = factory
     }
@@ -75,7 +75,7 @@ import Foundation
     func requestAds() {
         guard !adRequestsPending else { return }
         for (index, networkType) in settings.networkTypes.enumerated() {
-            var network = factory.createAdNetwork(type: networkType)
+            var network = factory.createAdapter(type: networkType)
             network.priority = index
             pendingAdNetworkRequests.append(network)
             network.delegate = self
@@ -102,15 +102,15 @@ extension VideoAdLoader: VideoAdNetworkAdapterDelegate {
     /**
      Assigns advert priority, ads to the adverts array and removes the pending request.
      */
-    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didLoad advert: VideoAd) {
-        advert.priority = adNetwork.priority
+    func adNetwork(_ adapter: VideoAdNetworkAdapter, didLoad advert: VideoAd) {
+        advert.priority = adapter.priority
         adverts.append(advert)
-        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
+        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(adapter: adapter)
     }
     /**
      Removes the failed pending request.
      */
-    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didFailToLoad error: Error) {
-        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(network: adNetwork)
+    func adNetwork(_ adapter: VideoAdNetworkAdapter, didFailToLoad error: Error) {
+        pendingAdNetworkRequests = pendingAdNetworkRequests.removing(adapter: adapter)
     }
 }

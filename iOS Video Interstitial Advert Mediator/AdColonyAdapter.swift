@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
-class AdColonyVideoAdNetwork: TimeOutableVideoAdNetworkAdapter {
+class AdColonyAdapter: TimeOutableVideoAdNetworkAdapter {
     /// The timer used to timeout the request if no response is received.
     /// - Note: Required to a bug with the AdColony SDK where completion isn't made when
     /// provided app ID is invalid.
@@ -87,7 +87,7 @@ class AdColonyVideoAdNetwork: TimeOutableVideoAdNetworkAdapter {
      - anotherAdNetwork: the `VideoAdNetwork` object to compare for equality.
      */
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
-        guard let anotherAdNetwork = anotherAdNetwork as? AdColonyVideoAdNetwork else { return false }
+        guard let anotherAdNetwork = anotherAdNetwork as? AdColonyAdapter else { return false }
         return self.zoneID == anotherAdNetwork.zoneID
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to instantiate `VideoAdNetwork` instances.
-protocol VideoAdNetworkFactory {
+protocol VideoAdNetworkAdapterFactory {
     /**
      Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
      receives as an argument.
@@ -18,28 +18,28 @@ protocol VideoAdNetworkFactory {
      - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for
      - Returns: An object conforming to `VideoAdNetwork`.
      */
-    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter
+    func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter
 }
 
-extension VideoAdNetworkFactory {
-    func createAdNetwork(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter {
+extension VideoAdNetworkAdapterFactory {
+    func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter {
         switch type {
         case let .adColony(appID, zoneID):
-            return AdColonyVideoAdNetwork(appID: appID, zoneID: zoneID)
+            return AdColonyAdapter(appID: appID, zoneID: zoneID)
         case let .admob(appID, adUnitID):
-            return AdMobVideoAdNetwork(appID: appID, adUnitID: adUnitID)
+            return AdMobAdapter(appID: appID, adUnitID: adUnitID)
         case let .appLovin(sdkKey):
-            return AppLovinVideoAdNetwork(sdkKey: sdkKey)
+            return AppLovinAdapter(sdkKey: sdkKey)
         case let .chartboost(appID, appSignature):
-            return ChartboostVideoAdNetwork(appID: appID, appSignature: appSignature)
+            return ChartboostAdapter(appID: appID, appSignature: appSignature)
         case let .vungle(appID, placementID):
-            return VungleVideoAdNetwork(appID: appID, placementID: placementID)
+            return VungleAdapter(appID: appID, placementID: placementID)
         }
     }
 }
 
 /// Used to instantiate `VideoAdNetwork` instances for interstitatial video ads.
-class InterstitialVideoAdNetworkFactory: VideoAdNetworkFactory { }
+class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory { }
 
 /// Used to represent a video ad network
 protocol VideoAdNetworkAdapter {
@@ -91,7 +91,7 @@ protocol VideoAdNetworkAdapterDelegate: class {
      - adNetwork: The `VideoAdNetwork` responsible for the callback.
      - ad: A `VideoAd` object ready for display.
      */
-    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didLoad advert: VideoAd)
+    func adNetwork(_ adapter: VideoAdNetworkAdapter, didLoad advert: VideoAd)
     /**
      Executed when the ad network request either fails, or is unfulfilled.
      
@@ -99,7 +99,7 @@ protocol VideoAdNetworkAdapterDelegate: class {
      - adNetwork: The `VideoAdNetwork` responsible for the callback.
      - error: An `Error` representing the problem that occured.
      */
-    func adNetwork(_ adNetwork: VideoAdNetworkAdapter, didFailToLoad error: Error)
+    func adNetwork(_ adapter: VideoAdNetworkAdapter, didFailToLoad error: Error)
 }
 
 /// Used to add functionality to `Array` where its elements are `VideoAdNetwork` objects.
@@ -110,7 +110,7 @@ extension Array where Element == VideoAdNetworkAdapter {
      - Parameters:
      - network: The `VideoAdNetwork` to remove the first instance of.
      */
-    func removing(network: VideoAdNetworkAdapter) -> Array {
-        return filter { !$0.isEqual(to: network) }
+    func removing(adapter: VideoAdNetworkAdapter) -> Array {
+        return filter { !$0.isEqual(to: adapter) }
     }
 }
