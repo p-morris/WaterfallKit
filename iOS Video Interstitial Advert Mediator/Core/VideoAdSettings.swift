@@ -32,6 +32,8 @@ Settings object which holds client's account details for all ad networks. Provid
  
  */
 @objc final class VideoAdNetworkSettings: NSObject {
+    /// The factory type to be used
+    let factoryType: VideoAdNetworkAdapterFactory.Type
     /// Encapsulates the required account details for each ad network
     enum NetworkType {
         case adColony(appID: String, zoneID: String)
@@ -42,4 +44,14 @@ Settings object which holds client's account details for all ad networks. Provid
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
     internal var networkTypes: [NetworkType] = []
+    /**
+     Initializes a new `VideoAdNetworkSettings` object.
+     
+     - Parameters:
+     - factoryType: The factory type to use for registering adapter classes.
+     - Returns: An initialized `VideoAdNetworkSettings` object.
+     */
+    init(factoryType: VideoAdNetworkAdapterFactory.Type = InterstitialAdapterFactory.self) {
+        self.factoryType = factoryType
+    }
 }

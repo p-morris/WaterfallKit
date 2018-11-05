@@ -20,7 +20,7 @@ extension VideoAdNetworkSettings {
      */
     func initializeChartboost(appID: String, appSignature: String) -> Self {
         networkTypes.append(.chartboost(appID: appID, appSignature: appSignature))
-        InterstitialAdapterFactory.register(adapterType: ChartboostAdapter.self)
+        factoryType.register(adapterType: ChartboostAdapter.self)
         return self
     }
 }

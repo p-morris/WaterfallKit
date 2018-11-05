@@ -20,7 +20,7 @@ extension VideoAdNetworkSettings {
      */
     func initializeAdColony(appID: String, zoneID: String) -> Self {
         networkTypes.append(.adColony(appID: appID, zoneID: zoneID))
-        InterstitialAdapterFactory.register(adapterType: AdColonyAdapter.self)
+        factoryType.register(adapterType: AdColonyAdapter.self)
         return self
     }
 }
