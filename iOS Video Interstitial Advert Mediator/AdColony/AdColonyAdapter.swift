@@ -35,6 +35,19 @@ class AdColonyAdapter: TimeOutableVideoAdNetworkAdapter {
     /// was ready to make requests.
     private var pendingAdRequest = false
     /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` if `type` case is `.adColony`, nil otherwise.
+     */
+    required convenience init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case let .adColony(appID, zoneID): self.init(appID: appID, zoneID: zoneID)
+        default: return nil
+        }
+    }
+    /**
      Initializes a new `AdColonyVideoAdNetwork` object.
      
      - Parameters:

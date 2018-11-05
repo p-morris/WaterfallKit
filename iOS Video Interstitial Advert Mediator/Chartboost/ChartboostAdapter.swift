@@ -43,6 +43,19 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     /// The Chartboost app signature used to make requests
     private let appSignature: String
     /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` if `type` case is `.chartboost`, nil otherwise.
+     */
+    required convenience init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case let .chartboost(appID, appSignature): self.init(appID: appID, appSignature: appSignature)
+        default: return nil
+        }
+    }
+    /**
      Initializes a new `ChartboostVideoAdNetwork` object.
      
      - Parameters:

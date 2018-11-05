@@ -18,6 +18,7 @@ extension VideoAdNetworkSettings {
      */
     func initializeAppLovin(sdkKey: String) -> Self {
         networkTypes.append(.appLovin(sdkKey: sdkKey))
+        InterstitialAdapterFactory.register(adapterType: AppLovinAdapter.self)
         return self
     }
 }

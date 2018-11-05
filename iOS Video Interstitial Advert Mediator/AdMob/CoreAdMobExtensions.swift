@@ -20,6 +20,7 @@ extension VideoAdNetworkSettings {
      */
     func initializeAdMob(appID: String, adUnitID: String) -> Self {
         networkTypes.append(.admob(appID: appID, adUnitID: adUnitID))
+        InterstitialAdapterFactory.register(adapterType: AdMobAdapter.self)
         return self
     }
 }

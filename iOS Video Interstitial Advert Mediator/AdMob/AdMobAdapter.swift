@@ -20,6 +20,19 @@ class AdMobAdapter: NSObject, VideoAdNetworkAdapter {
     /// The `GADRequest` responsible for loading the advert.
     private let request: GADRequest
     /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` if `type` case is `.admob`, nil otherwise.
+     */
+    required convenience init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case let .admob(appID, adUnitID): self.init(appID: appID, adUnitID: adUnitID)
+        default: return nil
+        }
+    }
+    /**
      Initializes a new `AdMobVideoAdNetwork` object.
      
      - Parameters:

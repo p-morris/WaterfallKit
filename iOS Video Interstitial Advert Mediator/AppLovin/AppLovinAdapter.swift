@@ -19,6 +19,19 @@ class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
     /// The AppLovin SDK instance
     private let appLovin: ALSdk?
     /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` if `type` case is `.applovin`, nil otherwise.
+     */
+    required convenience init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case let .appLovin(sdkKey): self.init(sdkKey: sdkKey)
+        default: return nil
+        }
+    }
+    /**
      Initializes a new `AppLovinVideoAdNetwork` object.
      
      - Parameters:

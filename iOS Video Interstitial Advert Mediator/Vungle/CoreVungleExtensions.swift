@@ -20,6 +20,7 @@ extension VideoAdNetworkSettings {
      */
     func initializeVungle(appID: String, placementID: String) -> Self {
         networkTypes.append(.vungle(appID: appID, placementID: placementID))
+        InterstitialAdapterFactory.register(adapterType: VungleAdapter.self)
         return self
     }
 }

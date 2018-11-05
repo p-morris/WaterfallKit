@@ -10,6 +10,14 @@ import Foundation
 
 /// Used to represent a video ad network
 protocol VideoAdNetworkAdapter: class {
+    /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` object.
+     */
+    init?(type: VideoAdNetworkSettings.NetworkType)
     /// The object that acts as the delegate of the `VideoAdNetwork`.
     var delegate: VideoAdNetworkAdapterDelegate? { get set }
     /// The priority of the network for display purposes

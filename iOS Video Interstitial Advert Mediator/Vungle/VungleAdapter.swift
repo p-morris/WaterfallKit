@@ -34,6 +34,19 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
     /// was ready to make requests.
     private var pendingAdRequest = false
     /**
+     Initializes a new `VideoAdNetworkAdapter` object.
+     
+     - Parameters:
+     - type: The network type to use for instantiation.
+     - Returns: An initialized `VideoAdNetworkAdapter` if `type` case is `.vungle`, nil otherwise.
+     */
+    required convenience init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case let .vungle(appID, placementID): self.init(appID: appID, placementID: placementID)
+        default: return nil
+        }
+    }
+    /**
      Initializes a new `VungleVideoAdNetwork` object.
      
      - Parameters:
