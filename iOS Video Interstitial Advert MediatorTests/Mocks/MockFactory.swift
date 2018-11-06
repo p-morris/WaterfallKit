@@ -10,6 +10,7 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockFactory: VideoAdNetworkAdapterFactory {
+    private (set) static var adapterClasses: [VideoAdNetworkAdapter.Type] = [MockVideoAdNetworkAdapter.self]
     static func unregisterAllAdapterTypes() {
         //
     }
@@ -20,6 +21,6 @@ class MockFactory: VideoAdNetworkAdapterFactory {
         // Register type
     }
     func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
-        return nil
+        return MockVideoAdNetworkAdapter(type: .test)
     }
 }

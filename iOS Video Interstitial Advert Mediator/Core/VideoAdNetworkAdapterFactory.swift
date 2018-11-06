@@ -10,6 +10,9 @@ import Foundation
 
 /// Used to instantiate `VideoAdNetwork` instances.
 protocol VideoAdNetworkAdapterFactory {
+    /// The array of adapter types that the factory will use for
+    /// creation of network adapter objects.
+    static var adapterClasses: [VideoAdNetworkAdapter.Type] { get }
     /**
      Registers a concrete adapter class which a `VideoAdNetworkAdapterFactory` will
      use for instantiating `VideoAdNetworkAdapter` objects.

@@ -55,6 +55,10 @@ import Foundation
     var adRequestsPending: Bool {
         return pendingAdNetworkRequests.count > 0
     }
+    /// Indicates the number of ad requests still pending
+    var numberOfPendingRequests: Int {
+        return pendingAdNetworkRequests.count
+    }
     /**
      Initializes a new `VideoAdMediator` object.
      
@@ -76,7 +80,7 @@ import Foundation
         guard !adRequestsPending else { return }
         for (index, networkType) in settings.networkTypes.enumerated() {
             if let network = factory.createAdapter(type: networkType) {
-                network.priority = index
+                network.priority = index + 1
                 pendingAdNetworkRequests.append(network)
                 network.delegate = self
                 network.requestAd()
