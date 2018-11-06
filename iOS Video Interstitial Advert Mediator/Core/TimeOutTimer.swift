@@ -30,8 +30,8 @@ class TimeOutTimer {
      - Parameters:
      - timeoutable: The `TimeOutableVideoAdNetworkAdapter` to notify on timeout.
      */
-    func startTimeOut(notify timeoutable: TimeOutableVideoAdNetworkAdapter) {
-        timer = Timer.scheduledTimer(withTimeInterval: timeOutIn, repeats: false, block: { _ in
+    func startTimeOut(notify timeoutable: TimeOutableVideoAdNetworkAdapter, timerType: Timer.Type = Timer.self) {
+        timer = timerType.scheduledTimer(withTimeInterval: timeOutIn, repeats: false, block: { _ in
             timeoutable.timeOut()
         })
     }

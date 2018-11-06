@@ -41,6 +41,7 @@ Settings object which holds client's account details for all ad networks. Provid
         case vungle(appID: String, placementID: String)
         case admob(appID: String, adUnitID: String)
         case chartboost(appID: String, appSignature: String)
+        case test
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
     internal var networkTypes: [NetworkType] = []

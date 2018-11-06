@@ -19,6 +19,18 @@ protocol VideoAdNetworkAdapterFactory {
      */
     static func register<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter
     /**
+     Unregisters a concrete adapter class. A `VideoAdNetworkAdapterFactory` will
+     not use that class for instantiating `VideoAdNetworkAdapter` objects.
+     
+     - Parameters:
+     - adapterType: The concrete `VideoAdNetworkAdapter` type to register for use.
+     */
+    static func unregister<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter
+    /**
+     Unregisters all concrete adapter classes for factory use.
+     */
+    static func unregisterAllAdapterTypes()
+    /**
      Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
      receives as an argument.
      
@@ -30,18 +42,10 @@ protocol VideoAdNetworkAdapterFactory {
 }
 
 /// Used to instantiate `VideoAdNetwork` instances for interstitatial video ads.
-class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
+final class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
     /// The concrete `VideoAdNetworkAdapter` classes to use to instantiate
     /// `VideoAdNetworkAdapter` objects.
-    private static var adapterClasses: [VideoAdNetworkAdapter.Type] = []
-    /**
-     Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
-     receives as an argument.
-     
-     - Parameters:
-     - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for
-     - Returns: An object conforming to `VideoAdNetwork`.
-     */
+    private (set) static var adapterClasses: [VideoAdNetworkAdapter.Type] = []
     func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
         var returnAdapter: VideoAdNetworkAdapter?
         for adapterClass in InterstitialAdapterFactory.adapterClasses {
@@ -52,15 +56,13 @@ class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
         }
         return returnAdapter
     }
-    /**
-     Instantiates and returns a concrete `VideoAdNetwork` object using the `NetworkType` it
-     receives as an argument.
-     
-     - Parameters:
-     - type: The `NetworkType` to instantiate a `VideoAdNetwork` object for.
-     - Returns: An object conforming to `VideoAdNetwork` if one could be created, `nil` otherwise.
-     */
     static func register<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
         adapterClasses.append(adapterType)
+    }
+    static func unregister<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
+        adapterClasses = adapterClasses.filter { !($0 is T.Type) }
+    }
+    static func unregisterAllAdapterTypes() {
+        adapterClasses.removeAll()
     }
 }

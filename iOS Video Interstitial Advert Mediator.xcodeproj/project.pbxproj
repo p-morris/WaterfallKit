@@ -39,6 +39,17 @@
 		725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */; };
 		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
 		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
+		72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */; };
+		72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */; };
+		72CEA72B2191920700FF0822 /* MockFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA72A2191920700FF0822 /* MockFactory.swift */; };
+		72CEA72D2191924000FF0822 /* MockTimeOutableNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA72C2191924000FF0822 /* MockTimeOutableNetwork.swift */; };
+		72CEA72F2191926500FF0822 /* MockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA72E2191926500FF0822 /* MockTimer.swift */; };
+		72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA730219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift */; };
+		72CEA7332191979200FF0822 /* MockStandardTimeOutableNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA7322191979200FF0822 /* MockStandardTimeOutableNetwork.swift */; };
+		72CEA735219197CB00FF0822 /* MockNetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA734219197CB00FF0822 /* MockNetworkDelegate.swift */; };
+		72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA736219198FD00FF0822 /* ArrayExtensionTests.swift */; };
+		72CEA73921919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA73821919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift */; };
+		72CEA73B21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA73A21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
 		72F11801218314FE00C3C805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F117FF218314FE00C3C805 /* Main.storyboard */; };
@@ -109,6 +120,17 @@
 		725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
 		72AA361A2186CC45004A3ECB /* VideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAd.swift; sourceTree = "<group>"; };
+		72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdSettingsTests.swift; sourceTree = "<group>"; };
+		72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutTimerTests.swift; sourceTree = "<group>"; };
+		72CEA72A2191920700FF0822 /* MockFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactory.swift; sourceTree = "<group>"; };
+		72CEA72C2191924000FF0822 /* MockTimeOutableNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeOutableNetwork.swift; sourceTree = "<group>"; };
+		72CEA72E2191926500FF0822 /* MockTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimer.swift; sourceTree = "<group>"; };
+		72CEA730219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutableVideoAdNetworkAdapterTests.swift; sourceTree = "<group>"; };
+		72CEA7322191979200FF0822 /* MockStandardTimeOutableNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStandardTimeOutableNetwork.swift; sourceTree = "<group>"; };
+		72CEA734219197CB00FF0822 /* MockNetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkDelegate.swift; sourceTree = "<group>"; };
+		72CEA736219198FD00FF0822 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		72CEA73821919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactoryTests.swift; sourceTree = "<group>"; };
+		72CEA73A21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoAdNetworkAdapter.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F117FD218314FE00C3C805 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +240,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		72CEA726219180A700FF0822 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */,
+				72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */,
+				72CEA730219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift */,
+				72CEA736219198FD00FF0822 /* ArrayExtensionTests.swift */,
+				72CEA73821919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		72CEA729219191E000FF0822 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				72CEA72A2191920700FF0822 /* MockFactory.swift */,
+				72CEA72C2191924000FF0822 /* MockTimeOutableNetwork.swift */,
+				72CEA7322191979200FF0822 /* MockStandardTimeOutableNetwork.swift */,
+				72CEA72E2191926500FF0822 /* MockTimer.swift */,
+				72CEA734219197CB00FF0822 /* MockNetworkDelegate.swift */,
+				72CEA73A21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		72F117EF218314FE00C3C805 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +307,8 @@
 		72F1180F218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				72CEA729219191E000FF0822 /* Mocks */,
+				72CEA726219180A700FF0822 /* Core */,
 				72F11812218314FF00C3C805 /* Info.plist */,
 			);
 			path = "iOS Video Interstitial Advert MediatorTests";
@@ -389,6 +438,7 @@
 					};
 					72F1180B218314FF00C3C805 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = 72F117F7218314FE00C3C805;
 					};
 				};
@@ -487,6 +537,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72CEA73B21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift in Sources */,
+				72CEA7332191979200FF0822 /* MockStandardTimeOutableNetwork.swift in Sources */,
+				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
+				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
+				72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
+				72CEA735219197CB00FF0822 /* MockNetworkDelegate.swift in Sources */,
+				72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */,
+				72CEA73921919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */,
+				72CEA72D2191924000FF0822 /* MockTimeOutableNetwork.swift in Sources */,
+				72CEA72B2191920700FF0822 /* MockFactory.swift in Sources */,
+				72CEA72F2191926500FF0822 /* MockTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +815,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = "iOS Video Interstitial Advert MediatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,6 +826,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.petemorris.iOS-Video-Interstitial-Advert-MediatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Video Interstitial Advert Mediator.app/iOS Video Interstitial Advert Mediator";
@@ -774,7 +838,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = "iOS Video Interstitial Advert MediatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
