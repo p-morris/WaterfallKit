@@ -11,6 +11,7 @@ import XCTest
 
 class MockFactory: VideoAdNetworkAdapterFactory {
     private (set) static var adapterClasses: [VideoAdNetworkAdapter.Type] = [MockVideoAdNetworkAdapter.self]
+    static var mockCount = 0
     static func unregisterAllAdapterTypes() {
         //
     }
@@ -21,6 +22,10 @@ class MockFactory: VideoAdNetworkAdapterFactory {
         // Register type
     }
     func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
-        return MockVideoAdNetworkAdapter(type: .test)
+        let adapter: VideoAdNetworkAdapter = MockFactory.mockCount == 0 ?
+            MockVideoAdNetworkAdapter(type: .test)! :
+            AnotherMockVideoAdNetworkAdapter(type: .test)!
+        MockFactory.mockCount += 1
+        return adapter
     }
 }

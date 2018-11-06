@@ -81,6 +81,15 @@ class VideoAdLoaderTests: XCTestCase {
         )
     }
     func testDelegateCalledWhenRequestsComplete() {
-        
+        let delegate = MockVideoAdLoaderDelegate()
+        loader.delegate = delegate
+        loader.requestAds()
+        let mockAdapter = MockVideoAdNetworkAdapter(type: .test)!
+        let mockAd = MockAd()
+        loader.adNetwork(mockAdapter, didLoad: mockAd)
+        XCTAssertNotNil(
+            delegate.adverts,
+            "VideoAdLoader should execute delegate's didLoad method when all requests are complete"
+        )
     }
 }

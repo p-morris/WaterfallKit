@@ -13,9 +13,11 @@ class MockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
     static var staticPriority = 0
     static var delegateSet = false
     static var adRequested = false
+    static var shouldFail = false
+    static var shouldDelegate = false
     required init?(type: VideoAdNetworkSettings.NetworkType) {
         switch type {
-        case .test: self.priority = 9999999
+        case .test: self.priority = 0
         default: return nil
         }
     }
@@ -33,6 +35,36 @@ class MockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
         MockVideoAdNetworkAdapter.adRequested = true
     }
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
-        return anotherAdNetwork as? MockVideoAdNetworkAdapter != nil
+        return anotherAdNetwork is MockVideoAdNetworkAdapter
+    }
+}
+
+class AnotherMockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
+    static var staticPriority = 0
+    static var delegateSet = false
+    static var adRequested = false
+    static var shouldFail = false
+    static var shouldDelegate = false
+    required init?(type: VideoAdNetworkSettings.NetworkType) {
+        switch type {
+        case .test: self.priority = 0
+        default: return nil
+        }
+    }
+    weak var delegate: VideoAdNetworkAdapterDelegate? {
+        didSet {
+            MockVideoAdNetworkAdapter.delegateSet = true
+        }
+    }
+    var priority: Int {
+        didSet {
+            MockVideoAdNetworkAdapter.staticPriority = priority
+        }
+    }
+    func requestAd() {
+        MockVideoAdNetworkAdapter.adRequested = true
+    }
+    func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
+        return anotherAdNetwork is MockVideoAdNetworkAdapter
     }
 }
