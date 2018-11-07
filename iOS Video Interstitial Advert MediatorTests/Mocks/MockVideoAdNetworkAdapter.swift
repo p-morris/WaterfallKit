@@ -33,6 +33,13 @@ class MockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
     }
     func requestAd() {
         MockVideoAdNetworkAdapter.adRequested = true
+        if MockVideoAdNetworkAdapter.shouldDelegate {
+            if MockVideoAdNetworkAdapter.shouldFail {
+                delegate?.adNetwork(self, didFailToLoad: NSError(domain: "", code: 999, userInfo: nil))
+            } else {
+                delegate?.adNetwork(self, didLoad: MockAd())
+            }
+        }
     }
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         return anotherAdNetwork is MockVideoAdNetworkAdapter
@@ -40,31 +47,25 @@ class MockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
 }
 
 class AnotherMockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
-    static var staticPriority = 0
-    static var delegateSet = false
-    static var adRequested = false
-    static var shouldFail = false
-    static var shouldDelegate = false
+    static var instances: [AnotherMockVideoAdNetworkAdapter] = []
     required init?(type: VideoAdNetworkSettings.NetworkType) {
         switch type {
         case .test: self.priority = 0
         default: return nil
         }
+        super.init()
     }
-    weak var delegate: VideoAdNetworkAdapterDelegate? {
-        didSet {
-            MockVideoAdNetworkAdapter.delegateSet = true
-        }
-    }
-    var priority: Int {
-        didSet {
-            MockVideoAdNetworkAdapter.staticPriority = priority
-        }
-    }
+    weak var delegate: VideoAdNetworkAdapterDelegate?
+    var priority: Int
     func requestAd() {
-        MockVideoAdNetworkAdapter.adRequested = true
+        AnotherMockVideoAdNetworkAdapter.instances.append(self)
     }
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
-        return anotherAdNetwork is MockVideoAdNetworkAdapter
+        return false
+    }
+    static func completeRequests() {
+        instances.forEach { instance in
+            instance.delegate?.adNetwork(instance, didLoad: MockAd())
+        }
     }
 }

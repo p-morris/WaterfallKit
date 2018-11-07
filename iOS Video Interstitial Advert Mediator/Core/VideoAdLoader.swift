@@ -52,12 +52,17 @@ import Foundation
     /// Adverts ready for display
     private var adverts: [VideoAd] = []
     /// Indicates whether ad requests are currently pending
+    private var advertSortingStrategy: SortingStrategy
     var adRequestsPending: Bool {
         return pendingAdNetworkRequests.count > 0
     }
     /// Indicates the number of ad requests still pending
     var numberOfPendingRequests: Int {
         return pendingAdNetworkRequests.count
+    }
+    /// Indicates the number of ads loaded currently
+    var numbersOfAdsLoaded: Int {
+        return adverts.count
     }
     /**
      Initializes a new `VideoAdMediator` object.
@@ -68,9 +73,12 @@ import Foundation
      - Returns: An initialized `VideoAdMediator` object that will use `settings`
      to request appropraite ads as prioritized.
      */
-    init(settings: VideoAdNetworkSettings, factory: VideoAdNetworkAdapterFactory = InterstitialAdapterFactory()) {
+    init(settings: VideoAdNetworkSettings,
+         factory: VideoAdNetworkAdapterFactory = InterstitialAdapterFactory(),
+         advertSortingStrategy: SortingStrategy = AscendingPrioritySorting()) {
         self.settings = settings
         self.factory = factory
+        self.advertSortingStrategy = advertSortingStrategy
     }
     /**
      Iterates through the networks stored in the `VideoAdNetworkSettings` object and
@@ -93,8 +101,8 @@ import Foundation
     private func notifyDelegate() {
         guard !adRequestsPending else { return }
         if adverts.count > 0 {
-            adverts.sort { $0.priority < $1.priority }
-            delegate?.mediator(self, didLoad: adverts)
+            let sortedAdverts = advertSortingStrategy.sorted(adverts)
+            delegate?.mediator(self, didLoad: sortedAdverts)
             adverts.removeAll()
         } else {
             let error = NSError(domain: VideoAdLoaderError.noFill, code: -1, userInfo: nil)

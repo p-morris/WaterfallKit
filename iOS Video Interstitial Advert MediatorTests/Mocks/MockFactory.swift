@@ -22,10 +22,11 @@ class MockFactory: VideoAdNetworkAdapterFactory {
         // Register type
     }
     func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
-        let adapter: VideoAdNetworkAdapter = MockFactory.mockCount == 0 ?
-            MockVideoAdNetworkAdapter(type: .test)! :
-            AnotherMockVideoAdNetworkAdapter(type: .test)!
-        MockFactory.mockCount += 1
-        return adapter
+        if MockFactory.mockCount == 0 {
+            MockFactory.mockCount += 1
+            return MockVideoAdNetworkAdapter(type: .test)!
+        } else {
+            return AnotherMockVideoAdNetworkAdapter(type: .test)!
+        }
     }
 }

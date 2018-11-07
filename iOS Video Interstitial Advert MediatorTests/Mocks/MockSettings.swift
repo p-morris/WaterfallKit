@@ -14,7 +14,7 @@ extension VideoAdNetworkSettings {
         networkTypes.append(.test)
         factoryType.register(adapterType: MockVideoAdNetworkAdapter.self)
     }
-    func addAnotherNetworkAdapter() {
+    func addAnotherNetwork() {
         networkTypes.append(.test)
         factoryType.register(adapterType: AnotherMockVideoAdNetworkAdapter.self)
     }

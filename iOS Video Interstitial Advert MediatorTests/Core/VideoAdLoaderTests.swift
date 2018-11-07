@@ -13,11 +13,18 @@ class VideoAdLoaderTests: XCTestCase {
     var settings: VideoAdNetworkSettings!
     var factory: MockFactory!
     var loader: VideoAdLoader!
+    var sortingStrategy: MockSortingStrategy!
+    var delegate: MockVideoAdLoaderDelegate!
     override func setUp() {
+        MockFactory.mockCount = 0
+        MockVideoAdNetworkAdapter.shouldDelegate = false
         settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
         settings.initializeForTest()
         factory = MockFactory()
-        loader = VideoAdLoader(settings: settings, factory: factory)
+        sortingStrategy = MockSortingStrategy()
+        loader = VideoAdLoader(settings: settings, factory: factory, advertSortingStrategy: sortingStrategy)
+        delegate = MockVideoAdLoaderDelegate()
+        loader.delegate = delegate
     }
     func testInitialization() {
         XCTAssertTrue(loader.settings == settings)
@@ -35,7 +42,7 @@ class VideoAdLoaderTests: XCTestCase {
             "VideoAdLoader adRequestsPending should return false when no requests are pending."
         )
     }
-    func testRequestAdsPendingRequests() {
+    func testSomePendingRequests() {
         loader.requestAds()
         XCTAssertTrue(
             loader.adRequestsPending,
@@ -61,35 +68,75 @@ class VideoAdLoaderTests: XCTestCase {
         loader.requestAds()
         XCTAssertEqual(loader.numberOfPendingRequests, 1, "VideoAdLoader should guard when requests are pending.")
     }
-    func testAdapterFailedRemovesPendingRequest() {
+    func testRequestFailsRemovesPendingRequest() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = true
         loader.requestAds()
-        let mockAdapter = MockVideoAdNetworkAdapter(type: .test)!
-        loader.adNetwork(mockAdapter, didFailToLoad: NSError(domain: "", code: 0, userInfo: nil))
+        XCTAssertEqual(loader.numberOfPendingRequests, 0, "VideoAdLoader should remove pending request when it fails.")
+    }
+    func testRequestSucceedsSetsAdPriority() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = false
+        loader.requestAds()
         XCTAssertEqual(
-            loader.numberOfPendingRequests, 0,
-            "VideoAdLoader should remove completed requests from pendingRequests."
+            MockAd.staticPriority, MockVideoAdNetworkAdapter.staticPriority,
+            "VideoAdLoader should set ad priority to equal network priority"
         )
     }
-    func testAdapterSuccessfulRemovesPendingRequest() {
+    func testRequestSucceedsRemovesPendingRequest() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = false
         loader.requestAds()
-        let mockAdapter = MockVideoAdNetworkAdapter(type: .test)!
-        let mockAd = MockAd()
-        loader.adNetwork(mockAdapter, didLoad: mockAd)
         XCTAssertEqual(
             loader.numberOfPendingRequests, 0,
-            "VideoAdLoader should remove completed requests from pendingRequests."
+            "VideoAdLoader should remove pending request after it completes successfully."
         )
     }
-    func testDelegateCalledWhenRequestsComplete() {
-        let delegate = MockVideoAdLoaderDelegate()
-        loader.delegate = delegate
+    func testNotifyDelegateUsesSortingStrategy() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = false
         loader.requestAds()
-        let mockAdapter = MockVideoAdNetworkAdapter(type: .test)!
-        let mockAd = MockAd()
-        loader.adNetwork(mockAdapter, didLoad: mockAd)
+        XCTAssertTrue(sortingStrategy.used, "VideoAdLoader notifyDelegate should use injected sorting strategy")
+    }
+    func testNotifyDelegateNotifiesDelegate() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = false
+        loader.requestAds()
+        XCTAssertEqual(
+            delegate.adverts?.count, 1,
+            "VideoAdLoader notifyDelegate should execute delegate's didLoad method."
+        )
+    }
+    func testNotifyDelegateRemovesReturnedAds() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = false
+        loader.requestAds()
+        XCTAssertEqual(
+            loader.numbersOfAdsLoaded, 0,
+            "VideoAdLoader notifyDelegate should remove loaded ads after returning to delegate"
+        )
+    }
+    func testNotifyDelegateNotifiesDelegateOnError() {
+        MockVideoAdNetworkAdapter.shouldDelegate = true
+        MockVideoAdNetworkAdapter.shouldFail = true
+        loader.requestAds()
         XCTAssertNotNil(
-            delegate.adverts,
-            "VideoAdLoader should execute delegate's didLoad method when all requests are complete"
+            delegate.error,
+            """
+            VideoAdLoader notifyDelegate should execute delegate's/
+            didFail method when no adverts were successfully loaded
+            """
+        )
+    }
+    func testNotifyDelegateGuardsWhenRequestsPending() {
+        settings.addAnotherNetwork()
+        MockVideoAdNetworkAdapter.shouldDelegate = false
+        MockVideoAdNetworkAdapter.shouldFail = false
+        loader.requestAds()
+        AnotherMockVideoAdNetworkAdapter.completeRequests()
+        XCTAssert(
+            delegate.adverts == nil && delegate.error == nil,
+            "VideoAdLoader notifyDelegate should guard while requests are pending"
         )
     }
 }

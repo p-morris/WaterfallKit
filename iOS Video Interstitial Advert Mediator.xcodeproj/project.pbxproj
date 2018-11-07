@@ -38,6 +38,8 @@
 		725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */; };
 		725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */; };
 		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
+		729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FB2192D48F00DA33EE /* SortingStrategy.swift */; };
+		729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */; };
 		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */; };
 		72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */; };
@@ -123,6 +125,8 @@
 		725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAd.swift; sourceTree = "<group>"; };
 		725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
+		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
+		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
 		72AA361A2186CC45004A3ECB /* VideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAd.swift; sourceTree = "<group>"; };
 		72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdSettingsTests.swift; sourceTree = "<group>"; };
 		72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutTimerTests.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				72CEA73E2191B15300FF0822 /* MockSettings.swift */,
 				72CEA7402191B88900FF0822 /* MockAd.swift */,
 				72CEA7422191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift */,
+				729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */,
 				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
 				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
+				729B34FB2192D48F00DA33EE /* SortingStrategy.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */,
+				729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */,
 				720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */,
 				72FFD86721902194002B1E28 /* CoreVungleExtensions.swift in Sources */,
 				72FFD86D21902434002B1E28 /* CoreAppLovinExtensions.swift in Sources */,
@@ -556,6 +563,7 @@
 				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
 				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
 				72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
+				729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */,
 				72CEA735219197CB00FF0822 /* MockNetworkDelegate.swift in Sources */,
 				72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */,
 				72CEA7432191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift in Sources */,
