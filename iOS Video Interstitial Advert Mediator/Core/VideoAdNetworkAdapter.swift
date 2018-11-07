@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to represent a video ad network
-protocol VideoAdNetworkAdapter: class {
+protocol VideoAdNetworkAdapter: NSObjectProtocol {
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      

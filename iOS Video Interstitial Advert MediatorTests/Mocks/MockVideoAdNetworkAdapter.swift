@@ -9,7 +9,7 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class MockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
+class MockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
     static var staticPriority = 0
     static var delegateSet = false
     static var adRequested = false
@@ -39,7 +39,7 @@ class MockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
     }
 }
 
-class AnotherMockVideoAdNetworkAdapter: VideoAdNetworkAdapter {
+class AnotherMockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
     static var staticPriority = 0
     static var delegateSet = false
     static var adRequested = false

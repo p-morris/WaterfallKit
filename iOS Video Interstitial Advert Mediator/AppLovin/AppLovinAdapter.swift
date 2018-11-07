@@ -54,7 +54,7 @@ class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
      */
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? AppLovinAdapter else { return false }
-        return sdkKey == anotherAdNetwork.sdkKey
+        return self == anotherAdNetwork
     }
 }
 

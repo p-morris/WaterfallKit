@@ -59,7 +59,7 @@ class AdMobAdapter: NSObject, VideoAdNetworkAdapter {
      */
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? AdMobAdapter else { return false }
-        return interstitial == anotherAdNetwork.interstitial
+        return self == anotherAdNetwork
     }
 }
 

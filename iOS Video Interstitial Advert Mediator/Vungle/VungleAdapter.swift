@@ -108,9 +108,7 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
      */
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? VungleAdapter else { return false }
-        return self.appID == anotherAdNetwork.appID
-            && self.placementID == anotherAdNetwork.placementID
-            && self.ready == anotherAdNetwork.ready
+        return self == anotherAdNetwork
     }
 }
 

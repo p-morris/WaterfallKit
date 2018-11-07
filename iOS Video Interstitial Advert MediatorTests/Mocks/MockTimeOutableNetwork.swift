@@ -9,7 +9,7 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class MockTimeOutableNetwork: TimeOutableVideoAdNetworkAdapter {
+class MockTimeOutableNetwork: NSObject, TimeOutableVideoAdNetworkAdapter {
     var timeoutTimer: TimeOutTimer
     var timedout = false
     required init?(type: VideoAdNetworkSettings.NetworkType) {

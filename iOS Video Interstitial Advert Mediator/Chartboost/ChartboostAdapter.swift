@@ -94,9 +94,7 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
      */
     func isEqual(to anotherAdNetwork: VideoAdNetworkAdapter) -> Bool {
         guard let anotherAdNetwork = anotherAdNetwork as? ChartboostAdapter else { return false }
-        return self.appID == anotherAdNetwork.appID
-            && self.appSignature == anotherAdNetwork.appSignature
-            && self.ready == anotherAdNetwork.ready
+        return self == anotherAdNetwork
     }
 }
 
