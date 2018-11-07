@@ -9,7 +9,7 @@
 import Foundation
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class MockVungleSDK: NSObject, VungleSDKProtocol {
+class MockVungleSDK: NSObject, VungleSDKProtocol, VungleAdProtocol {
     var shouldThrowStartException = false
     var shouldStart = false
     var shouldThrowLoadPlacementException = false
@@ -17,6 +17,8 @@ class MockVungleSDK: NSObject, VungleSDKProtocol {
     weak var delegate: VungleSDKDelegate?
     var started = false
     var loadPlacementCalled = false
+    var adPlayed = true
+    var throwPlayException = false
     func start(withAppId: String) throws {
         if shouldThrowStartException {
             throw NSError(domain: "", code: 0, userInfo: nil)
@@ -30,6 +32,12 @@ class MockVungleSDK: NSObject, VungleSDKProtocol {
     func loadPlacement(withID: String) throws {
         loadPlacementCalled = true
         if shouldThrowLoadPlacementException {
+            throw NSError(domain: "", code: 0, userInfo: nil)
+        }
+    }
+    func playAd(_ controller: UIViewController, options: [AnyHashable: Any]?, placementID: String?) throws {
+        adPlayed = true
+        if throwPlayException {
             throw NSError(domain: "", code: 0, userInfo: nil)
         }
     }

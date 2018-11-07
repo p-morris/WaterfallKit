@@ -16,3 +16,10 @@ protocol VungleSDKProtocol: NSObjectProtocol {
 }
 
 extension VungleSDK: VungleSDKProtocol { }
+
+protocol VungleAdProtocol: NSObjectProtocol {
+    var delegate: VungleSDKDelegate? { get set }
+    func playAd(_ controller: UIViewController, options: [AnyHashable: Any]?, placementID: String?) throws
+}
+
+extension VungleSDK: VungleAdProtocol { }

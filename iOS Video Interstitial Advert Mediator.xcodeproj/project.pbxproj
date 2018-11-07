@@ -28,6 +28,8 @@
 		7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */; };
 		7228F44D2192EEB300250B31 /* VungleSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */; };
 		7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F4502192F06B00250B31 /* MockVungleSDK.swift */; };
+		7247DC30219309F400094F88 /* VungleVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */; };
+		7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC3121930AA700094F88 /* MockAdDelegate.swift */; };
 		724C0E32218AE961004472DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E31218AE960004472DA /* CFNetwork.framework */; };
 		724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E33218AEA26004472DA /* MediaPlayer.framework */; };
 		724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E35218AEA2E004472DA /* QuartzCore.framework */; };
@@ -120,6 +122,8 @@
 		7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAd.swift; sourceTree = "<group>"; };
 		7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleSDKProtocol.swift; sourceTree = "<group>"; };
 		7228F4502192F06B00250B31 /* MockVungleSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVungleSDK.swift; sourceTree = "<group>"; };
+		7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleVideoAdTests.swift; sourceTree = "<group>"; };
+		7247DC3121930AA700094F88 /* MockAdDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdDelegate.swift; sourceTree = "<group>"; };
 		724C0E31218AE960004472DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		724C0E33218AEA26004472DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		724C0E35218AEA2E004472DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -298,6 +302,7 @@
 				72CEA7402191B88900FF0822 /* MockAd.swift */,
 				72CEA7422191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift */,
 				729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */,
+				7247DC3121930AA700094F88 /* MockAdDelegate.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				7228F44B2192EE2600250B31 /* Mocks */,
 				72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */,
 				72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */,
+				7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */,
 			);
 			path = Vungle;
 			sourceTree = "<group>";
@@ -589,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CEA73B21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift in Sources */,
+				7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */,
 				72CEA73F2191B15300FF0822 /* MockSettings.swift in Sources */,
 				72CEA73D2191A7AB00FF0822 /* VideoAdLoaderTests.swift in Sources */,
 				7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */,
@@ -600,6 +607,7 @@
 				72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
 				729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */,
 				72CEA735219197CB00FF0822 /* MockNetworkDelegate.swift in Sources */,
+				7247DC30219309F400094F88 /* VungleVideoAdTests.swift in Sources */,
 				72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */,
 				72CEA7432191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift in Sources */,
 				72CEA73921919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */,
