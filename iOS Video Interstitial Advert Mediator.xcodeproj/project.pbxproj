@@ -57,6 +57,8 @@
 		72CEA73F2191B15300FF0822 /* MockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA73E2191B15300FF0822 /* MockSettings.swift */; };
 		72CEA7412191B88900FF0822 /* MockAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA7402191B88900FF0822 /* MockAd.swift */; };
 		72CEA7432191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CEA7422191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift */; };
+		72EF2A072192E77000DE1DB6 /* VungleExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */; };
+		72EF2A092192EBC800DE1DB6 /* VungleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
 		72F11801218314FE00C3C805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F117FF218314FE00C3C805 /* Main.storyboard */; };
@@ -145,6 +147,8 @@
 		72CEA73E2191B15300FF0822 /* MockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettings.swift; sourceTree = "<group>"; };
 		72CEA7402191B88900FF0822 /* MockAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAd.swift; sourceTree = "<group>"; };
 		72CEA7422191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoAdLoaderDelegate.swift; sourceTree = "<group>"; };
+		72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleExtensionsTests.swift; sourceTree = "<group>"; };
+		72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleAdapterTests.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F117FD218314FE00C3C805 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		72EF2A052192E6DE00DE1DB6 /* Vungle */ = {
+			isa = PBXGroup;
+			children = (
+				72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */,
+				72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */,
+			);
+			path = Vungle;
+			sourceTree = "<group>";
+		};
 		72F117EF218314FE00C3C805 = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 			children = (
 				72CEA729219191E000FF0822 /* Mocks */,
 				72CEA726219180A700FF0822 /* Core */,
+				72EF2A052192E6DE00DE1DB6 /* Vungle */,
 				72F11812218314FF00C3C805 /* Info.plist */,
 			);
 			path = "iOS Video Interstitial Advert MediatorTests";
@@ -565,6 +579,8 @@
 				72CEA7332191979200FF0822 /* MockStandardTimeOutableNetwork.swift in Sources */,
 				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
 				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
+				72EF2A092192EBC800DE1DB6 /* VungleAdapterTests.swift in Sources */,
+				72EF2A072192E77000DE1DB6 /* VungleExtensionsTests.swift in Sources */,
 				72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
 				729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */,
 				72CEA735219197CB00FF0822 /* MockNetworkDelegate.swift in Sources */,
@@ -746,7 +762,6 @@
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
-					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/MOAT",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AdColony",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AppLovin",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AdMob",
@@ -765,10 +780,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/Avid",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
 					"-ObjC",
@@ -803,7 +815,6 @@
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator",
-					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/MOAT",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AdColony",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AppLovin",
 					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/AdMob",
@@ -822,10 +833,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/iOS\\ Video\\ Interstitial\\ Advert\\ Mediator/MoPubSDK/Viewability/Avid",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
 					"-ObjC",

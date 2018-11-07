@@ -14,7 +14,6 @@ class VideoAdLoaderTests: XCTestCase {
     var factory: MockFactory!
     var loader: VideoAdLoader!
     var sortingStrategy: MockSortingStrategy!
-    var delegate: MockVideoAdLoaderDelegate!
     override func setUp() {
         MockFactory.mockCount = 0
         MockVideoAdNetworkAdapter.shouldDelegate = false
@@ -23,8 +22,6 @@ class VideoAdLoaderTests: XCTestCase {
         factory = MockFactory()
         sortingStrategy = MockSortingStrategy()
         loader = VideoAdLoader(settings: settings, factory: factory, advertSortingStrategy: sortingStrategy)
-        delegate = MockVideoAdLoaderDelegate()
-        loader.delegate = delegate
     }
     func testInitialization() {
         XCTAssertTrue(loader.settings == settings)
@@ -101,9 +98,11 @@ class VideoAdLoaderTests: XCTestCase {
     func testNotifyDelegateNotifiesDelegate() {
         MockVideoAdNetworkAdapter.shouldDelegate = true
         MockVideoAdNetworkAdapter.shouldFail = false
+        let mockDelegate = MockVideoAdLoaderDelegate()
+        loader.delegate = mockDelegate
         loader.requestAds()
         XCTAssertEqual(
-            delegate.adverts?.count, 1,
+            mockDelegate.adverts?.count, 1,
             "VideoAdLoader notifyDelegate should execute delegate's didLoad method."
         )
     }
@@ -119,9 +118,11 @@ class VideoAdLoaderTests: XCTestCase {
     func testNotifyDelegateNotifiesDelegateOnError() {
         MockVideoAdNetworkAdapter.shouldDelegate = true
         MockVideoAdNetworkAdapter.shouldFail = true
+        let mockDelegate = MockVideoAdLoaderDelegate()
+        loader.delegate = mockDelegate
         loader.requestAds()
         XCTAssertNotNil(
-            delegate.error,
+            mockDelegate.error,
             """
             VideoAdLoader notifyDelegate should execute delegate's/
             didFail method when no adverts were successfully loaded
@@ -132,10 +133,12 @@ class VideoAdLoaderTests: XCTestCase {
         settings.addAnotherNetwork()
         MockVideoAdNetworkAdapter.shouldDelegate = false
         MockVideoAdNetworkAdapter.shouldFail = false
+        let mockDelegate = MockVideoAdLoaderDelegate()
+        loader.delegate = mockDelegate
         loader.requestAds()
         AnotherMockVideoAdNetworkAdapter.completeRequests()
         XCTAssert(
-            delegate.adverts == nil && delegate.error == nil,
+            mockDelegate.adverts == nil && mockDelegate.error == nil,
             "VideoAdLoader notifyDelegate should guard while requests are pending"
         )
     }
