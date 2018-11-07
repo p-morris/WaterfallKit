@@ -26,7 +26,7 @@ class VungleVideoAd: NSObject, VideoAd {
      - vungleSDK: The Vungle SDK object to use for displaying the ad.
      - Returns: An initialized `VungleVideoAd` object.
      */
-    init(placementID: String, vungleSDK: VungleSDK) {
+    init(placementID: String, vungleSDK: VungleSDK = VungleSDK.shared()) {
         self.placementID = placementID
         self.vungleSDK = vungleSDK
     }

@@ -19,7 +19,7 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
     /// The Vungle placement ID.
     let placementID: String
     /// The Vungle SDK
-    let vungleSDK: VungleSDK
+    let vungleSDK: VungleSDKProtocol
     /// Indicates whether the Vungle SDK is ready to make ad requests.
     /// - Note: Executes a pending ad request if one was made before the Vungle SDK
     /// became ready to make requests.
@@ -32,7 +32,7 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
     }
     /// Indicates whether an ad request was received before the Vungle SDK
     /// was ready to make requests.
-    private var pendingAdRequest = false
+    private (set) var pendingAdRequest = false
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      
@@ -55,7 +55,7 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
      - vungleSDK: The Vungle SDK object to use for the ad request.
      - Returns: An initialized `VungleVideoAdNetwork` object.
      */
-    init(appID: String, placementID: String, vungleSDK: VungleSDK = VungleSDK.shared()) {
+    init(appID: String, placementID: String, vungleSDK: VungleSDKProtocol = VungleSDK.shared()) {
         self.appID = appID
         self.placementID = placementID
         self.vungleSDK = vungleSDK
@@ -69,7 +69,7 @@ class VungleAdapter: NSObject, VideoAdNetworkAdapter {
      - sdk: The Vungle sdk to start.
      - appID: The Vungle app ID to use for ad requests.
      */
-    private func start(sdk: VungleSDK, appID: String) {
+    private func start(sdk: VungleSDKProtocol, appID: String) {
         do {
             vungleSDK.delegate = self
             try vungleSDK.start(withAppId: appID)
@@ -123,7 +123,7 @@ extension VungleAdapter: VungleSDKDelegate {
     }
     func vungleAdPlayabilityUpdate(_ isAdPlayable: Bool, placementID: String?, error: Error?) {
         guard let ready = ready, ready else { return }
-        let advert = VungleVideoAd(placementID: placementID ?? self.placementID, vungleSDK: vungleSDK)
+        let advert = VungleVideoAd(placementID: placementID ?? self.placementID)
         delegate?.adNetwork(self, didLoad: advert)
     }
 }

@@ -26,6 +26,8 @@
 		7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221A21887C0D00E6AC03 /* UIKit.framework */; };
 		7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221C21887C1900E6AC03 /* libz.tbd */; };
 		7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */; };
+		7228F44D2192EEB300250B31 /* VungleSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */; };
+		7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F4502192F06B00250B31 /* MockVungleSDK.swift */; };
 		724C0E32218AE961004472DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E31218AE960004472DA /* CFNetwork.framework */; };
 		724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E33218AEA26004472DA /* MediaPlayer.framework */; };
 		724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E35218AEA2E004472DA /* QuartzCore.framework */; };
@@ -116,6 +118,8 @@
 		7209221A21887C0D00E6AC03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7209221C21887C1900E6AC03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAd.swift; sourceTree = "<group>"; };
+		7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleSDKProtocol.swift; sourceTree = "<group>"; };
+		7228F4502192F06B00250B31 /* MockVungleSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVungleSDK.swift; sourceTree = "<group>"; };
 		724C0E31218AE960004472DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		724C0E33218AEA26004472DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		724C0E35218AEA2E004472DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -258,9 +262,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7228F44B2192EE2600250B31 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7228F4502192F06B00250B31 /* MockVungleSDK.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		72CEA726219180A700FF0822 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				72CEA729219191E000FF0822 /* Mocks */,
 				72CEA724219179D000FF0822 /* VideoAdSettingsTests.swift */,
 				72CEA7272191812E00FF0822 /* TimeOutTimerTests.swift */,
 				72CEA730219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift */,
@@ -292,6 +305,7 @@
 		72EF2A052192E6DE00DE1DB6 /* Vungle */ = {
 			isa = PBXGroup;
 			children = (
+				7228F44B2192EE2600250B31 /* Mocks */,
 				72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */,
 				72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */,
 			);
@@ -340,7 +354,6 @@
 		72F1180F218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				72CEA729219191E000FF0822 /* Mocks */,
 				72CEA726219180A700FF0822 /* Core */,
 				72EF2A052192E6DE00DE1DB6 /* Vungle */,
 				72F11812218314FF00C3C805 /* Info.plist */,
@@ -411,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				72FFD86621902194002B1E28 /* CoreVungleExtensions.swift */,
+				7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */,
 				72F6899B218719680035C76C /* VungleAdapter.swift */,
 				724C0E37218AF1B7004472DA /* VungleVideoAd.swift */,
 				72FFD87C21902839002B1E28 /* VungleSDK.framework */,
@@ -542,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7228F44D2192EEB300250B31 /* VungleSDKProtocol.swift in Sources */,
 				725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */,
 				729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */,
 				720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */,
@@ -576,6 +591,7 @@
 				72CEA73B21919D9E00FF0822 /* MockVideoAdNetworkAdapter.swift in Sources */,
 				72CEA73F2191B15300FF0822 /* MockSettings.swift in Sources */,
 				72CEA73D2191A7AB00FF0822 /* VideoAdLoaderTests.swift in Sources */,
+				7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */,
 				72CEA7332191979200FF0822 /* MockStandardTimeOutableNetwork.swift in Sources */,
 				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
 				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
