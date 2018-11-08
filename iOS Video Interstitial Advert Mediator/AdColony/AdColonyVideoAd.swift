@@ -15,7 +15,7 @@ final class AdColonyVideoAd: NSObject, VideoAd {
     /// The priority of the ad for display purposes
     var priority = 0
     /// The AdColony interstial advert
-    private let interstitial: AdColonyInterstitial
+    private let interstitial: AdColonyInterstitialProtocol
     /**
      Initializes a new `AdColonyVideoAd` object.
      
@@ -23,19 +23,20 @@ final class AdColonyVideoAd: NSObject, VideoAd {
      - interstitial: The `AdColonyInterstital` advert object to display.
      - Returns: An initialized `AdColonyVideoAd` object.
      */
-    init(interstitial: AdColonyInterstitial) {
+    init(interstitial: AdColonyInterstitialProtocol, delegate: VideoAdDelegate? = nil) {
+        self.delegate = delegate
         self.interstitial = interstitial
         super.init()
         configureCallbacks(for: interstitial)
     }
     /**
-     Configures an `AdColonyInterstitial` advert to make delegate callbacks
+     Configures an `AdColonyInterstitial` advert to make Cdelegate callbacks
      for open, close, and click events.
      
      - Parameters:
      - interstitial: The `AdColonyInterstitial` advert object to configure.
      */
-    private func configureCallbacks(for interstitial: AdColonyInterstitial) {
+    private func configureCallbacks(for interstitial: AdColonyInterstitialProtocol) {
         interstitial.setOpen {
             self.delegate?.videoAdDidAppear?(self)
         }
@@ -51,6 +52,6 @@ final class AdColonyVideoAd: NSObject, VideoAd {
      - Note: AdColony ads are presented modally from `viewController`.
      */
     func display(from viewController: UIViewController, or keyWindow: UIWindow) {
-        interstitial.show(withPresenting: viewController)
+        _ = interstitial.show(withPresenting: viewController)
     }
 }

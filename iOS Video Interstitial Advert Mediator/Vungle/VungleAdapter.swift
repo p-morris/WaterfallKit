@@ -123,7 +123,7 @@ extension VungleAdapter: VungleSDKDelegate {
     }
     func vungleAdPlayabilityUpdate(_ isAdPlayable: Bool, placementID: String?, error: Error?) {
         guard let ready = ready, ready else { return }
-        let advert = VungleVideoAd(placementID: placementID ?? self.placementID)
+        let advert = VungleVideoAd(placementID: self.placementID)
         delegate?.adNetwork(self, didLoad: advert)
     }
 }

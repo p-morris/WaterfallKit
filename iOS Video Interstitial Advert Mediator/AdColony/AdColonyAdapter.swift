@@ -10,6 +10,8 @@ import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
 final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
+    /// AdColony SDK
+    private let adColony: AdColonySDKProtocol.Type
     /// The timer used to timeout the request if no response is received.
     /// - Note: Required to a bug with the AdColony SDK where completion isn't made when
     /// provided app ID is invalid.
@@ -23,7 +25,7 @@ final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     /// Indicates whether the AdColony SDK is ready to make ad requests.
     /// - Note: Executes a pending ad request if one was made before the AdColony SDK
     /// became ready to make requests.
-    private var ready = false {
+    private (set) var ready = false {
         didSet {
             if pendingAdRequest {
                 pendingAdRequest = false
@@ -33,7 +35,7 @@ final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     }
     /// Indicates whether an ad request was received before the AdColony SDK
     /// was ready to make requests.
-    private var pendingAdRequest = false
+    private (set) var pendingAdRequest = false
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      
@@ -55,11 +57,15 @@ final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
      - zoneID: The AdColony zone ID to use for ad requests.
      - Returns: An initialized `AdColonyVideoAdNetwork` object.
      */
-    init(appID: String, zoneID: String) {
+    init(appID: String,
+         zoneID: String,
+         options: AdColonyAppOptions = AdColonyAppOptions(),
+         adColony: AdColonySDKProtocol.Type = AdColony.self) {
         self.zoneID = zoneID
         self.timeoutTimer = TimeOutTimer(timeOutIn: 5)
+        self.adColony = adColony
         super.init()
-        configure(appID: appID, zoneIDs: [zoneID])
+        configure(appID: appID, zoneIDs: [zoneID], options: options)
     }
     /**
      Initializes the AdColony SDK.
@@ -68,11 +74,10 @@ final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
      - appID: The AdColony app ID to use for ad requests.
      - zoneID: The AdColony zone ID to use for ad requests.
      */
-    private func configure(appID: String, zoneIDs: [String]) {
-        let options = AdColonyAppOptions()
+    private func configure(appID: String, zoneIDs: [String], options: AdColonyAppOptions) {
         options.disableLogging = true
         timeoutTimer.startTimeOut(notify: self)
-        AdColony.configure(withAppID: appID, zoneIDs: zoneIDs, options: options) { _ in
+        adColony.configure(withAppID: appID, zoneIDs: zoneIDs, options: options) { _ in
             self.timeoutTimer.cancelTimeOut()
             self.ready = true
         }
@@ -88,7 +93,7 @@ final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
             pendingAdRequest = true
             return
         }
-        AdColony.requestInterstitial(inZone: zoneID, options: nil, success: { (interstitial) in
+        adColony.requestInterstitial(inZone: zoneID, options: nil, success: { (interstitial) in
             self.delegate?.adNetwork(self, didLoad: AdColonyVideoAd(interstitial: interstitial))
         }, failure: { (error) in
             self.delegate?.adNetwork(self, didFailToLoad: error)

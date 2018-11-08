@@ -27,4 +27,9 @@ class TimeOutTimerTests: XCTestCase {
         timer.cancelTimeOut()
         XCTAssertTrue(MockTimer.invalidateCalled, "TimeOutTimer should invalidate timer when cancelled.")
     }
+    func testIsCancelled() {
+        timer.startTimeOut(notify: timeoutable)
+        timer.cancelTimeOut()
+        XCTAssertTrue(timer.isCancelled, "TimeOutTimer isCancelled should return true when timer invalid.")
+    }
 }

@@ -18,7 +18,8 @@ class TimeOutTimer {
     private (set) var isScheduled = false
     /// Indicates whether the timer has been invalidated.
     var isCancelled: Bool {
-        return timer?.isValid ?? false
+        let valid = (timer?.isValid) ?? false
+        return !valid
     }
     /**
      Initializes a new `TimeOutTimer` object.

@@ -42,7 +42,7 @@ class ChartboostAdapterTests: XCTestCase {
     func testDidInitializeCancelsTimeout() {
         let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.didInitialize(true)
-        XCTAssertFalse(
+        XCTAssertTrue(
             adapter.timeoutTimer.isCancelled,
             "ChartboostAdapter should cancel timeout on SDK initialization."
         )
