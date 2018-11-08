@@ -15,16 +15,16 @@ class ChartboostExtensionsTests: XCTestCase {
         settings.networkTypes.removeAll()
         _ = settings.initializeChartboost(appID: "123", appSignature: "456")
     }
-    func testInitializeVungleAddsNetworkType() {
+    func testInitializeChartboostAddsNetworkType() {
         switch settings.networkTypes[0] {
         case let .chartboost(appID, appSignature): XCTAssert(appID == "123" && appSignature == "456")
-        default: XCTFail("VideoAdNetworkSettings initializeVungle should add vungle type.")
+        default: XCTFail("VideoAdNetworkSettings initializeChartboost should add chartboost type.")
         }
     }
-    func testInitializeVungleAddsTypeToFactory() {
+    func testInitializeChartboostAddsTypeToFactory() {
         XCTAssertTrue(
             MockFactory.registeredType is ChartboostAdapter.Type,
-            "VideoAdNetworkSettings initializeVungle should add adapter class to factory"
+            "VideoAdNetworkSettings initializeChartboost should add adapter class to factory"
         )
     }
 }

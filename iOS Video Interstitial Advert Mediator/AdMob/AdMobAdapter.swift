@@ -16,7 +16,7 @@ class AdMobAdapter: NSObject, VideoAdNetworkAdapter {
     /// The priority of the network's ads for display purposes
     var priority = 0
     /// The `GADInterstitial` responsible for displaying the advert.
-    let interstitial: GADInterstitial
+    private (set) var interstitial: AdMobAdProtocol
     /// The `GADRequest` responsible for loading the advert.
     private let request: GADRequest
     /**
@@ -41,9 +41,13 @@ class AdMobAdapter: NSObject, VideoAdNetworkAdapter {
      - request: The `GADRequest` to use for loading ads.
      - Returns: An initialized `AdMobVideoAdNetwork` object.
      */
-    init(appID: String, adUnitID: String, request: GADRequest = GADRequest()) {
-        GADMobileAds.configure(withApplicationID: appID)
-        interstitial = GADInterstitial(adUnitID: adUnitID)
+    init(appID: String,
+         adUnitID: String,
+         adMobSDK: AdMobSDKProtocol.Type = GADMobileAds.self,
+         adMobAdType: AdMobAdProtocol.Type = GADInterstitial.self,
+         request: GADRequest = GADRequest()) {
+        adMobSDK.configure(withApplicationID: appID)
+        interstitial = adMobAdType.init(adUnitID: adUnitID)
         self.request = request
     }
     /// Makes an interstitial video ad request using the Admob SDK.
