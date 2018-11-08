@@ -9,7 +9,9 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the Chartboost network
-class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
+final class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
+    /// The Chartboost SDK
+    private var chartboost: ChartboostSDKProtocol.Type
     /// The timer used to timeout the request if no response is received.
     /// - Note: Required to a bug with the Chartboost SDK where completion isn't made when
     /// provided app ID is invalid.
@@ -27,7 +29,7 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     /// Indicates whether the Chartboost SDK is ready to make ad requests.
     /// - Note: Executes a pending ad request if one was made before the Chartboost SDK
     /// became ready to make requests.
-    private var ready = false {
+    private (set) var ready = false {
         didSet {
             if pendingAdRequest {
                 pendingAdRequest = false
@@ -37,11 +39,11 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     }
     /// Indicates whether an ad request was received before the AdColony SDK
     /// was ready to make requests.
-    private var pendingAdRequest = false
+    private (set) var pendingAdRequest = false
     /// The Chartboost app ID used to make requests
-    private let appID: String
+    let appID: String
     /// The Chartboost app signature used to make requests
-    private let appSignature: String
+    let appSignature: String
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      
@@ -63,15 +65,16 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
      - appSignature: The Chartboost app signature to use for ad request.
      - Returns: An initialized `ChartboostVideoAdNetwork` object.
      */
-    init(appID: String, appSignature: String) {
+    init(appID: String, appSignature: String, chartboostSDK: ChartboostSDKProtocol.Type = Chartboost.self) {
+        self.chartboost = chartboostSDK
         self.appID = appID
         self.appSignature = appSignature
         self.timeoutTimer = TimeOutTimer(timeOutIn: 5)
         super.init()
         timeoutTimer.startTimeOut(notify: self)
-        Chartboost.setPIDataUseConsent(.Unknown)
-        Chartboost.setLoggingLevel(.off)
-        Chartboost.start(withAppId: appID, appSignature: appSignature, delegate: self)
+        chartboost.setPIDataUseConsent(.Unknown)
+        chartboost.setLoggingLevel(.off)
+        chartboost.start(withAppId: appID, appSignature: appSignature, delegate: self)
     }
     /**
      Makes an interstitial video ad request using the Chartboost SDK.
@@ -84,7 +87,7 @@ class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
             pendingAdRequest = true
             return
         }
-       Chartboost.cacheInterstitial(CBLocationDefault)
+       chartboost.cacheInterstitial(CBLocationDefault)
     }
     /**
      Compares `self` with `anotherAdNetwork`. `ChartboostVideoAdNetwork` objects are considered

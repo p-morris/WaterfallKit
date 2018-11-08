@@ -41,6 +41,11 @@
 		725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692A2189AFD50038FDD3 /* Foundation.framework */; };
 		725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */; };
 		725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */; };
+		72810B512194035C00AB3757 /* ChartboostExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B502194035C00AB3757 /* ChartboostExtensionsTests.swift */; };
+		72810B532194043000AB3757 /* ChartboostAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B522194043000AB3757 /* ChartboostAdapterTests.swift */; };
+		72810B552194071100AB3757 /* ChartboostSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */; };
+		72810B58219409FF00AB3757 /* MockChartboostSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B57219409FF00AB3757 /* MockChartboostSDK.swift */; };
+		72810B5A219419D100AB3757 /* ChartboostAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B59219419D100AB3757 /* ChartboostAdTests.swift */; };
 		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
 		729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FB2192D48F00DA33EE /* SortingStrategy.swift */; };
 		729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */; };
@@ -135,6 +140,11 @@
 		725B692A2189AFD50038FDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAd.swift; sourceTree = "<group>"; };
 		725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		72810B502194035C00AB3757 /* ChartboostExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostExtensionsTests.swift; sourceTree = "<group>"; };
+		72810B522194043000AB3757 /* ChartboostAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostAdapterTests.swift; sourceTree = "<group>"; };
+		72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostSDKProtocol.swift; sourceTree = "<group>"; };
+		72810B57219409FF00AB3757 /* MockChartboostSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChartboostSDK.swift; sourceTree = "<group>"; };
+		72810B59219419D100AB3757 /* ChartboostAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostAdTests.swift; sourceTree = "<group>"; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
 		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
@@ -274,6 +284,25 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		72810B4F2194033B00AB3757 /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				72810B56219409F000AB3757 /* Mocks */,
+				72810B502194035C00AB3757 /* ChartboostExtensionsTests.swift */,
+				72810B522194043000AB3757 /* ChartboostAdapterTests.swift */,
+				72810B59219419D100AB3757 /* ChartboostAdTests.swift */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
+		72810B56219409F000AB3757 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				72810B57219409FF00AB3757 /* MockChartboostSDK.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		72CEA726219180A700FF0822 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +391,7 @@
 			children = (
 				72CEA726219180A700FF0822 /* Core */,
 				72EF2A052192E6DE00DE1DB6 /* Vungle */,
+				72810B4F2194033B00AB3757 /* Chartboost */,
 				72F11812218314FF00C3C805 /* Info.plist */,
 			);
 			path = "iOS Video Interstitial Advert MediatorTests";
@@ -418,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				72FFD868219023BD002B1E28 /* CoreChartboostExtensions.swift */,
+				72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */,
 				72F68993218718280035C76C /* ChartboostAdapter.swift */,
 				725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */,
 				72FFD88021902856002B1E28 /* CHAMoatMobileAppKit.framework */,
@@ -573,6 +604,7 @@
 				724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */,
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleAdapter.swift in Sources */,
+				72810B552194071100AB3757 /* ChartboostSDKProtocol.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				72FFD86B21902402002B1E28 /* CoreAdMobExtensions.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
@@ -598,7 +630,10 @@
 				7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */,
 				72CEA73F2191B15300FF0822 /* MockSettings.swift in Sources */,
 				72CEA73D2191A7AB00FF0822 /* VideoAdLoaderTests.swift in Sources */,
+				72810B532194043000AB3757 /* ChartboostAdapterTests.swift in Sources */,
+				72810B58219409FF00AB3757 /* MockChartboostSDK.swift in Sources */,
 				7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */,
+				72810B512194035C00AB3757 /* ChartboostExtensionsTests.swift in Sources */,
 				72CEA7332191979200FF0822 /* MockStandardTimeOutableNetwork.swift in Sources */,
 				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
 				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
@@ -616,6 +651,7 @@
 				72CEA72B2191920700FF0822 /* MockFactory.swift in Sources */,
 				72CEA72F2191926500FF0822 /* MockTimer.swift in Sources */,
 				729B35002192E26F00DA33EE /* SortingStrategyTests.swift in Sources */,
+				72810B5A219419D100AB3757 /* ChartboostAdTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

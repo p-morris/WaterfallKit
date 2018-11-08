@@ -10,10 +10,22 @@ import Foundation
 
 /// Used for displaying and invoking delegate callbacks for Chartboost interstial videos ads.
 class ChartboostVideoAd: NSObject, VideoAd {
+    /// The Chartboost SDK
+    private var chartboostSDK: ChartboostAdProtocol.Type
     /// The object that acts as the delegate of the `ChartboostVideoAd`.
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
     var priority = 0
+    /**
+     Initializes a new `ChartboostVideoAd` object.
+     
+     - Parameters:
+     - chartboostDSK: A type which conforms to `ChartboostAdProtocol` for making ad presentation requests.
+     - Returns: An initialized `ChartboostVideoAd`.
+     */
+    init(chartboostSDK: ChartboostAdProtocol.Type = Chartboost.self) {
+        self.chartboostSDK = chartboostSDK
+    }
     /**
      Displays the Chartboost interstial ad modally.
      - Note: The implementation details are private for Chartboost interstitials. It can't be
@@ -21,8 +33,8 @@ class ChartboostVideoAd: NSObject, VideoAd {
      rendered over the top of the `keyWindow`.
      */
     func display(from viewController: UIViewController, or keyWindow: UIWindow) {
-        Chartboost.setDelegate(self)
-        Chartboost.showInterstitial(CBLocationDefault)
+        chartboostSDK.setDelegate(self)
+        chartboostSDK.showInterstitial(CBLocationDefault)
     }
 }
 /// Used to implement delegate callbacks for Chartboost SDK display events
