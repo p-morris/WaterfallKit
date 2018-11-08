@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for displaying and invoking delegate callbacks for Chartboost interstial videos ads.
-class ChartboostVideoAd: NSObject, VideoAd {
+final class ChartboostVideoAd: NSObject, VideoAd {
     /// The Chartboost SDK
     private var chartboostSDK: ChartboostAdProtocol.Type
     /// The object that acts as the delegate of the `ChartboostVideoAd`.
@@ -25,6 +25,7 @@ class ChartboostVideoAd: NSObject, VideoAd {
      */
     init(chartboostSDK: ChartboostAdProtocol.Type = Chartboost.self) {
         self.chartboostSDK = chartboostSDK
+        super.init()
     }
     /**
      Displays the Chartboost interstial ad modally.

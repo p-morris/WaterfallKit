@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
-class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
+final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {
     /// The timer used to timeout the request if no response is received.
     /// - Note: Required to a bug with the AdColony SDK where completion isn't made when
     /// provided app ID is invalid.

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the Vungle network
-class VungleAdapter: NSObject, VideoAdNetworkAdapter {
+final class VungleAdapter: NSObject, VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `ChartboostVideoAdNetwork`.
     weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes.

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for displaying and invoking delegate callbacks for AdColony interstial videos ads.
-class AdColonyVideoAd: VideoAd {
+final class AdColonyVideoAd: NSObject, VideoAd {
     /// The object that acts as the delegate of the `VideoAdDelegate`.
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
@@ -25,6 +25,7 @@ class AdColonyVideoAd: VideoAd {
      */
     init(interstitial: AdColonyInterstitial) {
         self.interstitial = interstitial
+        super.init()
         configureCallbacks(for: interstitial)
     }
     /**

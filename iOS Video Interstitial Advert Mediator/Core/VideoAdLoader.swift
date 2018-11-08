@@ -29,7 +29,7 @@ import Foundation
 }
 
 /// Used for parsing a set of ad networks and requesting adverts.
-@objc class VideoAdLoader: NSObject {
+@objc final class VideoAdLoader: NSObject {
     /// Used to encapsulate `String` literals related to errors loading
     /// video ads
     private enum VideoAdLoaderError {
@@ -79,6 +79,7 @@ import Foundation
         self.settings = settings
         self.factory = factory
         self.advertSortingStrategy = advertSortingStrategy
+        super.init()
     }
     /**
      Iterates through the networks stored in the `VideoAdNetworkSettings` object and

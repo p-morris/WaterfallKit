@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for displaying and invoking delegate callbacks for Vungle interstial videos ads.
-class VungleVideoAd: NSObject, VideoAd {
+final class VungleVideoAd: NSObject, VideoAd {
     /// The object that acts as the delegate of the `VungleVideoAd`.
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
@@ -29,6 +29,7 @@ class VungleVideoAd: NSObject, VideoAd {
     init(placementID: String, vungleSDK: VungleAdProtocol = VungleSDK.shared()) {
         self.placementID = placementID
         self.vungleSDK = vungleSDK
+        super.init()
     }
     /**
      Displays the Vungle interstial ad modally.

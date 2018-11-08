@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for displaying and invoking delegate callbacks for AppLovin interstial videos ads.
-class AppLovinVideoAd: NSObject, VideoAd {
+final class AppLovinVideoAd: NSObject, VideoAd {
     /// The object that acts as the delegate of the `AppLovinVideoAd`.
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
@@ -17,7 +17,7 @@ class AppLovinVideoAd: NSObject, VideoAd {
     /// The AppLovin advert to display.
     private let appLovinAd: ALAd
     /// The AppLovin interstitial that will be reponsible for rendering the advert.
-    private let interstitial: ALInterstitialAd
+    private (set) var interstitial: AppLovinInterstitialProtocol
     /**
      Initializes a new `AppLovinVideoAd` object.
      
@@ -26,9 +26,10 @@ class AppLovinVideoAd: NSObject, VideoAd {
      - interstitial: The AppLovin interstitial used to render the ad.
      - Returns: An initialized `AppLovinVideoAd` object.
      */
-    init(appLovinAd: ALAd, interstitial: ALInterstitialAd) {
+    init(appLovinAd: ALAd, interstitial: AppLovinInterstitialProtocol) {
         self.appLovinAd = appLovinAd
         self.interstitial = interstitial
+        super.init()
     }
     /**
      Displays the AppLovin interstial ad modally.

@@ -10,7 +10,7 @@ import Foundation
 import GoogleMobileAds
 
 /// Used for displaying and invoking delegate callbacks for Admob interstial videos ads.
-class AdMobVideoAd: NSObject, VideoAd {
+final class AdMobVideoAd: NSObject, VideoAd {
     /// The object that acts as the delegate of the `AdMobVideoAd`.
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
@@ -26,6 +26,7 @@ class AdMobVideoAd: NSObject, VideoAd {
      */
     init(interstitial: AdMobAdProtocol) {
         self.interstitial = interstitial
+        super.init()
     }
     /**
      Displays the Admob interstial ad modally.

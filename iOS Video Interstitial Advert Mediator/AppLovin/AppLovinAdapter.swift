@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used for making interstitial video ad requests to the AdColony network
-class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
+final class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
     /// The object that acts as the delegate of the `AppLovinVideoAdNetwork`.
     weak var delegate: VideoAdNetworkAdapterDelegate?
     /// The priority of the network's ads for display purposes
@@ -17,7 +17,7 @@ class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
     /// The AppLovin SDK key.
     let sdkKey: String
     /// The AppLovin SDK instance
-    private let appLovin: ALSdk?
+    let appLovin: AppLovinSDKProtocol?
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      
@@ -38,9 +38,10 @@ class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
      - sdkKey: The AppLovin SDK key to use for ad requests.
      - Returns: An initialized `AppLovinVideoAdNetwork` object.
      */
-    init(sdkKey: String) {
+    init(sdkKey: String, appLovin: AppLovinSDKProtocol.Type = ALSdk.self) {
         self.sdkKey = sdkKey
-        appLovin = ALSdk.shared(withKey: sdkKey)
+        self.appLovin = appLovin.shared(withKey: sdkKey)
+        super.init()
     }
     /// Makes an interstitial video ad request using the AppLovin SDK.
     func requestAd() {
@@ -58,10 +59,10 @@ class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {
     }
 }
 
-/// Used to implement delegate callbacks for AppLovin SDK ad loading events
+/// Used to implement delegate callbacks forlo AppLovin SDK ad loading events
 extension AppLovinAdapter: ALAdLoadDelegate {
     func adService(_ adService: ALAdService, didLoad advert: ALAd) {
-        if let appLovin = appLovin {
+        if let appLovin = appLovin as? ALSdk {
             let appLovinAd = AppLovinVideoAd(appLovinAd: advert, interstitial: ALInterstitialAd.init(sdk: appLovin))
             delegate?.adNetwork(self, didLoad: appLovinAd)
         }

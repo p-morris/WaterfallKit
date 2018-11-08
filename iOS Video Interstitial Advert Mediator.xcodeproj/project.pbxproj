@@ -52,6 +52,11 @@
 		72810B642194237200AB3757 /* MockAdMobSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B632194237200AB3757 /* MockAdMobSDK.swift */; };
 		72810B662194244C00AB3757 /* MockAdMobInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B652194244C00AB3757 /* MockAdMobInterstitial.swift */; };
 		72810B6821942A2300AB3757 /* AdMobVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B6721942A2300AB3757 /* AdMobVideoAdTests.swift */; };
+		72810B6C219430DC00AB3757 /* AppLovinExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B6B219430DC00AB3757 /* AppLovinExtensionsTests.swift */; };
+		72810B6E219431BF00AB3757 /* AppLovinAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B6D219431BF00AB3757 /* AppLovinAdapterTests.swift */; };
+		72810B70219431E500AB3757 /* AppLovinSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B6F219431E500AB3757 /* AppLovinSDKProtocol.swift */; };
+		72810B742194424100AB3757 /* AppLovinVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B732194424100AB3757 /* AppLovinVideoAdTests.swift */; };
+		72810B77219443B000AB3757 /* MockAppLovinInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B76219443B000AB3757 /* MockAppLovinInterstitial.swift */; };
 		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
 		729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FB2192D48F00DA33EE /* SortingStrategy.swift */; };
 		729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */; };
@@ -157,6 +162,11 @@
 		72810B632194237200AB3757 /* MockAdMobSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdMobSDK.swift; sourceTree = "<group>"; };
 		72810B652194244C00AB3757 /* MockAdMobInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdMobInterstitial.swift; sourceTree = "<group>"; };
 		72810B6721942A2300AB3757 /* AdMobVideoAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoAdTests.swift; sourceTree = "<group>"; };
+		72810B6B219430DC00AB3757 /* AppLovinExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinExtensionsTests.swift; sourceTree = "<group>"; };
+		72810B6D219431BF00AB3757 /* AppLovinAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinAdapterTests.swift; sourceTree = "<group>"; };
+		72810B6F219431E500AB3757 /* AppLovinSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinSDKProtocol.swift; sourceTree = "<group>"; };
+		72810B732194424100AB3757 /* AppLovinVideoAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAdTests.swift; sourceTree = "<group>"; };
+		72810B76219443B000AB3757 /* MockAppLovinInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppLovinInterstitial.swift; sourceTree = "<group>"; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
 		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
@@ -335,6 +345,25 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		72810B69219430A700AB3757 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				72810B752194439500AB3757 /* Mocks */,
+				72810B6B219430DC00AB3757 /* AppLovinExtensionsTests.swift */,
+				72810B6D219431BF00AB3757 /* AppLovinAdapterTests.swift */,
+				72810B732194424100AB3757 /* AppLovinVideoAdTests.swift */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		72810B752194439500AB3757 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				72810B76219443B000AB3757 /* MockAppLovinInterstitial.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		72CEA726219180A700FF0822 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +454,7 @@
 				72EF2A052192E6DE00DE1DB6 /* Vungle */,
 				72810B4F2194033B00AB3757 /* Chartboost */,
 				72810B5B21941D8700AB3757 /* Admob */,
+				72810B69219430A700AB3757 /* AppLovin */,
 				72F11812218314FF00C3C805 /* Info.plist */,
 			);
 			path = "iOS Video Interstitial Advert MediatorTests";
@@ -459,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				72FFD86C21902434002B1E28 /* CoreAppLovinExtensions.swift */,
+				72810B6F219431E500AB3757 /* AppLovinSDKProtocol.swift */,
 				72F6898F2187175F0035C76C /* AppLovinAdapter.swift */,
 				7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */,
 				72FFD8842190286C002B1E28 /* AppLovinSDK.framework */,
@@ -640,6 +671,7 @@
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleAdapter.swift in Sources */,
 				72810B552194071100AB3757 /* ChartboostSDKProtocol.swift in Sources */,
+				72810B70219431E500AB3757 /* AppLovinSDKProtocol.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				72FFD86B21902402002B1E28 /* CoreAdMobExtensions.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
@@ -665,6 +697,7 @@
 				7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */,
 				72CEA73F2191B15300FF0822 /* MockSettings.swift in Sources */,
 				72CEA73D2191A7AB00FF0822 /* VideoAdLoaderTests.swift in Sources */,
+				72810B6C219430DC00AB3757 /* AppLovinExtensionsTests.swift in Sources */,
 				72810B532194043000AB3757 /* ChartboostAdapterTests.swift in Sources */,
 				72810B58219409FF00AB3757 /* MockChartboostSDK.swift in Sources */,
 				7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */,
@@ -673,9 +706,11 @@
 				72810B5F21941F4C00AB3757 /* AdmobAdapterTests.swift in Sources */,
 				72CEA725219179D000FF0822 /* VideoAdSettingsTests.swift in Sources */,
 				72CEA737219198FD00FF0822 /* ArrayExtensionTests.swift in Sources */,
+				72810B6E219431BF00AB3757 /* AppLovinAdapterTests.swift in Sources */,
 				72810B5D21941DA300AB3757 /* AdmobExtensionsTests.swift in Sources */,
 				72EF2A092192EBC800DE1DB6 /* VungleAdapterTests.swift in Sources */,
 				72EF2A072192E77000DE1DB6 /* VungleExtensionsTests.swift in Sources */,
+				72810B742194424100AB3757 /* AppLovinVideoAdTests.swift in Sources */,
 				72810B642194237200AB3757 /* MockAdMobSDK.swift in Sources */,
 				72CEA731219194E900FF0822 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
 				729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */,
@@ -683,6 +718,7 @@
 				72810B662194244C00AB3757 /* MockAdMobInterstitial.swift in Sources */,
 				72810B6821942A2300AB3757 /* AdMobVideoAdTests.swift in Sources */,
 				7247DC30219309F400094F88 /* VungleVideoAdTests.swift in Sources */,
+				72810B77219443B000AB3757 /* MockAppLovinInterstitial.swift in Sources */,
 				72CEA7282191812E00FF0822 /* TimeOutTimerTests.swift in Sources */,
 				72CEA7432191D4C600FF0822 /* MockVideoAdLoaderDelegate.swift in Sources */,
 				72CEA73921919ACE00FF0822 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */,
