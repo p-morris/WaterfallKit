@@ -10,6 +10,12 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class ChartboostAdTests: XCTestCase {
+    override func tearDown() {
+        MockChartboostSDK.started = false
+        MockChartboostSDK.consentSet = false
+        MockChartboostSDK.loggingLevelSet = false
+        MockChartboostSDK.cachedInterstitial = false
+    }
     func testDisplayFromSetsSDKDelegate() {
         let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
         advert.display(from: UIViewController(), or: UIWindow())

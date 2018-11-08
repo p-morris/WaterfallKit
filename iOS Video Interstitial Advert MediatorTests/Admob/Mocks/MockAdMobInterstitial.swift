@@ -18,10 +18,14 @@ class MockAdMobInterstitial: AdMobAdProtocol {
         }
     }
     static var loaded = false
+    var presentedFrom: UIViewController?
     required init(adUnitID: String) {
         //
     }
     func load(_ request: GADRequest?) {
         MockAdMobInterstitial.loaded = true
+    }
+    func present(fromRootViewController rootViewController: UIViewController) {
+        presentedFrom = rootViewController
     }
 }

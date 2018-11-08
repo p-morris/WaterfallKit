@@ -19,6 +19,7 @@ protocol AdMobAdProtocol {
     var delegate: GADInterstitialDelegate? { get set }
     init(adUnitID: String)
     func load(_ request: GADRequest?)
+    func present(fromRootViewController rootViewController: UIViewController)
 }
 
 extension GADInterstitial: AdMobAdProtocol { }

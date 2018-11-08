@@ -15,6 +15,9 @@ class ChartboostExtensionsTests: XCTestCase {
         settings.networkTypes.removeAll()
         _ = settings.initializeChartboost(appID: "123", appSignature: "456")
     }
+    override func tearDown() {
+        MockFactory.unregisterAllAdapterTypes()
+    }
     func testInitializeChartboostAddsNetworkType() {
         switch settings.networkTypes[0] {
         case let .chartboost(appID, appSignature): XCTAssert(appID == "123" && appSignature == "456")

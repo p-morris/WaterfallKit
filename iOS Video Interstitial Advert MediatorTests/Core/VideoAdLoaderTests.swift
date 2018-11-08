@@ -23,6 +23,16 @@ class VideoAdLoaderTests: XCTestCase {
         sortingStrategy = MockSortingStrategy()
         loader = VideoAdLoader(settings: settings, factory: factory, advertSortingStrategy: sortingStrategy)
     }
+    override func tearDown() {
+        MockFactory.mockCount = 0
+        MockFactory.registeredType = nil
+        MockFactory.unregisterAllAdapterTypes()
+        MockVideoAdNetworkAdapter.shouldDelegate = false
+        MockVideoAdNetworkAdapter.staticPriority = 0
+        MockVideoAdNetworkAdapter.delegateSet = false
+        MockVideoAdNetworkAdapter.adRequested = false
+        MockVideoAdNetworkAdapter.shouldFail = false
+    }
     func testInitialization() {
         XCTAssertTrue(loader.settings == settings)
     }

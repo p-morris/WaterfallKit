@@ -16,7 +16,7 @@ class AdMobVideoAd: NSObject, VideoAd {
     /// The priority of the ad for display purposes
     var priority = 0
     /// The `GADInterstitial` which contains the ad to be displayed.
-    private let interstitial: GADInterstitial
+    private (set) var interstitial: AdMobAdProtocol
     /**
      Initializes a new `AdMobVideoAd` object.
      
@@ -24,7 +24,7 @@ class AdMobVideoAd: NSObject, VideoAd {
      - interstitial: The `GADInterstitial` which contains the ad to be displayed.
      - Returns: An initialized `AdMobVideoAd` object.
      */
-    init(interstitial: GADInterstitial) {
+    init(interstitial: AdMobAdProtocol) {
         self.interstitial = interstitial
     }
     /**

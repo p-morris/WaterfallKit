@@ -10,6 +10,12 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class ChartboostAdapterTests: XCTestCase {
+    override func tearDown() {
+        MockChartboostSDK.started = false
+        MockChartboostSDK.consentSet = false
+        MockChartboostSDK.loggingLevelSet = false
+        MockChartboostSDK.cachedInterstitial = false
+    }
     func testConvenienceInitializerSetsAppID() {
         let adapter = ChartboostAdapter(type: .chartboost(appID: "123", appSignature: "456"))!
         XCTAssertEqual(adapter.appID, "123", "ChartboostAdapter convenience initializer should set appID.")

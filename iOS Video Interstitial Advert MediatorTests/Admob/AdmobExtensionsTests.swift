@@ -15,6 +15,9 @@ class AdmobExtensionsTests: XCTestCase {
         settings.networkTypes.removeAll()
         _ = settings.initializeAdMob(appID: "123", adUnitID: "456")
     }
+    override func tearDown() {
+        MockFactory.unregisterAllAdapterTypes()
+    }
     func testInitializeAdmobAddsNetworkType() {
         switch settings.networkTypes[0] {
         case let .admob(appID, adUnitID): XCTAssert(appID == "123" && adUnitID == "456")

@@ -11,6 +11,11 @@ import GoogleMobileAds
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class AdmobAdapterTests: XCTestCase {
+    override func tearDown() {
+        MockAdMobSDK.configured = false
+        MockAdMobInterstitial.didSetDelegate = false
+        MockAdMobInterstitial.loaded = false
+    }
     func testConvenienceInitializer() {
         let adapter = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))
         XCTAssertNotNil(adapter, "AdmobAdapter convenience initializer should return instance for admob type")

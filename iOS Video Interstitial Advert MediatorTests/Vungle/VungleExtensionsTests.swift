@@ -15,6 +15,9 @@ class VungleExtensionsTests: XCTestCase {
         settings.networkTypes.removeAll()
         _ = settings.initializeVungle(appID: "123", placementID: "123")
     }
+    override func tearDown() {
+        MockFactory.unregisterAllAdapterTypes()
+    }
     func testInitializeVungleAddsNetworkType() {
         switch settings.networkTypes[0] {
         case let .vungle(appID, placementID): XCTAssert(appID == "123" && placementID == "123")
