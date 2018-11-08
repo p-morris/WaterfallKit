@@ -36,13 +36,13 @@ class AppLovinVideoAdTests: XCTestCase {
     }
     func testDisplaySetsDelegate() {
         let interstitial = MockAppLovinInterstitial()
-        let advert = AppLovinVideoAd(appLovinAd: ALAd(), interstitial:interstitial)
+        let advert = AppLovinVideoAd(appLovinAd: ALAd(), interstitial: interstitial)
         advert.display(from: UIViewController(), or: UIWindow())
         XCTAssertTrue(interstitial.didSetDelegate, "AppLovinVideoAd display should set interstitial delegate.")
     }
     func testDisplayShowsAd() {
         let interstitial = MockAppLovinInterstitial()
-        let advert = AppLovinVideoAd(appLovinAd: ALAd(), interstitial:interstitial)
+        let advert = AppLovinVideoAd(appLovinAd: ALAd(), interstitial: interstitial)
         advert.display(from: UIViewController(), or: UIWindow())
         XCTAssertTrue(interstitial.didShow, "AppLovinVideoAd display should show ad from window.")
     }
