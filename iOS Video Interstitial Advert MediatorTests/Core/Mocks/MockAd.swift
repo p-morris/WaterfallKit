@@ -11,12 +11,7 @@ import XCTest
 
 class MockAd: VideoAd {
     weak var delegate: VideoAdDelegate?
-    var priority: Int = 0 {
-        didSet {
-            MockAd.staticPriority = priority
-        }
-    }
-    static var staticPriority = 0
+    var priority: Int = 0
     func display(from viewController: UIViewController, or keyWindow: UIWindow) {
         //
     }

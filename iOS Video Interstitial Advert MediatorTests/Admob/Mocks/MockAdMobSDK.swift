@@ -10,8 +10,8 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockAdMobSDK: AdMobSDKProtocol {
-    static var configured = false
+    static weak var testDelegate: AdmobTestDelegate?
     static func configure(withApplicationID applicationID: String) {
-        configured = true
+        testDelegate?.configured = true
     }
 }

@@ -14,12 +14,12 @@ class VideoAdNetworkAdapterFactoryTests: XCTestCase {
     let factory = InterstitialAdapterFactory()
     override func setUp() {
         InterstitialAdapterFactory.unregisterAllAdapterTypes()
+        InterstitialAdapterFactory.register(adapterType: type)
     }
     override func tearDown() {
         InterstitialAdapterFactory.unregisterAllAdapterTypes()
     }
     func testRegisterAdapterType() {
-        InterstitialAdapterFactory.register(adapterType: type)
         let contains = InterstitialAdapterFactory.adapterClasses.contains { $0 == type }
         XCTAssertTrue(
             contains,
@@ -27,7 +27,6 @@ class VideoAdNetworkAdapterFactoryTests: XCTestCase {
         )
     }
     func testUnregisterAdapterType() {
-        InterstitialAdapterFactory.register(adapterType: type)
         InterstitialAdapterFactory.unregister(adapterType: type)
         let contains = InterstitialAdapterFactory.adapterClasses.contains { $0 == type }
         XCTAssertFalse(
@@ -36,7 +35,6 @@ class VideoAdNetworkAdapterFactoryTests: XCTestCase {
         )
     }
     func testCreateAdapter() {
-        InterstitialAdapterFactory.register(adapterType: type)
         let network = factory.createAdapter(type: .test)
         XCTAssertTrue(
             network is MockVideoAdNetworkAdapter,
@@ -44,6 +42,7 @@ class VideoAdNetworkAdapterFactoryTests: XCTestCase {
         )
     }
     func testCreateAdapterUnregisteredType() {
+        InterstitialAdapterFactory.unregister(adapterType: type)
         let network = factory.createAdapter(type: .test)
         XCTAssertNil(
             network,
@@ -51,7 +50,6 @@ class VideoAdNetworkAdapterFactoryTests: XCTestCase {
         )
     }
     func testUnregisterAll() {
-        InterstitialAdapterFactory.register(adapterType: type)
         InterstitialAdapterFactory.unregisterAllAdapterTypes()
         XCTAssertEqual(
             InterstitialAdapterFactory.adapterClasses.count, 0,

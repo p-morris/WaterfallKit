@@ -9,24 +9,18 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class AppLovinExtensionsTests: XCTestCase {
-    let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
-    override func setUp() {
-        settings.networkTypes.removeAll()
+extension ArrayExtensionTests {
+    func testInitializeAppLovinAddsNetworkType() {
         _ = settings.initializeAppLovin(sdkKey: "123")
-    }
-    override func tearDown() {
-        MockFactory.unregisterAllAdapterTypes()
-    }
-    func testInitializeAdmobAddsNetworkType() {
         switch settings.networkTypes[0] {
         case let .appLovin(sdkKey): XCTAssert(sdkKey == "123")
         default: XCTFail("VideoAdNetworkSettings initializeAppLovin should add applovin type.")
         }
     }
-    func testInitializeAdmobAddsTypeToFactory() {
+    func testInitializeAppLovinAddsTypeToFactory() {
+        _ = settings.initializeAppLovin(sdkKey: "123")
         XCTAssertTrue(
-            MockFactory.registeredType is AppLovinAdapter.Type,
+            testDelegate.factoryRegisteredType is AppLovinAdapter.Type,
             "VideoAdNetworkSettings initializeAppLovin should add adapter class to factory"
         )
     }

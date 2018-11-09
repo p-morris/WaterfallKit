@@ -9,24 +9,18 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class AdmobExtensionsTests: XCTestCase {
-    let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
-    override func setUp() {
-        settings.networkTypes.removeAll()
-        _ = settings.initializeAdMob(appID: "123", adUnitID: "456")
-    }
-    override func tearDown() {
-        MockFactory.unregisterAllAdapterTypes()
-    }
+extension ArrayExtensionTests {
     func testInitializeAdmobAddsNetworkType() {
+        _ = settings.initializeAdMob(appID: "123", adUnitID: "456")
         switch settings.networkTypes[0] {
         case let .admob(appID, adUnitID): XCTAssert(appID == "123" && adUnitID == "456")
         default: XCTFail("VideoAdNetworkSettings initializeAdmob should add admob type.")
         }
     }
     func testInitializeAdmobAddsTypeToFactory() {
+        _ = settings.initializeAdMob(appID: "123", adUnitID: "456")
         XCTAssertTrue(
-            MockFactory.registeredType is AdMobAdapter.Type,
+            testDelegate.factoryRegisteredType is AdMobAdapter.Type,
             "VideoAdNetworkSettings initializeAdmob should add adapter class to factory"
         )
     }

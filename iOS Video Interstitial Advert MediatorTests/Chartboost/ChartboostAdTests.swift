@@ -8,51 +8,45 @@
 
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
+//swiftlint:disable weak_delegate
 
 class ChartboostAdTests: XCTestCase {
-    override func tearDown() {
-        MockChartboostSDK.started = false
-        MockChartboostSDK.consentSet = false
-        MockChartboostSDK.loggingLevelSet = false
-        MockChartboostSDK.cachedInterstitial = false
+    var advert: ChartboostVideoAd!
+    var advertDelegate: MockAdDelegate!
+    var testDelegate: ChartboostTestDelegate!
+    override func setUp() {
+        testDelegate = ChartboostTestDelegate()
+        MockChartboostSDK.testDelegate = testDelegate
+        advertDelegate = MockAdDelegate()
+        advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
+        advert.delegate = advertDelegate
     }
     func testDisplayFromSetsSDKDelegate() {
-        let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
         advert.display(from: UIViewController(), or: UIWindow())
-        XCTAssertTrue(MockChartboostSDK.delegateSet, "ChartboostVideoAd display should set SDK delegate.")
+        XCTAssertTrue(testDelegate.delegateSet, "ChartboostVideoAd display should set SDK delegate.")
     }
     func testDisplayFromDisplaysAd() {
-        let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
         advert.display(from: UIViewController(), or: UIWindow())
-        XCTAssertTrue(MockChartboostSDK.showInterstitial, "ChartboostVideoAd display should show ad.")
+        XCTAssertTrue(testDelegate.showInterstitial, "ChartboostVideoAd display should show ad.")
     }
     func testDidDisplay() {
-        let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockAdDelegate()
-        advert.delegate = delegate
         advert.didDisplayInterstitial("")
         XCTAssertTrue(
-            delegate.didAppear,
+            advertDelegate.didAppear,
             "ChartboostVideoAd didDisplayInterstitial should execute delegate's didAppear method."
         )
     }
     func testDidDismiss() {
-        let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockAdDelegate()
-        advert.delegate = delegate
         advert.didDismissInterstitial("")
         XCTAssertTrue(
-            delegate.didDismiss,
+            advertDelegate.didDismiss,
             "ChartboostVideoAd didDismissInterstitial should execute delegate's didDismiss method."
         )
     }
     func testDidClick() {
-        let advert = ChartboostVideoAd(chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockAdDelegate()
-        advert.delegate = delegate
         advert.didClickInterstitial("")
         XCTAssertTrue(
-            delegate.didReceiveClick,
+            advertDelegate.didReceiveClick,
             "ChartboostVideoAd didClickInterstitial should execute delegate's didReceiveClick method."
         )
     }

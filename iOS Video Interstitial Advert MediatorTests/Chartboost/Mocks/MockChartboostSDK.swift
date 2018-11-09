@@ -10,31 +10,26 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockChartboostSDK: ChartboostSDKProtocol {
-    static var consentSet = false
-    static var loggingLevelSet = false
-    static var cachedInterstitial = false
-    static var started = false
+    static weak var testDelegate: ChartboostTestDelegate?
     static func setPIDataUseConsent(_ consent: CBPIDataUseConsent) {
-        consentSet = true
+        MockChartboostSDK.testDelegate?.consentSet = true
     }
     static func setLoggingLevel(_ loggingLevel: CBLoggingLevel) {
-        loggingLevelSet = true
+        MockChartboostSDK.testDelegate?.loggingLevelSet = true
     }
     static func cacheInterstitial(_ location: String!) {
-        cachedInterstitial = true
+        MockChartboostSDK.testDelegate?.cachedInterstitial = true
     }
     static func start(withAppId appId: String!, appSignature: String!, delegate: ChartboostDelegate!) {
-        started = true
+        MockChartboostSDK.testDelegate?.started = true
     }
 }
 
 extension MockChartboostSDK: ChartboostAdProtocol {
-    static var delegateSet = false
-    static var showInterstitial = false
     static func setDelegate(_ del: ChartboostDelegate!) {
-        delegateSet = true
+        MockChartboostSDK.testDelegate?.delegateSet = true
     }
     static func showInterstitial(_ location: String!) {
-        showInterstitial = true
+        MockChartboostSDK.testDelegate?.showInterstitial = true
     }
 }

@@ -9,7 +9,7 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockTimer: Timer {
-    static var invalidateCalled = false
+    static weak var testDelegate: TimerTestDelegate?
     override open class func scheduledTimer(withTimeInterval interval: TimeInterval,
                                             repeats: Bool,
                                             block: @escaping (Timer) -> Void) -> Timer {
@@ -18,6 +18,6 @@ class MockTimer: Timer {
         return timer
     }
     override func invalidate() {
-        MockTimer.invalidateCalled = true
+        MockTimer.testDelegate?.wasInvalidated = true
     }
 }

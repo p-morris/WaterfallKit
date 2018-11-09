@@ -9,25 +9,21 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class ChartboostExtensionsTests: XCTestCase {
-    let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
-    override func setUp() {
-        settings.networkTypes.removeAll()
-        _ = settings.initializeChartboost(appID: "123", appSignature: "456")
-    }
-    override func tearDown() {
-        MockFactory.unregisterAllAdapterTypes()
-    }
+extension ArrayExtensionTests {
     func testInitializeChartboostAddsNetworkType() {
+        _ = settings.initializeChartboost(appID: "123", appSignature: "456")
         switch settings.networkTypes[0] {
         case let .chartboost(appID, appSignature): XCTAssert(appID == "123" && appSignature == "456")
         default: XCTFail("VideoAdNetworkSettings initializeChartboost should add chartboost type.")
         }
     }
     func testInitializeChartboostAddsTypeToFactory() {
+        let delegate = FactoryTestDelegate()
+        MockFactory.testDelegate = delegate
+        _ = settings.initializeChartboost(appID: "123", appSignature: "456")
         XCTAssertTrue(
-            MockFactory.registeredType is ChartboostAdapter.Type,
-            "VideoAdNetworkSettings initializeChartboost should add adapter class to factory"
+            MockFactory.testDelegate?.factoryRegisteredType is ChartboostAdapter.Type,
+            "VideoAdNetworkSettings initializeVungle should add adapter class to factory"
         )
     }
 }

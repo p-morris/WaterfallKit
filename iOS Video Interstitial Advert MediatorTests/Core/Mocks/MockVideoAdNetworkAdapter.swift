@@ -10,11 +10,7 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
-    static var staticPriority = 0
-    static var delegateSet = false
-    static var adRequested = false
-    static var shouldFail = false
-    static var shouldDelegate = false
+    static weak var testDelegate: VideoAdLoaderTestDelegate?
     required init?(type: VideoAdNetworkSettings.NetworkType) {
         switch type {
         case .test: self.priority = 0
@@ -23,18 +19,18 @@ class MockVideoAdNetworkAdapter: NSObject, VideoAdNetworkAdapter {
     }
     weak var delegate: VideoAdNetworkAdapterDelegate? {
         didSet {
-            MockVideoAdNetworkAdapter.delegateSet = true
+            MockVideoAdNetworkAdapter.testDelegate?.adapterDelegateSet = true
         }
     }
     var priority: Int {
         didSet {
-            MockVideoAdNetworkAdapter.staticPriority = priority
+            MockVideoAdNetworkAdapter.testDelegate?.adapterPriority = priority
         }
     }
     func requestAd() {
-        MockVideoAdNetworkAdapter.adRequested = true
-        if MockVideoAdNetworkAdapter.shouldDelegate {
-            if MockVideoAdNetworkAdapter.shouldFail {
+        MockVideoAdNetworkAdapter.testDelegate?.adapterAdRequested = true
+        if let testDelegate = MockVideoAdNetworkAdapter.testDelegate, testDelegate.adapterShouldDelegate {
+            if testDelegate.adapterShouldFailToInitialize {
                 delegate?.adNetwork(self, didFailToLoad: NSError(domain: "", code: 999, userInfo: nil))
             } else {
                 delegate?.adNetwork(self, didLoad: MockAd())

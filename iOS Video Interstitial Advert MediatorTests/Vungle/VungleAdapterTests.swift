@@ -8,12 +8,15 @@
 
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
+//swiftlint:disable weak_delegate
 
 class VungleAdapterTests: XCTestCase {
     var adapter: VungleAdapter!
     var mockVungleSDK = MockVungleSDK()
+    var delegate = MockNetworkDelegate()
     override func setUp() {
         adapter = VungleAdapter(appID: "123", placementID: "456", vungleSDK: mockVungleSDK)
+        adapter.delegate = delegate
     }
     func testConvenienceInitializer() {
         let adapter = VungleAdapter(type: .vungle(appID: "", placementID: ""))
@@ -22,16 +25,6 @@ class VungleAdapterTests: XCTestCase {
     func testConvenienceInitializerInvalidCase() {
         let adapter = VungleAdapter(type: .adColony(appID: "", zoneID: ""))
         XCTAssertNil(adapter, "VungleAdapter convenience initializer should return nil for invalid network type")
-    }
-    func testInitializerStoresAppID() {
-        let adapter = VungleAdapter(appID: "123", placementID: "456", vungleSDK: mockVungleSDK)
-        XCTAssertEqual(adapter.appID, "123", "VungleAdapter init should assign appID to appID property.")
-    }
-    func testInitializerStoresPlacementID() {
-        XCTAssertEqual(
-            adapter.placementID, "456",
-            "VungleAdapter init should assign placementID to placementID property."
-        )
     }
     func testBeginsInNonReadyState() {
         XCTAssertNil(adapter.ready, "VungleAdapter ready property should begin nil.")
@@ -43,8 +36,7 @@ class VungleAdapterTests: XCTestCase {
         XCTAssertTrue(mockVungleSDK.started, "VungleAdapter start should start Vungle SDK")
     }
     func testReadyFalseOnStartException() {
-        let mockSDK = MockVungleSDK()
-        mockSDK.shouldThrowStartException = true
+        let mockSDK = getMockVungleSDK(shouldThrowStartException: true)
         let adapter = VungleAdapter(appID: "123", placementID: "456", vungleSDK: mockSDK)
         XCTAssert(
             adapter.ready != nil && adapter.ready! == false,
@@ -71,26 +63,21 @@ class VungleAdapterTests: XCTestCase {
         )
     }
     func testRequestAdInitializationError() {
-        let adapterDelegate = MockNetworkDelegate()
-        adapter.delegate = adapterDelegate
         let error = NSError(domain: "", code: 0, userInfo: nil)
         mockVungleSDK.delegate?.vungleSDKFailedToInitializeWithError?(error)
         adapter.requestAd()
         XCTAssertNotNil(
-            adapterDelegate.error,
+            delegate.error,
             "VungleAdapter request ad should execute delegate error method if SDK does not initialize."
         )
     }
     func testRequestAdLoadsPlacementIfReady() {
-        let mockSDK = MockVungleSDK()
-        mockSDK.shouldStart = true
+        let mockSDK = getMockVungleSDK(shouldStart: true)
         VungleAdapter(appID: "123", placementID: "456", vungleSDK: mockSDK).requestAd()
         XCTAssertTrue(mockSDK.loadPlacementCalled, "VungleAdapter requestAd should loadPlacement if SDK ready")
     }
     func testRequestAdSetsNotReadyOnException() {
-        let mockSDK = MockVungleSDK()
-        mockSDK.shouldStart = true
-        mockSDK.shouldThrowLoadPlacementException = true
+        let mockSDK = getMockVungleSDK(shouldStart: true, shouldThrowLoadPlacementException: true)
         let adapter = VungleAdapter(appID: "123", placementID: "456", vungleSDK: mockSDK)
         adapter.requestAd()
         XCTAssert(
@@ -120,26 +107,20 @@ class VungleAdapterTests: XCTestCase {
         )
     }
     func testPlayabilityUpdateGuardsWhenReadyNil() {
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.vungleAdPlayabilityUpdate(true, placementID: nil, error: nil)
         XCTAssertFalse(delegate.didLoad, "VungleAdapter playabilityUpdate should guard when ready nil.")
     }
     func testPlayabilityUpdateGuardsWhenNotReady() {
         let delegate = MockNetworkDelegate()
-        let mockSDK = MockVungleSDK()
-        mockSDK.shouldStart = true
-        mockSDK.shouldThrowStartException = true
-        let adapter = VungleAdapter(appID: "", placementID: "")
+        let mockSDK = getMockVungleSDK(shouldStart: true, shouldThrowStartException: true)
+        let adapter = VungleAdapter(appID: "", placementID: "", vungleSDK: mockSDK)
         adapter.delegate = delegate
         adapter.vungleAdPlayabilityUpdate(true, placementID: "", error: nil)
         XCTAssertFalse(delegate.didLoad, "VungleAdapter playability update should guard when ready false.")
     }
     func testPlayabilityUpdateCallsDelegate() {
         let delegate = MockNetworkDelegate()
-        let mockSDK = MockVungleSDK()
-        mockSDK.shouldStart = true
-        mockSDK.shouldThrowStartException = false
+        let mockSDK = getMockVungleSDK(shouldStart: true, shouldThrowStartException: false)
         let adapter = VungleAdapter(appID: "", placementID: "", vungleSDK: mockSDK)
         adapter.delegate = delegate
         adapter.vungleAdPlayabilityUpdate(true, placementID: "", error: nil)
@@ -147,5 +128,24 @@ class VungleAdapterTests: XCTestCase {
             delegate.didLoad,
             "VungleAdapter playability update should execute delegate didLoad method when ad received."
         )
+    }
+    func getMockVungleSDK(shouldStart: Bool? = nil,
+                          shouldThrowStartException: Bool? = nil,
+                          shouldLoadPlacement: Bool? = nil,
+                          shouldThrowLoadPlacementException: Bool? = nil) -> MockVungleSDK {
+        let mockSDK = MockVungleSDK()
+        if let shouldStart = shouldStart {
+            mockSDK.shouldStart = shouldStart
+        }
+        if let shouldThrowStartException = shouldThrowStartException {
+            mockSDK.shouldThrowStartException = shouldThrowStartException
+        }
+        if let shouldLoadPlacement = shouldLoadPlacement {
+            mockSDK.shouldLoadPlacement = shouldLoadPlacement
+        }
+        if let shouldThrowLoadPlacementException = shouldThrowLoadPlacementException {
+            mockSDK.shouldThrowLoadPlacementException = shouldThrowLoadPlacementException
+        }
+        return mockSDK
     }
 }

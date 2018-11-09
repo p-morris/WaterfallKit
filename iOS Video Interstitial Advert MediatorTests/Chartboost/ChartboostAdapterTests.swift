@@ -8,13 +8,18 @@
 
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
+//swiftlint:disable weak_delegate
 
 class ChartboostAdapterTests: XCTestCase {
-    override func tearDown() {
-        MockChartboostSDK.started = false
-        MockChartboostSDK.consentSet = false
-        MockChartboostSDK.loggingLevelSet = false
-        MockChartboostSDK.cachedInterstitial = false
+    var testDelegate: ChartboostTestDelegate!
+    var adapter: ChartboostAdapter!
+    var adapterDelegate: MockNetworkDelegate!
+    override func setUp() {
+        testDelegate = ChartboostTestDelegate()
+        MockChartboostSDK.testDelegate = testDelegate
+        adapterDelegate = MockNetworkDelegate()
+        adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
+        adapter.delegate = adapterDelegate
     }
     func testConvenienceInitializerSetsAppID() {
         let adapter = ChartboostAdapter(type: .chartboost(appID: "123", appSignature: "456"))!
@@ -28,19 +33,15 @@ class ChartboostAdapterTests: XCTestCase {
         )
     }
     func testInitializerSetsDataUseConsent() {
-        _ = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        XCTAssertTrue(MockChartboostSDK.consentSet, "ChartboostAdapter initializer should set data consent.")
+        XCTAssertTrue(testDelegate.consentSet, "ChartboostAdapter initializer should set data consent.")
     }
     func testInitializerSetsLoggingLevel() {
-        _ = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        XCTAssertTrue(MockChartboostSDK.loggingLevelSet, "ChartboostAdapter initializer should set logging level.")
+        XCTAssertTrue(testDelegate.loggingLevelSet, "ChartboostAdapter initializer should set logging level.")
     }
     func testInitializerStartsSDK() {
-        _ = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        XCTAssertTrue(MockChartboostSDK.started, "ChartboostAdapter initializer should start SDK.")
+        XCTAssertTrue(testDelegate.started, "ChartboostAdapter initializer should start SDK.")
     }
     func testDidInitializeCancelsTimeout() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.didInitialize(true)
         XCTAssertTrue(
             adapter.timeoutTimer.isCancelled,
@@ -48,28 +49,21 @@ class ChartboostAdapterTests: XCTestCase {
         )
     }
     func testDidInitializeSuccessfulSetsReady() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.didInitialize(true)
         XCTAssertTrue(adapter.ready, "ChartboostAdapter should set ready to true when SDK initializes.")
     }
     func testDidInitializeNotifesDelegateOnFailure() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.didInitialize(false)
-        XCTAssertNotNil(delegate.error, "ChartboostAdapter should notifiy delegate on SDK initialization failure.")
+        XCTAssertNotNil(
+            adapterDelegate.error,
+            "ChartboostAdapter should notifiy delegate on SDK initialization failure."
+        )
     }
     func testDidInitializeFailedSetsReady() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.didInitialize(false)
         XCTAssertFalse(adapter.ready, "Chartboost adapter should set ready to false when SDK initialization fails.")
     }
     func testDidInitializeFailedSetsPendingAdRequest() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.requestAd()
         adapter.didInitialize(false)
         XCTAssertFalse(
@@ -78,39 +72,29 @@ class ChartboostAdapterTests: XCTestCase {
         )
     }
     func testDidCacheInterstital() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.didCacheInterstitial("")
-        XCTAssertTrue(delegate.didLoad, "Chartboost adapter should notify delegate when ad is cached.")
+        XCTAssertTrue(adapterDelegate.didLoad, "Chartboost adapter should notify delegate when ad is cached.")
     }
     func testDidFailToCacheInterstitial() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         let error = CBLoadError(rawValue: 1)!
         adapter.didFail(toLoadInterstitial: "", withError: error)
-        XCTAssertNotNil(delegate.error, "ChartboostAdapter should notify delegate when ad fails to cache.")
+        XCTAssertNotNil(adapterDelegate.error, "ChartboostAdapter should notify delegate when ad fails to cache.")
     }
     func testIsEqualReturnsTrueForSameObject() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         let equal = adapter.isEqual(to: adapter)
         XCTAssertTrue(equal, "ChartboostAdapter isEqual should return true for same object.")
     }
     func testIsEqualReturnsFalseForDifferentObject() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         let adapter2 = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         let equal = adapter.isEqual(to: adapter2)
         XCTAssertFalse(equal, "ChartboostAdapter isEqual should return false for different object.")
     }
     func testIsEqualReturnsFalseForObjectOfDifferentClass() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         let adapter2 = MockVideoAdNetworkAdapter(type: .test)!
         let equal = adapter.isEqual(to: adapter2)
         XCTAssertFalse(equal, "ChartboostAdapter isEqual should return false for different object.")
     }
     func testRequestAdAddsPendingRequestWhenNotReady() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.requestAd()
         XCTAssertTrue(
             adapter.pendingAdRequest,
@@ -118,26 +102,23 @@ class ChartboostAdapterTests: XCTestCase {
         )
     }
     func testRequestAdDoesntAttemptAdLoadWhenNotReady() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.requestAd()
         XCTAssertFalse(
-            MockChartboostSDK.cachedInterstitial,
+            testDelegate.cachedInterstitial,
             "ChartboostAdapter requestAd should not request ad when ready is false."
         )
     }
     func testRequestCalledWhenRequestIsPending() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.requestAd()
         adapter.didInitialize(true)
         XCTAssertTrue(
-            MockChartboostSDK.cachedInterstitial,
+            testDelegate.cachedInterstitial,
             "ChartboostAdapter should request ad when initialized and pendingAdRequest is true."
         )
     }
     func testRequestAdLoadsAdWhenReady() {
-        let adapter = ChartboostAdapter(appID: "123", appSignature: "456", chartboostSDK: MockChartboostSDK.self)
         adapter.didInitialize(true)
         adapter.requestAd()
-        XCTAssertTrue(MockChartboostSDK.cachedInterstitial, "ChartboostAdapter requestAd should load ad when ready.")
+        XCTAssertTrue(testDelegate.cachedInterstitial, "ChartboostAdapter requestAd should load ad when ready.")
     }
 }

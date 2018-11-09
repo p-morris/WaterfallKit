@@ -11,21 +11,19 @@ import GoogleMobileAds
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockAdMobInterstitial: AdMobAdProtocol {
-    static var didSetDelegate = false
+    static weak var testDelegate: AdmobTestDelegate?
     weak var delegate: GADInterstitialDelegate? {
         didSet {
-            MockAdMobInterstitial.didSetDelegate = true
+            MockAdMobInterstitial.testDelegate?.didSetDelegate = true
         }
     }
-    static var loaded = false
-    var presentedFrom: UIViewController?
     required init(adUnitID: String) {
         //
     }
     func load(_ request: GADRequest?) {
-        MockAdMobInterstitial.loaded = true
+        MockAdMobInterstitial.testDelegate?.loaded = true
     }
     func present(fromRootViewController rootViewController: UIViewController) {
-        presentedFrom = rootViewController
+        MockAdMobInterstitial.testDelegate?.presentedFrom = rootViewController
     }
 }

@@ -9,76 +9,63 @@
 import XCTest
 import GoogleMobileAds
 @testable import iOS_Video_Interstitial_Advert_Mediator
+//swiftlint:disable weak_delegate
 
 class AdmobAdapterTests: XCTestCase {
-    override func tearDown() {
-        MockAdMobSDK.configured = false
-        MockAdMobInterstitial.didSetDelegate = false
-        MockAdMobInterstitial.loaded = false
+    var adapter: AdMobAdapter!
+    var testDelegate: AdmobTestDelegate!
+    var adapterDelegate: MockNetworkDelegate!
+    override func setUp() {
+        testDelegate = AdmobTestDelegate()
+        MockAdMobSDK.testDelegate = testDelegate
+        MockAdMobInterstitial.testDelegate = testDelegate
+        adapter = AdMobAdapter(
+            appID: "123", adUnitID: "456", adMobSDK: MockAdMobSDK.self, adMobAdType: MockAdMobInterstitial.self
+        )
+        adapterDelegate = MockNetworkDelegate()
+        adapter.delegate = adapterDelegate
     }
     func testConvenienceInitializer() {
         let adapter = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))
         XCTAssertNotNil(adapter, "AdmobAdapter convenience initializer should return instance for admob type")
     }
     func testInitializerConfiguresSDK() {
-        _ = AdMobAdapter(appID: "123", adUnitID: "456", adMobSDK: MockAdMobSDK.self)
-        XCTAssertTrue(MockAdMobSDK.configured, "AdmobAdapter init should configure Admob SDK.")
+        XCTAssertTrue(testDelegate.configured, "AdmobAdapter init should configure Admob SDK.")
     }
     func testDidReceiveAd() {
-        let adapter = AdMobAdapter(appID: "123", adUnitID: "456", adMobSDK: MockAdMobSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.interstitialDidReceiveAd(GADInterstitial(adUnitID: "123"))
-        XCTAssertTrue(delegate.didLoad, "AdmobAdapter didReceiveAd should call delegate's didLoad method.")
+        XCTAssertTrue(adapterDelegate.didLoad, "AdmobAdapter didReceiveAd should call delegate's didLoad method.")
     }
     func testFailedToReceiveAd() {
-        let adapter = AdMobAdapter(appID: "123", adUnitID: "456", adMobSDK: MockAdMobSDK.self)
-        let delegate = MockNetworkDelegate()
-        adapter.delegate = delegate
         adapter.interstitial(
             GADInterstitial(adUnitID: "123"),
             didFailToReceiveAdWithError: GADRequestError(domain: "", code: 0, userInfo: nil)
         )
-        XCTAssertNotNil(delegate.error, "AdmobAdapter didFailToReceiveAd should call delegate's didFail method.")
+        XCTAssertNotNil(adapterDelegate.error, "AdmobAdapter didFailToReceiveAd should call delegate's didFail method.")
     }
     func testIsEqualReturnsTrueForEqualObject() {
-        let adapter = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))!
         let equal = adapter.isEqual(to: adapter)
         XCTAssertTrue(equal, "AdmobAdapter isEqual should return true for equal object.")
     }
     func testIsEqualReturnsFalseForDifferentObject() {
-        let adapter = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))!
         let adapter2 = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))!
         let equal = adapter.isEqual(to: adapter2)
         XCTAssertFalse(equal, "AdmobAdapter isEqual should return false for inequal object.")
     }
     func testIsEqualReturnFalseForDifferentClass() {
-        let adapter = AdMobAdapter(type: .admob(appID: "123", adUnitID: "456"))!
         let adapter2 = MockVideoAdNetworkAdapter(type: .test)!
         let equal = adapter.isEqual(to: adapter2)
         XCTAssertFalse(equal, "AdmobAdapter isEqual should return false for object of different class.")
     }
     func testRequestAdSetsDelegate() {
-        let adapter = AdMobAdapter(
-            appID: "123",
-            adUnitID: "456",
-            adMobSDK: MockAdMobSDK.self,
-            adMobAdType: MockAdMobInterstitial.self
-        )
         adapter.requestAd()
         XCTAssertNotNil(
-            MockAdMobInterstitial.didSetDelegate,
+            testDelegate.didSetDelegate,
             "AdmobAdapter requestAd should set interstitial delegate."
         )
     }
     func testRequestAdLoadsAd() {
-        let adapter = AdMobAdapter(
-            appID: "123",
-            adUnitID: "456",
-            adMobSDK: MockAdMobSDK.self,
-            adMobAdType: MockAdMobInterstitial.self
-        )
         adapter.requestAd()
-        XCTAssertTrue(MockAdMobInterstitial.loaded, "AdmobAdapter requestAd should load interstitial.")
+        XCTAssertTrue(testDelegate.loaded, "AdmobAdapter requestAd should load interstitial.")
     }
 }

@@ -10,16 +10,13 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockAdColonySDK: AdColonySDKProtocol {
-    static var configured = false
-    static var requested = false
-    static var shouldConfigure = true
-    static var shouldLoadAd = true
+    static weak var testDelegate: AdColonyTestDelegate?
     static func configure(withAppID appID: String,
                           zoneIDs: [String],
                           options: AdColonyAppOptions?,
                           completion: (([AdColonyZone]) -> Void)?) {
-        configured = true
-        if shouldConfigure {
+        testDelegate?.configured = true
+        if let testDelegate = testDelegate, testDelegate.shouldConfigure {
             completion?([])
         }
     }
@@ -27,8 +24,8 @@ class MockAdColonySDK: AdColonySDKProtocol {
                                     options: AdColonyAdOptions?,
                                     success: @escaping (AdColonyInterstitial) -> Void,
                                     failure: ((AdColonyAdRequestError) -> Void)?) {
-        requested = true
-        if shouldLoadAd {
+        testDelegate?.requested = true
+        if let testDelegate = testDelegate, testDelegate.shouldLoadAd {
             success(AdColonyInterstitial())
         } else {
             let error = AdColonyAdRequestError(domain: "", code: 0, userInfo: nil)

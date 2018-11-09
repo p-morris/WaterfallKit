@@ -8,8 +8,16 @@
 
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
+//swiftlint:disable weak_delegate
 
 class ArrayExtensionTests: XCTestCase {
+    var testDelegate: FactoryTestDelegate!
+    let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
+    override func setUp() {
+        settings.networkTypes.removeAll()
+        testDelegate = FactoryTestDelegate()
+        MockFactory.testDelegate = testDelegate
+    }
     func testRemoveNetwork() {
         let network1 = MockTimeOutableNetwork(type: .appLovin(sdkKey: ""))!
         let array = [network1].removing(adapter: network1)

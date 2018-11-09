@@ -10,9 +10,8 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockFactory: VideoAdNetworkAdapterFactory {
+    static weak var testDelegate: FactoryTestDelegate?
     private (set) static var adapterClasses: [VideoAdNetworkAdapter.Type] = [MockVideoAdNetworkAdapter.self]
-    static var mockCount = 0
-    static var registeredType: VideoAdNetworkAdapter.Type?
     static func unregisterAllAdapterTypes() {
         //
     }
@@ -20,14 +19,9 @@ class MockFactory: VideoAdNetworkAdapterFactory {
         //
     }
     static func register<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
-        registeredType = adapterType
+        testDelegate?.factoryRegisteredType = adapterType
     }
     func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
-        if MockFactory.mockCount == 0 {
-            MockFactory.mockCount += 1
-            return MockVideoAdNetworkAdapter(type: .test)!
-        } else {
-            return AnotherMockVideoAdNetworkAdapter(type: .test)!
-        }
+        return MockFactory.testDelegate?.factoryCreateType.init(type: .test)
     }
 }

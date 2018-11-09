@@ -9,24 +9,18 @@
 import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
-class VungleExtensionsTests: XCTestCase {
-    let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
-    override func setUp() {
-        settings.networkTypes.removeAll()
-        _ = settings.initializeVungle(appID: "123", placementID: "123")
-    }
-    override func tearDown() {
-        MockFactory.unregisterAllAdapterTypes()
-    }
+extension ArrayExtensionTests {
     func testInitializeVungleAddsNetworkType() {
+        _ = settings.initializeVungle(appID: "123", placementID: "123")
         switch settings.networkTypes[0] {
         case let .vungle(appID, placementID): XCTAssert(appID == "123" && placementID == "123")
         default: XCTFail("VideoAdNetworkSettings initializeVungle should add vungle type.")
         }
     }
     func testInitializeVungleAddsTypeToFactory() {
+        _ = settings.initializeVungle(appID: "123", placementID: "123")
         XCTAssertTrue(
-            MockFactory.registeredType is VungleAdapter.Type,
+            testDelegate.factoryRegisteredType is VungleAdapter.Type,
             "VideoAdNetworkSettings initializeVungle should add adapter class to factory"
         )
     }

@@ -10,23 +10,22 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class SortingStrategyTests: XCTestCase {
-
     func testSorting() {
-        let ad1 = MockAd()
-        ad1.priority = 1
-        let ad2 = MockAd()
-        ad2.priority = 2
-        let ad3 = MockAd()
-        ad3.priority = 3
-        let ad4 = MockAd()
-        ad4.priority = 4
-        let ads = [ad3, ad2, ad4, ad1]
+        let adverts = self.adverts()
         let strategy = AscendingPrioritySorting()
-        let sortedAds = strategy.sorted(ads)
+        let sortedAds = strategy.sorted(adverts)
         XCTAssert(sortedAds[0].priority == 1 &&
                   sortedAds[1].priority == 2 &&
                   sortedAds[2].priority == 3 &&
                   sortedAds[3].priority == 4)
     }
-
+    func adverts() -> [VideoAd] {
+        let adverts = [MockAd(), MockAd(), MockAd(), MockAd()]
+        var priority = 1
+        adverts.forEach {
+            $0.priority = priority
+            priority += 1
+        }
+        return adverts.shuffled()
+    }
 }

@@ -12,9 +12,6 @@ import XCTest
 class TimeOutTimerTests: XCTestCase {
     let timer = TimeOutTimer(timeOutIn: 0.5)
     let timeoutable = MockTimeOutableNetwork(type: .adColony(appID: "", zoneID: ""))!
-    override func tearDown() {
-        MockTimer.invalidateCalled = false
-    }
     func testTimeOutInInitialization() {
         XCTAssertEqual(timer.timeOutIn, 0.5, "TimeOutTimer should set timeOutIn property.")
     }
@@ -23,9 +20,14 @@ class TimeOutTimerTests: XCTestCase {
         XCTAssertTrue(timeoutable.timedout, "TimeOutTimer should execute timeOut when it fires.")
     }
     func testTimerInvalidatedOnCancel() {
+        let delegate = TimerTestDelegate()
+        MockTimer.testDelegate = delegate
         timer.startTimeOut(notify: timeoutable, timerType: MockTimer.self)
         timer.cancelTimeOut()
-        XCTAssertTrue(MockTimer.invalidateCalled, "TimeOutTimer should invalidate timer when cancelled.")
+        XCTAssertTrue(
+            delegate.wasInvalidated,
+            "TimeOutTimer should invalidate timer when cancelled."
+        )
     }
     func testIsCancelled() {
         timer.startTimeOut(notify: timeoutable)
