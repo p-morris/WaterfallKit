@@ -31,11 +31,11 @@ Settings object which holds client's account details for all ad networks. Provid
  3) Vungle
  
  */
-@objc final class VideoAdNetworkSettings: NSObject {
+@objc public final class VideoAdNetworkSettings: NSObject {
     /// The factory type to be used
-    let factoryType: VideoAdNetworkAdapterFactory.Type
+    public let factoryType: VideoAdNetworkAdapterFactory.Type
     /// Encapsulates the required account details for each ad network
-    enum NetworkType {
+    public enum NetworkType {
         case adColony(appID: String, zoneID: String)
         case appLovin(sdkKey: String)
         case vungle(appID: String, placementID: String)
@@ -55,7 +55,7 @@ Settings object which holds client's account details for all ad networks. Provid
         }
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
-    internal var networkTypes: [NetworkType] = []
+    public var networkTypes: [NetworkType] = []
     /**
      Initializes a new `VideoAdNetworkSettings` object.
      
@@ -63,7 +63,7 @@ Settings object which holds client's account details for all ad networks. Provid
      - factoryType: The factory type to use for registering adapter classes.
      - Returns: An initialized `VideoAdNetworkSettings` object.
      */
-    init(factoryType: VideoAdNetworkAdapterFactory.Type = InterstitialAdapterFactory.self) {
+    public init(factoryType: VideoAdNetworkAdapterFactory.Type = InterstitialAdapterFactory.self) {
         self.factoryType = factoryType
     }
 }

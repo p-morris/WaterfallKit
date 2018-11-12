@@ -9,15 +9,15 @@
 import Foundation
 
 /// Encapsulates an instance on Timer
-class TimeOutTimer {
+public class TimeOutTimer {
     /// The timer to use for the timeout
     private var timer: Timer?
     /// The `TimeInterval` to wait before timing out.
-    let timeOutIn: TimeInterval
+    private let timeOutIn: TimeInterval
     /// Indicates whether the timer is currently scheduled to fire.
-    private (set) var isScheduled = false
+    private (set) public var isScheduled = false
     /// Indicates whether the timer has been invalidated.
-    var isCancelled: Bool {
+    public var isCancelled: Bool {
         let valid = (timer?.isValid) ?? false
         return !valid
     }
@@ -27,7 +27,7 @@ class TimeOutTimer {
      - timeOutIn: The `TimeInterval` to wait before timing out.
      - Returns: An initialized `TimeOutTimer` object.
      */
-    init(timeOutIn: TimeInterval) {
+    public init(timeOutIn: TimeInterval) {
         self.timeOutIn = timeOutIn
     }
     /**
@@ -36,7 +36,7 @@ class TimeOutTimer {
      - Parameters:
      - timeoutable: The `TimeOutableVideoAdNetworkAdapter` to notify on timeout.
      */
-    func startTimeOut(notify timeoutable: TimeOutableVideoAdNetworkAdapter, timerType: Timer.Type = Timer.self) {
+    public func startTimeOut(notify timeoutable: TimeOutableVideoAdNetworkAdapter, timerType: Timer.Type = Timer.self) {
         isScheduled = true
         timer = timerType.scheduledTimer(withTimeInterval: timeOutIn, repeats: false, block: { _ in
             self.isScheduled = false
@@ -46,7 +46,7 @@ class TimeOutTimer {
     /**
      Cancels the timeout.
      */
-    func cancelTimeOut() {
+    public func cancelTimeOut() {
         timer?.invalidate()
     }
 }

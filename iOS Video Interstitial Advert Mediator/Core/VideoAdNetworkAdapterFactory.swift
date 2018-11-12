@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to instantiate `VideoAdNetwork` instances.
-protocol VideoAdNetworkAdapterFactory {
+public protocol VideoAdNetworkAdapterFactory {
     /// The array of adapter types that the factory will use for
     /// creation of network adapter objects.
     static var adapterClasses: [VideoAdNetworkAdapter.Type] { get }
@@ -45,11 +45,11 @@ protocol VideoAdNetworkAdapterFactory {
 }
 
 /// Used to instantiate `VideoAdNetwork` instances for interstitatial video ads.
-final class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
+public final class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
     /// The concrete `VideoAdNetworkAdapter` classes to use to instantiate
     /// `VideoAdNetworkAdapter` objects.
-    private (set) static var adapterClasses: [VideoAdNetworkAdapter.Type] = []
-    func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
+    private (set) public static var adapterClasses: [VideoAdNetworkAdapter.Type] = []
+    public func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
         var returnAdapter: VideoAdNetworkAdapter?
         for adapterClass in InterstitialAdapterFactory.adapterClasses {
             if let adapter = adapterClass.init(type: type) {
@@ -59,13 +59,13 @@ final class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
         }
         return returnAdapter
     }
-    static func register<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
+    public static func register<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
         adapterClasses.append(adapterType)
     }
-    static func unregister<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
+    public static func unregister<T>(adapterType: T.Type) where T: VideoAdNetworkAdapter {
         adapterClasses = adapterClasses.filter { !($0 is T.Type) }
     }
-    static func unregisterAllAdapterTypes() {
+    public static func unregisterAllAdapterTypes() {
         adapterClasses.removeAll()
     }
 }

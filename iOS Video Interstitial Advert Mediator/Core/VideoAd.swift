@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// An interstital video advert.
-@objc protocol VideoAd {
+@objc public protocol VideoAd {
     /// The object that acts as the delegate of the `VideoAd`.
     var delegate: VideoAdDelegate? { get set }
     /// The priority of ad for display.
@@ -27,7 +27,7 @@ import UIKit
 }
 
 /// Provides callbacks for interstatial advert events.
-@objc protocol VideoAdDelegate {
+@objc public protocol VideoAdDelegate {
     /**
      Executed after the interstatial becomes visible.
      

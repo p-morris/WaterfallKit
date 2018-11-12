@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppLovinSDK
 
 /// Used for making interstitial video ad requests to the AdColony network
 final class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {

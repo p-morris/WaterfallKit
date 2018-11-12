@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import AppLovinSDK
 @testable import iOS_Video_Interstitial_Advert_Mediator
 //swiftlint:disable weak_delegate
 

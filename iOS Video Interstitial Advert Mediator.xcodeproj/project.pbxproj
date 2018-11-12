@@ -7,44 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7203478C21885ACF00918FB5 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203478B21885ACF00918FB5 /* libz.1.2.5.tbd */; };
-		7203478E21885ADE00918FB5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203478D21885ADE00918FB5 /* AdSupport.framework */; };
-		7203479021885AE500918FB5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203478F21885AE500918FB5 /* AudioToolbox.framework */; };
-		7203479221885AF200918FB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479121885AF200918FB5 /* AVFoundation.framework */; };
-		7203479421885AFB00918FB5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479321885AFB00918FB5 /* CoreMedia.framework */; };
-		7203479621885B0300918FB5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479521885B0300918FB5 /* CoreTelephony.framework */; };
-		7203479821885B0A00918FB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479721885B0A00918FB5 /* JavaScriptCore.framework */; };
-		7203479A21885B1300918FB5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479921885B1300918FB5 /* MessageUI.framework */; };
-		7203479C21885B1B00918FB5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479B21885B1B00918FB5 /* MobileCoreServices.framework */; };
-		7203479E21885B2300918FB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479D21885B2300918FB5 /* Social.framework */; };
-		720347A021885B2B00918FB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203479F21885B2B00918FB5 /* StoreKit.framework */; };
-		720347A221885B3300918FB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720347A121885B3300918FB5 /* SystemConfiguration.framework */; };
-		720347A421885B3B00918FB5 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720347A321885B3B00918FB5 /* WatchConnectivity.framework */; };
-		720347A621885B4300918FB5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720347A521885B4300918FB5 /* WebKit.framework */; };
 		720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */; };
-		7209221921887BFA00E6AC03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221821887BF900E6AC03 /* CoreGraphics.framework */; };
-		7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221A21887C0D00E6AC03 /* UIKit.framework */; };
-		7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7209221C21887C1900E6AC03 /* libz.tbd */; };
 		7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */; };
 		7228F44D2192EEB300250B31 /* VungleSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */; };
 		7228F4512192F06B00250B31 /* MockVungleSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228F4502192F06B00250B31 /* MockVungleSDK.swift */; };
 		7247DC30219309F400094F88 /* VungleVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */; };
 		7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC3121930AA700094F88 /* MockAdDelegate.swift */; };
-		724C0E32218AE961004472DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E31218AE960004472DA /* CFNetwork.framework */; };
-		724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E33218AEA26004472DA /* MediaPlayer.framework */; };
-		724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E35218AEA2E004472DA /* QuartzCore.framework */; };
 		724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0E37218AF1B7004472DA /* VungleVideoAd.swift */; };
-		724C0E3A218AFB0E004472DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E39218AFB0E004472DA /* CoreLocation.framework */; };
-		724C0E3C218AFB22004472DA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E3B218AFB22004472DA /* SafariServices.framework */; };
 		724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
 		72529D8D2199651500297903 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D8C2199651500297903 /* TableViewController.swift */; };
 		72529D912199699F00297903 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D902199699F00297903 /* AppFacade.swift */; };
 		72529D932199833F00297903 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D922199833F00297903 /* AdvertTableViewController.swift */; };
 		72529D9521998CD300297903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72529D9421998CD300297903 /* Assets.xcassets */; };
 		725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B69222189971B0038FDD3 /* AdMobVideoAd.swift */; };
-		725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692A2189AFD50038FDD3 /* Foundation.framework */; };
 		725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */; };
-		725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */; };
 		72810B512194035C00AB3757 /* ChartboostExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B502194035C00AB3757 /* ChartboostExtensionsTests.swift */; };
 		72810B532194043000AB3757 /* ChartboostAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B522194043000AB3757 /* ChartboostAdapterTests.swift */; };
 		72810B552194071100AB3757 /* ChartboostSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */; };
@@ -108,12 +84,8 @@
 		72FFD86B21902402002B1E28 /* CoreAdMobExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FFD86A21902402002B1E28 /* CoreAdMobExtensions.swift */; };
 		72FFD86D21902434002B1E28 /* CoreAppLovinExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FFD86C21902434002B1E28 /* CoreAppLovinExtensions.swift */; };
 		72FFD86F21902467002B1E28 /* CoreAdColonyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FFD86E21902467002B1E28 /* CoreAdColonyExtensions.swift */; };
-		72FFD87D21902839002B1E28 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD87C21902839002B1E28 /* VungleSDK.framework */; };
-		72FFD87F21902846002B1E28 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD87E21902846002B1E28 /* GoogleMobileAds.framework */; };
-		72FFD88221902857002B1E28 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD88021902856002B1E28 /* CHAMoatMobileAppKit.framework */; };
-		72FFD88321902857002B1E28 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD88121902857002B1E28 /* Chartboost.framework */; };
-		72FFD8852190286C002B1E28 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD8842190286C002B1E28 /* AppLovinSDK.framework */; };
-		72FFD88721902875002B1E28 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FFD88621902875002B1E28 /* AdColony.framework */; };
+		954779944B59991A17361BF1 /* Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0E8C065CBBA38E49980DD /* Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework */; };
+		D6DEF7471C76D98DE6D681DD /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D29B0AD79E1F3AE59FC8BE8 /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,45 +99,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7203478B21885ACF00918FB5 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
-		7203478D21885ADE00918FB5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		7203478F21885AE500918FB5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		7203479121885AF200918FB5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		7203479321885AFB00918FB5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		7203479521885B0300918FB5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		7203479721885B0A00918FB5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		7203479921885B1300918FB5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7203479B21885B1B00918FB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		7203479D21885B2300918FB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		7203479F21885B2B00918FB5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		720347A121885B3300918FB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		720347A321885B3B00918FB5 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		720347A521885B4300918FB5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Video Interstitial Advert Mediator-Bridging-Header.h"; sourceTree = "<group>"; };
+		163F4FBAD3C0DE23A8970524 /* Pods-iOS Video Interstitial Advert Mediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Video Interstitial Advert Mediator.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Video Interstitial Advert Mediator/Pods-iOS Video Interstitial Advert Mediator.release.xcconfig"; sourceTree = "<group>"; };
+		1FE0E8C065CBBA38E49980DD /* Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D29B0AD79E1F3AE59FC8BE8 /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Video_Interstitial_Advert_Mediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyVideoAd.swift; sourceTree = "<group>"; };
-		7209221821887BF900E6AC03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7209221A21887C0D00E6AC03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7209221C21887C1900E6AC03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAd.swift; sourceTree = "<group>"; };
 		7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleSDKProtocol.swift; sourceTree = "<group>"; };
 		7228F4502192F06B00250B31 /* MockVungleSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVungleSDK.swift; sourceTree = "<group>"; };
 		7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleVideoAdTests.swift; sourceTree = "<group>"; };
 		7247DC3121930AA700094F88 /* MockAdDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdDelegate.swift; sourceTree = "<group>"; };
-		724C0E31218AE960004472DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		724C0E33218AEA26004472DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		724C0E35218AEA2E004472DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		724C0E37218AF1B7004472DA /* VungleVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleVideoAd.swift; sourceTree = "<group>"; };
-		724C0E39218AFB0E004472DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		724C0E3B218AFB22004472DA /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		724C0FE9218B097F004472DA /* TimeOutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutTimer.swift; sourceTree = "<group>"; };
 		72529D8C2199651500297903 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		72529D902199699F00297903 /* AppFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
 		72529D922199833F00297903 /* AdvertTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertTableViewController.swift; sourceTree = "<group>"; };
 		72529D9421998CD300297903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		725B69222189971B0038FDD3 /* AdMobVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoAd.swift; sourceTree = "<group>"; };
-		725B692A2189AFD50038FDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAd.swift; sourceTree = "<group>"; };
-		725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		72810B502194035C00AB3757 /* ChartboostExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostExtensionsTests.swift; sourceTree = "<group>"; };
 		72810B522194043000AB3757 /* ChartboostAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostAdapterTests.swift; sourceTree = "<group>"; };
 		72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostSDKProtocol.swift; sourceTree = "<group>"; };
@@ -189,6 +139,7 @@
 		72810B842194544F00AB3757 /* AdColonyVideoAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdColonyVideoAdTests.swift; sourceTree = "<group>"; };
 		72810B862194549400AB3757 /* MockAdColonyInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdColonyInterstitial.swift; sourceTree = "<group>"; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
+		7299B1412199DED3003ED83F /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Video Interstitial Advert Mediator-Bridging-Header.h"; sourceTree = "<group>"; };
 		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FF2192E26F00DA33EE /* SortingStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategyTests.swift; sourceTree = "<group>"; };
@@ -233,12 +184,9 @@
 		72FFD86A21902402002B1E28 /* CoreAdMobExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAdMobExtensions.swift; sourceTree = "<group>"; };
 		72FFD86C21902434002B1E28 /* CoreAppLovinExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAppLovinExtensions.swift; sourceTree = "<group>"; };
 		72FFD86E21902467002B1E28 /* CoreAdColonyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAdColonyExtensions.swift; sourceTree = "<group>"; };
-		72FFD87C21902839002B1E28 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
-		72FFD87E21902846002B1E28 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		72FFD88021902856002B1E28 /* CHAMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CHAMoatMobileAppKit.framework; sourceTree = "<group>"; };
-		72FFD88121902857002B1E28 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
-		72FFD8842190286C002B1E28 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		72FFD88621902875002B1E28 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		79573EA87E686D6A01D7560C /* Pods-iOS Video Interstitial Advert MediatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Video Interstitial Advert MediatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Video Interstitial Advert MediatorTests/Pods-iOS Video Interstitial Advert MediatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C91D37BB0812D0A7C99871D /* Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Video Interstitial Advert Mediator/Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig"; sourceTree = "<group>"; };
+		ACF0D7EBE7113A70BEFE4010 /* Pods-iOS Video Interstitial Advert MediatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Video Interstitial Advert MediatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Video Interstitial Advert MediatorTests/Pods-iOS Video Interstitial Advert MediatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,36 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7209221B21887C0D00E6AC03 /* UIKit.framework in Frameworks */,
-				724C0E3C218AFB22004472DA /* SafariServices.framework in Frameworks */,
-				72FFD87F21902846002B1E28 /* GoogleMobileAds.framework in Frameworks */,
-				724C0E3A218AFB0E004472DA /* CoreLocation.framework in Frameworks */,
-				724C0E36218AEA2E004472DA /* QuartzCore.framework in Frameworks */,
-				724C0E34218AEA26004472DA /* MediaPlayer.framework in Frameworks */,
-				724C0E32218AE961004472DA /* CFNetwork.framework in Frameworks */,
-				72FFD8852190286C002B1E28 /* AppLovinSDK.framework in Frameworks */,
-				725B69372189BDF60038FDD3 /* libsqlite3.0.tbd in Frameworks */,
-				725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */,
-				7209221D21887C1900E6AC03 /* libz.tbd in Frameworks */,
-				7209221921887BFA00E6AC03 /* CoreGraphics.framework in Frameworks */,
-				720347A621885B4300918FB5 /* WebKit.framework in Frameworks */,
-				720347A421885B3B00918FB5 /* WatchConnectivity.framework in Frameworks */,
-				72FFD88221902857002B1E28 /* CHAMoatMobileAppKit.framework in Frameworks */,
-				720347A221885B3300918FB5 /* SystemConfiguration.framework in Frameworks */,
-				720347A021885B2B00918FB5 /* StoreKit.framework in Frameworks */,
-				7203479E21885B2300918FB5 /* Social.framework in Frameworks */,
-				7203479C21885B1B00918FB5 /* MobileCoreServices.framework in Frameworks */,
-				72FFD88721902875002B1E28 /* AdColony.framework in Frameworks */,
-				7203479A21885B1300918FB5 /* MessageUI.framework in Frameworks */,
-				7203479821885B0A00918FB5 /* JavaScriptCore.framework in Frameworks */,
-				7203479621885B0300918FB5 /* CoreTelephony.framework in Frameworks */,
-				72FFD88321902857002B1E28 /* Chartboost.framework in Frameworks */,
-				7203479421885AFB00918FB5 /* CoreMedia.framework in Frameworks */,
-				7203479221885AF200918FB5 /* AVFoundation.framework in Frameworks */,
-				7203479021885AE500918FB5 /* AudioToolbox.framework in Frameworks */,
-				7203478E21885ADE00918FB5 /* AdSupport.framework in Frameworks */,
-				72FFD87D21902839002B1E28 /* VungleSDK.framework in Frameworks */,
-				7203478C21885ACF00918FB5 /* libz.1.2.5.tbd in Frameworks */,
+				D6DEF7471C76D98DE6D681DD /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,39 +202,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954779944B59991A17361BF1 /* Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1414290A0E75D18D698E6B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C91D37BB0812D0A7C99871D /* Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig */,
+				163F4FBAD3C0DE23A8970524 /* Pods-iOS Video Interstitial Advert Mediator.release.xcconfig */,
+				ACF0D7EBE7113A70BEFE4010 /* Pods-iOS Video Interstitial Advert MediatorTests.debug.xcconfig */,
+				79573EA87E686D6A01D7560C /* Pods-iOS Video Interstitial Advert MediatorTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7203478A21885ACF00918FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				724C0E3B218AFB22004472DA /* SafariServices.framework */,
-				724C0E39218AFB0E004472DA /* CoreLocation.framework */,
-				724C0E35218AEA2E004472DA /* QuartzCore.framework */,
-				724C0E33218AEA26004472DA /* MediaPlayer.framework */,
-				724C0E31218AE960004472DA /* CFNetwork.framework */,
-				725B69362189BDF60038FDD3 /* libsqlite3.0.tbd */,
-				725B692A2189AFD50038FDD3 /* Foundation.framework */,
-				7209221C21887C1900E6AC03 /* libz.tbd */,
-				7209221A21887C0D00E6AC03 /* UIKit.framework */,
-				7209221821887BF900E6AC03 /* CoreGraphics.framework */,
-				720347A521885B4300918FB5 /* WebKit.framework */,
-				720347A321885B3B00918FB5 /* WatchConnectivity.framework */,
-				720347A121885B3300918FB5 /* SystemConfiguration.framework */,
-				7203479F21885B2B00918FB5 /* StoreKit.framework */,
-				7203479D21885B2300918FB5 /* Social.framework */,
-				7203479B21885B1B00918FB5 /* MobileCoreServices.framework */,
-				7203479921885B1300918FB5 /* MessageUI.framework */,
-				7203479721885B0A00918FB5 /* JavaScriptCore.framework */,
-				7203479521885B0300918FB5 /* CoreTelephony.framework */,
-				7203479321885AFB00918FB5 /* CoreMedia.framework */,
-				7203479121885AF200918FB5 /* AVFoundation.framework */,
-				7203478F21885AE500918FB5 /* AudioToolbox.framework */,
-				7203478D21885ADE00918FB5 /* AdSupport.framework */,
-				7203478B21885ACF00918FB5 /* libz.1.2.5.tbd */,
+				3D29B0AD79E1F3AE59FC8BE8 /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework */,
+				1FE0E8C065CBBA38E49980DD /* Pods_iOS_Video_Interstitial_Advert_MediatorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -493,6 +402,7 @@
 				72F1180F218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */,
 				72F117F9218314FE00C3C805 /* Products */,
 				7203478A21885ACF00918FB5 /* Frameworks */,
+				1414290A0E75D18D698E6B76 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -517,11 +427,11 @@
 				72529D902199699F00297903 /* AppFacade.swift */,
 				72F117FB218314FE00C3C805 /* AppDelegate.swift */,
 				72529D8C2199651500297903 /* TableViewController.swift */,
+				7299B1412199DED3003ED83F /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
 				72529D922199833F00297903 /* AdvertTableViewController.swift */,
 				72F11804218314FF00C3C805 /* LaunchScreen.storyboard */,
 				72529D9421998CD300297903 /* Assets.xcassets */,
 				72F11807218314FF00C3C805 /* Info.plist */,
-				720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
 			);
 			path = "iOS Video Interstitial Advert Mediator";
 			sourceTree = "<group>";
@@ -561,7 +471,6 @@
 				72810B7E219448E700AB3757 /* AdColonySDKProtocol.swift */,
 				72F6898D218716A50035C76C /* AdColonyAdapter.swift */,
 				720347AA2188607D00918FB5 /* AdColonyVideoAd.swift */,
-				72FFD88621902875002B1E28 /* AdColony.framework */,
 			);
 			path = AdColony;
 			sourceTree = "<group>";
@@ -573,7 +482,6 @@
 				72810B6F219431E500AB3757 /* AppLovinSDKProtocol.swift */,
 				72F6898F2187175F0035C76C /* AppLovinAdapter.swift */,
 				7209222021887F1600E6AC03 /* AppLovinVideoAd.swift */,
-				72FFD8842190286C002B1E28 /* AppLovinSDK.framework */,
 			);
 			path = AppLovin;
 			sourceTree = "<group>";
@@ -585,7 +493,6 @@
 				72810B60219420FA00AB3757 /* AdMobSDKProtocol.swift */,
 				72F68991218717B20035C76C /* AdMobAdapter.swift */,
 				725B69222189971B0038FDD3 /* AdMobVideoAd.swift */,
-				72FFD87E21902846002B1E28 /* GoogleMobileAds.framework */,
 			);
 			path = AdMob;
 			sourceTree = "<group>";
@@ -597,8 +504,6 @@
 				72810B542194071100AB3757 /* ChartboostSDKProtocol.swift */,
 				72F68993218718280035C76C /* ChartboostAdapter.swift */,
 				725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */,
-				72FFD88021902856002B1E28 /* CHAMoatMobileAppKit.framework */,
-				72FFD88121902857002B1E28 /* Chartboost.framework */,
 			);
 			path = Chartboost;
 			sourceTree = "<group>";
@@ -610,7 +515,6 @@
 				7228F44C2192EEB300250B31 /* VungleSDKProtocol.swift */,
 				72F6899B218719680035C76C /* VungleAdapter.swift */,
 				724C0E37218AF1B7004472DA /* VungleVideoAd.swift */,
-				72FFD87C21902839002B1E28 /* VungleSDK.framework */,
 			);
 			path = Vungle;
 			sourceTree = "<group>";
@@ -622,6 +526,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72F11815218314FF00C3C805 /* Build configuration list for PBXNativeTarget "iOS Video Interstitial Advert Mediator" */;
 			buildPhases = (
+				EBB72EA1C6CDF97ABAB2F6C8 /* [CP] Check Pods Manifest.lock */,
 				72F117F4218314FE00C3C805 /* Sources */,
 				72F117F5218314FE00C3C805 /* Frameworks */,
 				72F117F6218314FE00C3C805 /* Resources */,
@@ -640,6 +545,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72F11818218314FF00C3C805 /* Build configuration list for PBXNativeTarget "iOS Video Interstitial Advert MediatorTests" */;
 			buildPhases = (
+				55563C7A7131A949EB31C2B9 /* [CP] Check Pods Manifest.lock */,
 				72F11808218314FF00C3C805 /* Sources */,
 				72F11809218314FF00C3C805 /* Frameworks */,
 				72F1180A218314FF00C3C805 /* Resources */,
@@ -714,6 +620,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		55563C7A7131A949EB31C2B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Video Interstitial Advert MediatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		72F6898C21870F650035C76C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -730,6 +658,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		EBB72EA1C6CDF97ABAB2F6C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Video Interstitial Advert Mediator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -963,6 +913,7 @@
 		};
 		72F11816218314FF00C3C805 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C91D37BB0812D0A7C99871D /* Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1000,10 +951,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-fobjc-arc",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.petemorris.iOS-Video-Interstitial-Advert-Mediator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS Video Interstitial Advert Mediator/iOS Video Interstitial Advert Mediator-Bridging-Header.h";
@@ -1015,6 +963,7 @@
 		};
 		72F11817218314FF00C3C805 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 163F4FBAD3C0DE23A8970524 /* Pods-iOS Video Interstitial Advert Mediator.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1052,10 +1001,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-fobjc-arc",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.petemorris.iOS-Video-Interstitial-Advert-Mediator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS Video Interstitial Advert Mediator/iOS Video Interstitial Advert Mediator-Bridging-Header.h";
@@ -1066,6 +1012,7 @@
 		};
 		72F11819218314FF00C3C805 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACF0D7EBE7113A70BEFE4010 /* Pods-iOS Video Interstitial Advert MediatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1089,6 +1036,7 @@
 		};
 		72F1181A218314FF00C3C805 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79573EA87E686D6A01D7560C /* Pods-iOS Video Interstitial Advert MediatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

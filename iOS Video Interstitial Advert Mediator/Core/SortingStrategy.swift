@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol SortingStrategy {
+public protocol SortingStrategy {
     func sorted(_ array: [VideoAd]) -> [VideoAd]
 }
 
-class AscendingPrioritySorting: SortingStrategy {
-    func sorted(_ array: [VideoAd]) -> [VideoAd] {
+public class AscendingPrioritySorting: SortingStrategy {
+    public func sorted(_ array: [VideoAd]) -> [VideoAd] {
         return array.sorted { $0.priority < $1.priority }
     }
 }

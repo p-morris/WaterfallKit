@@ -10,9 +10,5 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class VideoAdSettingsTests: XCTestCase {
-    func testInitializationWithCustomFactoryClass() {
-        let settings = VideoAdNetworkSettings(factoryType: MockFactory.self)
-        XCTAssert(settings.factoryType == MockFactory.self,
-                  "VideoAdNetworkSettings should initialize factoryType property.")
-    }
+
 }

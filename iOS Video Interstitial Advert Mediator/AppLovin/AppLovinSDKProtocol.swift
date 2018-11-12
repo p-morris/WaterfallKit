@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppLovinSDK
 
 protocol AppLovinSDKProtocol {
     static func shared(withKey sdkKey: String) -> ALSdk?

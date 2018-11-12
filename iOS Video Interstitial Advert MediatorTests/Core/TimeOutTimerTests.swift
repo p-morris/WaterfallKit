@@ -12,9 +12,6 @@ import XCTest
 class TimeOutTimerTests: XCTestCase {
     let timer = TimeOutTimer(timeOutIn: 0.5)
     let timeoutable = MockTimeOutableNetwork(type: .adColony(appID: "", zoneID: ""))!
-    func testTimeOutInInitialization() {
-        XCTAssertEqual(timer.timeOutIn, 0.5, "TimeOutTimer should set timeOutIn property.")
-    }
     func testTimeoutExecutedOnTimeOut() {
         timer.startTimeOut(notify: timeoutable, timerType: MockTimer.self)
         XCTAssertTrue(timeoutable.timedout, "TimeOutTimer should execute timeOut when it fires.")

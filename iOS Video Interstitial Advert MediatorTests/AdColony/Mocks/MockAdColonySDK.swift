@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import AdColony
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 class MockAdColonySDK: AdColonySDKProtocol {

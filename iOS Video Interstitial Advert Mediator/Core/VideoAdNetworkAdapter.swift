@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to represent a video ad network
-protocol VideoAdNetworkAdapter: NSObjectProtocol {
+public protocol VideoAdNetworkAdapter: NSObjectProtocol {
     /**
      Initializes a new `VideoAdNetworkAdapter` object.
      
@@ -37,7 +37,7 @@ protocol VideoAdNetworkAdapter: NSObjectProtocol {
 }
 
 /// Used to add timeout functionality to a video ad network
-protocol TimeOutableVideoAdNetworkAdapter: VideoAdNetworkAdapter {
+public protocol TimeOutableVideoAdNetworkAdapter: VideoAdNetworkAdapter {
     /// The timer used to timeout the request
     var timeoutTimer: TimeOutTimer { get }
     /// Called when the timeout timer fires
@@ -58,7 +58,7 @@ extension TimeOutableVideoAdNetworkAdapter {
 }
 
 /// Provides callbacks for AdNetwork request events.
-protocol VideoAdNetworkAdapterDelegate: class {
+public protocol VideoAdNetworkAdapterDelegate: class {
     /**
      Executed when the ad network request is fulfilled.
      
