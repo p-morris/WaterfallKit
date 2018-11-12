@@ -17,7 +17,7 @@ import Foundation
      - mediator: The `VideoAdMediator` responsible for the callback.
      - advert: A `VideoAd` object ready for display.
      */
-    func mediator(_ mediator: VideoAdLoader, didLoad adverts: [VideoAd])
+    func adLoader(_ adLoader: VideoAdLoader, didLoad adverts: [VideoAd])
     /**
      Executed when the mediator successfully loads a prioritized video ad.
      
@@ -25,7 +25,7 @@ import Foundation
      - mediator: The `VideoAdMediator` responsible for the callback.
      - error: An `Error` that occured.
      */
-    func mediator(_ mediator: VideoAdLoader, loadFailedWith error: Error)
+    func adLoader(_ adLoader: VideoAdLoader, loadFailedWith error: Error)
 }
 
 /// Used for parsing a set of ad networks and requesting adverts.
@@ -87,6 +87,11 @@ import Foundation
      */
     func requestAds() {
         guard !adRequestsPending else { return }
+        guard settings.networkTypes.count > 0 else {
+            let error = NSError(domain: "NoNetworksInitialized", code: -1, userInfo: nil)
+            delegate?.adLoader(self, loadFailedWith: error)
+            return
+        }
         for (index, networkType) in settings.networkTypes.enumerated() {
             if let network = factory.createAdapter(type: networkType) {
                 network.priority = index + 1
@@ -103,11 +108,11 @@ import Foundation
         guard !adRequestsPending else { return }
         if adverts.count > 0 {
             let sortedAdverts = advertSortingStrategy.sorted(adverts)
-            delegate?.mediator(self, didLoad: sortedAdverts)
+            delegate?.adLoader(self, didLoad: sortedAdverts)
             adverts.removeAll()
         } else {
             let error = NSError(domain: VideoAdLoaderError.noFill, code: -1, userInfo: nil)
-            delegate?.mediator(self, loadFailedWith: error)
+            delegate?.adLoader(self, loadFailedWith: error)
         }
     }
 }

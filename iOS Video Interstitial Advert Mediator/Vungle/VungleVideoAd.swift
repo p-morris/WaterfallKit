@@ -14,6 +14,7 @@ final class VungleVideoAd: NSObject, VideoAd {
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
     var priority = 0
+    /// The name of the network the ad belongs to
     /// The placementID of the Vungle ad
     let placementID: String
     /// The Vungle SDK

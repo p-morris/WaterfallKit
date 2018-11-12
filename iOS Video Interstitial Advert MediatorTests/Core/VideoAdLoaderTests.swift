@@ -59,6 +59,14 @@ class VideoAdLoaderTests: XCTestCase {
             "VideoAdLoader adRequestsPending should return true when requests are pending."
         )
     }
+    func testRequestAdsReturnsErrorWhenNoNetworksInitialized() {
+        settings.removeAll()
+        loader.requestAds()
+        XCTAssertNotNil(
+            loaderDelegate.error,
+            "VideoAdLoader should call delegate's didFailWithError method when no networks are initialized."
+        )
+    }
     func testRequestAdsSetsDelegate() {
         testDelegate.adapterShouldDelegate = false
         loader.requestAds()

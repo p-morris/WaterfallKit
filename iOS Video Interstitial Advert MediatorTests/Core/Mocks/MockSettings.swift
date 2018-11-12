@@ -10,6 +10,9 @@ import XCTest
 @testable import iOS_Video_Interstitial_Advert_Mediator
 
 extension VideoAdNetworkSettings {
+    func removeAll() {
+        networkTypes.removeAll()
+    }
     func initializeForTest() {
         networkTypes.append(.test)
         factoryType.register(adapterType: MockVideoAdNetworkAdapter.self)

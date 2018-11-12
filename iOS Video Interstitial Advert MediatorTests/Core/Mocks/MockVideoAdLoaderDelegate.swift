@@ -12,10 +12,10 @@ import XCTest
 class MockVideoAdLoaderDelegate: VideoAdLoaderDelegate {
     var error: Error?
     var adverts: [VideoAd]?
-    func mediator(_ mediator: VideoAdLoader, didLoad adverts: [VideoAd]) {
+    func adLoader(_ adLoader: VideoAdLoader, didLoad adverts: [VideoAd]) {
         self.adverts = adverts
     }
-    func mediator(_ mediator: VideoAdLoader, loadFailedWith error: Error) {
+    func adLoader(_ adLoader: VideoAdLoader, loadFailedWith error: Error) {
         self.error = error
     }
 }

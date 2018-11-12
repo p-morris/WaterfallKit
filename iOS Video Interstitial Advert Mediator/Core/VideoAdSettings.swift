@@ -42,6 +42,17 @@ Settings object which holds client's account details for all ad networks. Provid
         case admob(appID: String, adUnitID: String)
         case chartboost(appID: String, appSignature: String)
         case test
+        // A String represnting the name of the ad network.
+        var name: String {
+            switch self {
+            case .adColony: return "AdColony"
+            case .appLovin: return "AppLovin"
+            case .vungle: return "Vungle"
+            case .admob: return "Admob"
+            case .chartboost: return "Chartboost"
+            case .test: return "Test"
+            }
+        }
     }
     /// Contains all initialized ad network settings. Order determines ad priority.
     internal var networkTypes: [NetworkType] = []

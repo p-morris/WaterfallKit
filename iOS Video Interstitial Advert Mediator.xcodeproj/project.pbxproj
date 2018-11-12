@@ -37,6 +37,10 @@
 		724C0E3A218AFB0E004472DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E39218AFB0E004472DA /* CoreLocation.framework */; };
 		724C0E3C218AFB22004472DA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724C0E3B218AFB22004472DA /* SafariServices.framework */; };
 		724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
+		72529D8D2199651500297903 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D8C2199651500297903 /* TableViewController.swift */; };
+		72529D912199699F00297903 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D902199699F00297903 /* AppFacade.swift */; };
+		72529D932199833F00297903 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D922199833F00297903 /* AdvertTableViewController.swift */; };
+		72529D9521998CD300297903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72529D9421998CD300297903 /* Assets.xcassets */; };
 		725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B69222189971B0038FDD3 /* AdMobVideoAd.swift */; };
 		725B692B2189AFD50038FDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725B692A2189AFD50038FDD3 /* Foundation.framework */; };
 		725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */; };
@@ -90,9 +94,6 @@
 		72EF2A072192E77000DE1DB6 /* VungleExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF2A062192E77000DE1DB6 /* VungleExtensionsTests.swift */; };
 		72EF2A092192EBC800DE1DB6 /* VungleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
-		72F117FE218314FE00C3C805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FD218314FE00C3C805 /* ViewController.swift */; };
-		72F11801218314FE00C3C805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F117FF218314FE00C3C805 /* Main.storyboard */; };
-		72F11803218314FF00C3C805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F11802218314FF00C3C805 /* Assets.xcassets */; };
 		72F11806218314FF00C3C805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F11804218314FF00C3C805 /* LaunchScreen.storyboard */; };
 		72F689852186D56A0035C76C /* VideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */; };
 		72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689862186FE980035C76C /* VideoAdLoader.swift */; };
@@ -157,6 +158,10 @@
 		724C0E39218AFB0E004472DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		724C0E3B218AFB22004472DA /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		724C0FE9218B097F004472DA /* TimeOutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutTimer.swift; sourceTree = "<group>"; };
+		72529D8C2199651500297903 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		72529D902199699F00297903 /* AppFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
+		72529D922199833F00297903 /* AdvertTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertTableViewController.swift; sourceTree = "<group>"; };
+		72529D9421998CD300297903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		725B69222189971B0038FDD3 /* AdMobVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoAd.swift; sourceTree = "<group>"; };
 		725B692A2189AFD50038FDD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		725B692C2189B2520038FDD3 /* ChartboostVideoAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartboostVideoAd.swift; sourceTree = "<group>"; };
@@ -211,9 +216,6 @@
 		72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VungleAdapterTests.swift; sourceTree = "<group>"; };
 		72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Video Interstitial Advert Mediator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F117FB218314FE00C3C805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72F117FD218314FE00C3C805 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		72F11800218314FE00C3C805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		72F11802218314FF00C3C805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72F11805218314FF00C3C805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72F11807218314FF00C3C805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F1180C218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Video Interstitial Advert MediatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,11 +514,12 @@
 				72FFD86321902073002B1E28 /* AdMob */,
 				72FFD86221902069002B1E28 /* AppLovin */,
 				72FFD8612190205D002B1E28 /* AdColony */,
+				72529D902199699F00297903 /* AppFacade.swift */,
 				72F117FB218314FE00C3C805 /* AppDelegate.swift */,
-				72F117FD218314FE00C3C805 /* ViewController.swift */,
-				72F117FF218314FE00C3C805 /* Main.storyboard */,
-				72F11802218314FF00C3C805 /* Assets.xcassets */,
+				72529D8C2199651500297903 /* TableViewController.swift */,
+				72529D922199833F00297903 /* AdvertTableViewController.swift */,
 				72F11804218314FF00C3C805 /* LaunchScreen.storyboard */,
+				72529D9421998CD300297903 /* Assets.xcassets */,
 				72F11807218314FF00C3C805 /* Info.plist */,
 				720347A721885C3200918FB5 /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */,
 			);
@@ -696,9 +699,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72529D9521998CD300297903 /* Assets.xcassets in Resources */,
 				72F11806218314FF00C3C805 /* LaunchScreen.storyboard in Resources */,
-				72F11803218314FF00C3C805 /* Assets.xcassets in Resources */,
-				72F11801218314FE00C3C805 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +747,8 @@
 				72FFD86D21902434002B1E28 /* CoreAppLovinExtensions.swift in Sources */,
 				725B692D2189B2520038FDD3 /* ChartboostVideoAd.swift in Sources */,
 				72FFD86F21902467002B1E28 /* CoreAdColonyExtensions.swift in Sources */,
+				72529D8D2199651500297903 /* TableViewController.swift in Sources */,
+				72529D932199833F00297903 /* AdvertTableViewController.swift in Sources */,
 				724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */,
 				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleAdapter.swift in Sources */,
@@ -752,11 +756,11 @@
 				72810B70219431E500AB3757 /* AppLovinSDKProtocol.swift in Sources */,
 				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				72FFD86B21902402002B1E28 /* CoreAdMobExtensions.swift in Sources */,
+				72529D912199699F00297903 /* AppFacade.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
 				728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */,
 				72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */,
 				72810B7F219448E700AB3757 /* AdColonySDKProtocol.swift in Sources */,
-				72F117FE218314FE00C3C805 /* ViewController.swift in Sources */,
 				724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */,
 				72F6898E218716A50035C76C /* AdColonyAdapter.swift in Sources */,
 				72F68992218717B20035C76C /* AdMobAdapter.swift in Sources */,
@@ -830,14 +834,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		72F117FF218314FE00C3C805 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72F11800218314FE00C3C805 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		72F11804218314FF00C3C805 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -968,7 +964,6 @@
 		72F11816218314FF00C3C805 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1021,7 +1016,6 @@
 		72F11817218314FF00C3C805 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
