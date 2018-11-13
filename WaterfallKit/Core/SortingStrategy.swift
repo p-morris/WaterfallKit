@@ -13,6 +13,7 @@ public protocol SortingStrategy {
 }
 
 public class AscendingPrioritySorting: SortingStrategy {
+    public init() { }
     public func sorted(_ array: [VideoAd]) -> [VideoAd] {
         return array.sorted { $0.priority < $1.priority }
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Provides callbacks for prioritized VideoAdLoader requests
-@objc protocol VideoAdLoaderDelegate {
+@objc public protocol VideoAdLoaderDelegate {
     /**
      Executed when the mediator successfully loads a prioritized video ad.
      
@@ -29,18 +29,18 @@ import Foundation
 }
 
 /// Used for parsing a set of ad networks and requesting adverts.
-@objc final class VideoAdLoader: NSObject {
+@objc public final class VideoAdLoader: NSObject {
     /// Used to encapsulate `String` literals related to errors loading
     /// video ads
     private enum VideoAdLoaderError {
         static let noFill = "VideoAdLoaderNoFill"
     }
     /// The prioritized network settings to use for this ad request
-    let settings: VideoAdNetworkSettings
+    public let settings: VideoAdNetworkSettings
     /// The factory used to create ad network instances
     private let factory: VideoAdNetworkAdapterFactory
     /// The object that acts as the delegate of `VideoAdMediator`
-    weak var delegate: VideoAdLoaderDelegate?
+    public weak var delegate: VideoAdLoaderDelegate?
     /// Number of network requests currently in process
     private var pendingAdNetworkRequests: [VideoAdNetworkAdapter] = [] {
         didSet {
@@ -53,15 +53,15 @@ import Foundation
     private var adverts: [VideoAd] = []
     /// Indicates whether ad requests are currently pending
     private var advertSortingStrategy: SortingStrategy
-    var adRequestsPending: Bool {
+    public var adRequestsPending: Bool {
         return pendingAdNetworkRequests.count > 0
     }
     /// Indicates the number of ad requests still pending
-    var numberOfPendingRequests: Int {
+    public var numberOfPendingRequests: Int {
         return pendingAdNetworkRequests.count
     }
     /// Indicates the number of ads loaded currently
-    var numbersOfAdsLoaded: Int {
+    public var numbersOfAdsLoaded: Int {
         return adverts.count
     }
     /**
@@ -73,9 +73,9 @@ import Foundation
      - Returns: An initialized `VideoAdMediator` object that will use `settings`
      to request appropraite ads as prioritized.
      */
-    init(settings: VideoAdNetworkSettings,
-         factory: VideoAdNetworkAdapterFactory = InterstitialAdapterFactory(),
-         advertSortingStrategy: SortingStrategy = AscendingPrioritySorting()) {
+    public init(settings: VideoAdNetworkSettings,
+                factory: VideoAdNetworkAdapterFactory = InterstitialAdapterFactory(),
+                advertSortingStrategy: SortingStrategy = AscendingPrioritySorting()) {
         self.settings = settings
         self.factory = factory
         self.advertSortingStrategy = advertSortingStrategy
@@ -85,7 +85,7 @@ import Foundation
      Iterates through the networks stored in the `VideoAdNetworkSettings` object and
      requests fill for video interstitatial adverts.
      */
-    func requestAds() {
+    public func requestAds() {
         guard !adRequestsPending else { return }
         guard settings.networkTypes.count > 0 else {
             let error = NSError(domain: "NoNetworksInitialized", code: -1, userInfo: nil)
@@ -121,7 +121,7 @@ extension VideoAdLoader: VideoAdNetworkAdapterDelegate {
     /**
      Assigns advert priority, ads to the adverts array and removes the pending request.
      */
-    func adNetwork(_ adapter: VideoAdNetworkAdapter, didLoad advert: VideoAd) {
+    public func adNetwork(_ adapter: VideoAdNetworkAdapter, didLoad advert: VideoAd) {
         advert.priority = adapter.priority
         adverts.append(advert)
         pendingAdNetworkRequests = pendingAdNetworkRequests.removing(adapter: adapter)
@@ -129,7 +129,7 @@ extension VideoAdLoader: VideoAdNetworkAdapterDelegate {
     /**
      Removes the failed pending request.
      */
-    func adNetwork(_ adapter: VideoAdNetworkAdapter, didFailToLoad error: Error) {
+    public func adNetwork(_ adapter: VideoAdNetworkAdapter, didFailToLoad error: Error) {
         pendingAdNetworkRequests = pendingAdNetworkRequests.removing(adapter: adapter)
     }
 }

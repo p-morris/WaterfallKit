@@ -51,7 +51,7 @@ extension TimeOutableVideoAdNetworkAdapter {
         return "RequestTimedOutErrorDomain"
     }
     /// Notifies the delegate that the timeout has occured
-    func timeOut() {
+    public func timeOut() {
         let error = NSError(domain: timeOutError, code: -1, userInfo: nil)
         delegate?.adNetwork(self, didFailToLoad: error)
     }
