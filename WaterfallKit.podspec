@@ -12,4 +12,9 @@ Pod::Spec.new do |spec|
   spec.source = { git: "https://github.com/p-morris/WaterfallKit.git", tag: "v#{spec.version}", submodules: true }
   spec.source_files = "WaterfallKit/Core/*"
 
+  subspec 'AdColony' do |sp|
+    sp.source_files = 'WaterfallKit/AdColony/*'
+    sp.dependency 'AdColony', '3.3.6'
+  end
+
 end

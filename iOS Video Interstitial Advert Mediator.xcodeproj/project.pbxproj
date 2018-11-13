@@ -52,6 +52,9 @@
 		729AC6E9219AD7FD00488443 /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
 		729AC6EA219AD7FD00488443 /* VideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */; };
 		729AC6EB219AD7FD00488443 /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
+		729AC6F5219ADC1D00488443 /* WaterfallKit_AdColony.h in Headers */ = {isa = PBXBuildFile; fileRef = 729AC6F3219ADC1D00488443 /* WaterfallKit_AdColony.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		729AC6F8219ADC1D00488443 /* WaterfallKit_AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729AC6F1219ADC1D00488443 /* WaterfallKit_AdColony.framework */; };
+		729AC6F9219ADC1D00488443 /* WaterfallKit_AdColony.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 729AC6F1219ADC1D00488443 /* WaterfallKit_AdColony.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */; };
 		729B35002192E26F00DA33EE /* SortingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FF2192E26F00DA33EE /* SortingStrategyTests.swift */; };
 		72B3B34C2195A4490056415A /* TestDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B3B34B2195A4490056415A /* TestDelegates.swift */; };
@@ -99,6 +102,13 @@
 			remoteGlobalIDString = 729AC6D7219AD7DF00488443;
 			remoteInfo = WaterfallKit;
 		};
+		729AC6F6219ADC1D00488443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72F117F0218314FE00C3C805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 729AC6F0219ADC1D00488443;
+			remoteInfo = "WaterfallKit-AdColony";
+		};
 		72F1180D218314FF00C3C805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 72F117F0218314FE00C3C805 /* Project object */;
@@ -116,6 +126,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				729AC6E0219AD7DF00488443 /* WaterfallKit.framework in Embed Frameworks */,
+				729AC6F9219ADC1D00488443 /* WaterfallKit_AdColony.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +178,9 @@
 		729AC6D8219AD7DF00488443 /* WaterfallKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterfallKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		729AC6DA219AD7DF00488443 /* WaterfallKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterfallKit.h; sourceTree = "<group>"; };
 		729AC6DB219AD7DF00488443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729AC6F1219ADC1D00488443 /* WaterfallKit_AdColony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterfallKit_AdColony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		729AC6F3219ADC1D00488443 /* WaterfallKit_AdColony.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterfallKit_AdColony.h; sourceTree = "<group>"; };
+		729AC6F4219ADC1D00488443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FF2192E26F00DA33EE /* SortingStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategyTests.swift; sourceTree = "<group>"; };
@@ -224,11 +238,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		729AC6EE219ADC1D00488443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F117F5218314FE00C3C805 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				729AC6DF219AD7DF00488443 /* WaterfallKit.framework in Frameworks */,
+				729AC6F8219ADC1D00488443 /* WaterfallKit_AdColony.framework in Frameworks */,
 				D6DEF7471C76D98DE6D681DD /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +391,15 @@
 			path = WaterfallKit;
 			sourceTree = "<group>";
 		};
+		729AC6F2219ADC1D00488443 /* WaterfallKit-AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				729AC6F3219ADC1D00488443 /* WaterfallKit_AdColony.h */,
+				729AC6F4219ADC1D00488443 /* Info.plist */,
+			);
+			path = "WaterfallKit-AdColony";
+			sourceTree = "<group>";
+		};
 		72B3B34A2195A42F0056415A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +483,7 @@
 				72F117FA218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */,
 				72F1180F218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */,
 				729AC6D9219AD7DF00488443 /* WaterfallKit */,
+				729AC6F2219ADC1D00488443 /* WaterfallKit-AdColony */,
 				72F117F9218314FE00C3C805 /* Products */,
 				7203478A21885ACF00918FB5 /* Frameworks */,
 				1414290A0E75D18D698E6B76 /* Pods */,
@@ -464,6 +496,7 @@
 				72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */,
 				72F1180C218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests.xctest */,
 				729AC6D8219AD7DF00488443 /* WaterfallKit.framework */,
+				729AC6F1219ADC1D00488443 /* WaterfallKit_AdColony.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,6 +601,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		729AC6EC219ADC1D00488443 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729AC6F5219ADC1D00488443 /* WaterfallKit_AdColony.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -589,6 +630,24 @@
 			productReference = 729AC6D8219AD7DF00488443 /* WaterfallKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		729AC6F0219ADC1D00488443 /* WaterfallKit-AdColony */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 729AC6FC219ADC1D00488443 /* Build configuration list for PBXNativeTarget "WaterfallKit-AdColony" */;
+			buildPhases = (
+				729AC6EC219ADC1D00488443 /* Headers */,
+				729AC6ED219ADC1D00488443 /* Sources */,
+				729AC6EE219ADC1D00488443 /* Frameworks */,
+				729AC6EF219ADC1D00488443 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WaterfallKit-AdColony";
+			productName = "WaterfallKit-AdColony";
+			productReference = 729AC6F1219ADC1D00488443 /* WaterfallKit_AdColony.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72F11815218314FF00C3C805 /* Build configuration list for PBXNativeTarget "iOS Video Interstitial Advert Mediator" */;
@@ -604,6 +663,7 @@
 			);
 			dependencies = (
 				729AC6DE219AD7DF00488443 /* PBXTargetDependency */,
+				729AC6F7219ADC1D00488443 /* PBXTargetDependency */,
 			);
 			name = "iOS Video Interstitial Advert Mediator";
 			productName = "iOS Video Interstitial Advert Mediator";
@@ -642,6 +702,9 @@
 					729AC6D7219AD7DF00488443 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					729AC6F0219ADC1D00488443 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					72F117F7218314FE00C3C805 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
@@ -669,12 +732,20 @@
 				72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */,
 				72F1180B218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */,
 				729AC6D7219AD7DF00488443 /* WaterfallKit */,
+				729AC6F0219ADC1D00488443 /* WaterfallKit-AdColony */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		729AC6D6219AD7DF00488443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729AC6EF219ADC1D00488443 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -778,6 +849,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		729AC6ED219ADC1D00488443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F117F4218314FE00C3C805 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -868,6 +946,11 @@
 			target = 729AC6D7219AD7DF00488443 /* WaterfallKit */;
 			targetProxy = 729AC6DD219AD7DF00488443 /* PBXContainerItemProxy */;
 		};
+		729AC6F7219ADC1D00488443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 729AC6F0219ADC1D00488443 /* WaterfallKit-AdColony */;
+			targetProxy = 729AC6F6219ADC1D00488443 /* PBXContainerItemProxy */;
+		};
 		72F1180E218314FF00C3C805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */;
@@ -932,6 +1015,60 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.WaterfallKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		729AC6FA219ADC1D00488443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "WaterfallKit-AdColony/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.petemorris.WaterfallKit-AdColony";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		729AC6FB219ADC1D00488443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "WaterfallKit-AdColony/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.petemorris.WaterfallKit-AdColony";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1213,6 +1350,15 @@
 			buildConfigurations = (
 				729AC6E1219AD7DF00488443 /* Debug */,
 				729AC6E2219AD7DF00488443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		729AC6FC219ADC1D00488443 /* Build configuration list for PBXNativeTarget "WaterfallKit-AdColony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729AC6FA219ADC1D00488443 /* Debug */,
+				729AC6FB219ADC1D00488443 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
