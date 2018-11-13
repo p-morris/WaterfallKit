@@ -18,7 +18,7 @@ extension VideoAdNetworkSettings {
      - zoneIDs: An array of `String` objects representing your AdColony zone IDs.
      - Returns: The VideoAdNetworkSettings object.
      */
-    func initializeAdColony(appID: String, zoneID: String) -> Self {
+    public func initializeAdColony(appID: String, zoneID: String) -> Self {
         networkTypes.append(.adColony(appID: appID, zoneID: zoneID))
         factoryType.register(adapterType: AdColonyAdapter.self)
         return self
