@@ -10,11 +10,20 @@ Pod::Spec.new do |spec|
   spec.platform = :ios, "12"
   spec.requires_arc = true
   spec.source = { git: "https://github.com/p-morris/WaterfallKit.git", tag: "v#{spec.version}", submodules: true }
-  spec.source_files = "WaterfallKit/Core/*"
 
-  subspec 'AdColony' do |sp|
-    sp.source_files = 'WaterfallKit/AdColony/*'
-    sp.dependency 'AdColony', '3.3.6'
+  spec.subspec 'Core' do |core|
+    core.source_files = "WaterfallKit/Core/*"
+  end
+
+  spec.subspec 'AdColony' do |adcolony|
+    adcolony.source_files = 'WaterfallKit/AdColony/*.swift', 'WaterfallKit/AdColony/*.h'
+    adcolony.vendored_frameworks = 'WaterfallKit/AdColony/AdColony.framework'
+    adcolony.public_header_files = 'WaterfallKit/AdColony/Headers.h'
+    adcolony.preserve_paths = 'WaterfallKit/AdColony/AdColony.framework'
+    adcolony.libraries = 'z.1.2.5',
+    adcolony.frameworks = 'AdColony', 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'JavaScriptCore', 'MessageUI', 'MobileCoreServices', 'SystemConfiguration'
+    adcolony.weak_frameworks = 'Social', 'StoreKit', 'WatchConnectivity', 'WebKit'
+    adcolony.dependency 'WaterfallKit/Core'
   end
 
 end
