@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
     adcolony.vendored_frameworks = 'WaterfallKit/AdColony/AdColony.framework'
     adcolony.public_header_files = 'WaterfallKit/AdColony/Headers.h'
     adcolony.preserve_paths = 'WaterfallKit/AdColony/AdColony.framework'
-    adcolony.libraries = 'z.1.2.5',
+    #adcolony.libraries = 'z.1.2.5',
     adcolony.frameworks = 'AdColony', 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'CoreTelephony', 'JavaScriptCore', 'MessageUI', 'MobileCoreServices', 'SystemConfiguration'
     adcolony.weak_frameworks = 'Social', 'StoreKit', 'WatchConnectivity', 'WebKit'
     adcolony.dependency 'WaterfallKit/Core'
