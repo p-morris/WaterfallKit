@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
+import WaterfallKit
 
 /// Used for making interstitial video ad requests to the Admob network
 final class AdMobAdapter: NSObject, VideoAdNetworkAdapter {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 /// Adds support for the Vungle video network to the `VideoAdNetworkSettings` class.
 extension VideoAdNetworkSettings {

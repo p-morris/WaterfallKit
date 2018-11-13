@@ -8,6 +8,7 @@
 
 import Foundation
 import AppLovinSDK
+import WaterfallKit
 
 /// Used for making interstitial video ad requests to the AdColony network
 final class AppLovinAdapter: NSObject, VideoAdNetworkAdapter {

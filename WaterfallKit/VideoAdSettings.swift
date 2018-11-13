@@ -43,7 +43,7 @@ Settings object which holds client's account details for all ad networks. Provid
         case chartboost(appID: String, appSignature: String)
         case test
         // A String represnting the name of the ad network.
-        var name: String {
+        public var name: String {
             switch self {
             case .adColony: return "AdColony"
             case .appLovin: return "AppLovin"

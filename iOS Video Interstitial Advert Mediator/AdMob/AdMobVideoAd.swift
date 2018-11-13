@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
+import WaterfallKit
 
 /// Used for displaying and invoking delegate callbacks for Admob interstial videos ads.
 final class AdMobVideoAd: NSObject, VideoAd {

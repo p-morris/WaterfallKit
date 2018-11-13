@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 /// Used for making interstitial video ad requests to the Vungle network
 final class VungleAdapter: NSObject, VideoAdNetworkAdapter {

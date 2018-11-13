@@ -49,6 +49,7 @@ public final class InterstitialAdapterFactory: VideoAdNetworkAdapterFactory {
     /// The concrete `VideoAdNetworkAdapter` classes to use to instantiate
     /// `VideoAdNetworkAdapter` objects.
     private (set) public static var adapterClasses: [VideoAdNetworkAdapter.Type] = []
+    public init() { }
     public func createAdapter(type: VideoAdNetworkSettings.NetworkType) -> VideoAdNetworkAdapter? {
         var returnAdapter: VideoAdNetworkAdapter?
         for adapterClass in InterstitialAdapterFactory.adapterClasses {

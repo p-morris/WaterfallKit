@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WaterfallKit
 
 final class TableViewController: UITableViewController {
     typealias AdNetwork = VideoAdNetworkSettings.NetworkType

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 /// Used for displaying and invoking delegate callbacks for Chartboost interstial videos ads.
 final class ChartboostVideoAd: NSObject, VideoAd {

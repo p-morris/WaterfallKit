@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 /// Used for making interstitial video ad requests to the Chartboost network
 final class ChartboostAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {

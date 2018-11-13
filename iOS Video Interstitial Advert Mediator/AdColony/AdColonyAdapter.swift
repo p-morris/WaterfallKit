@@ -8,6 +8,7 @@
 
 import Foundation
 import AdColony
+import WaterfallKit
 
 /// Used for making interstitial video ad requests to the AdColony network
 final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {

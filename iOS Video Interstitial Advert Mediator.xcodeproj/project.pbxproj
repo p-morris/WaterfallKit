@@ -14,7 +14,6 @@
 		7247DC30219309F400094F88 /* VungleVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC2F219309F400094F88 /* VungleVideoAdTests.swift */; };
 		7247DC3221930AA700094F88 /* MockAdDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC3121930AA700094F88 /* MockAdDelegate.swift */; };
 		724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0E37218AF1B7004472DA /* VungleVideoAd.swift */; };
-		724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
 		72529D8D2199651500297903 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D8C2199651500297903 /* TableViewController.swift */; };
 		72529D912199699F00297903 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D902199699F00297903 /* AppFacade.swift */; };
 		72529D932199833F00297903 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72529D922199833F00297903 /* AdvertTableViewController.swift */; };
@@ -43,11 +42,18 @@
 		72810B8321944C4600AB3757 /* MockAdColonySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B8221944C4600AB3757 /* MockAdColonySDK.swift */; };
 		72810B852194544F00AB3757 /* AdColonyVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B842194544F00AB3757 /* AdColonyVideoAdTests.swift */; };
 		72810B872194549400AB3757 /* MockAdColonyInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72810B862194549400AB3757 /* MockAdColonyInterstitial.swift */; };
-		728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
-		729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FB2192D48F00DA33EE /* SortingStrategy.swift */; };
+		729AC6DC219AD7DF00488443 /* WaterfallKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 729AC6DA219AD7DF00488443 /* WaterfallKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		729AC6DF219AD7DF00488443 /* WaterfallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729AC6D8219AD7DF00488443 /* WaterfallKit.framework */; };
+		729AC6E0219AD7DF00488443 /* WaterfallKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 729AC6D8219AD7DF00488443 /* WaterfallKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		729AC6E5219AD7FD00488443 /* VideoAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689862186FE980035C76C /* VideoAdLoader.swift */; };
+		729AC6E6219AD7FD00488443 /* VideoAdNetworkAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */; };
+		729AC6E7219AD7FD00488443 /* VideoAdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898A2187005C0035C76C /* VideoAdSettings.swift */; };
+		729AC6E8219AD7FD00488443 /* SortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FB2192D48F00DA33EE /* SortingStrategy.swift */; };
+		729AC6E9219AD7FD00488443 /* TimeOutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C0FE9218B097F004472DA /* TimeOutTimer.swift */; };
+		729AC6EA219AD7FD00488443 /* VideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */; };
+		729AC6EB219AD7FD00488443 /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		729B34FE2192D7C600DA33EE /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */; };
 		729B35002192E26F00DA33EE /* SortingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B34FF2192E26F00DA33EE /* SortingStrategyTests.swift */; };
-		72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA361A2186CC45004A3ECB /* VideoAd.swift */; };
 		72B3B34C2195A4490056415A /* TestDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B3B34B2195A4490056415A /* TestDelegates.swift */; };
 		72B3B3502195A4910056415A /* ChartboostTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B3B34F2195A4910056415A /* ChartboostTestDelegate.swift */; };
 		72B3B3532195A4CC0056415A /* AdmobTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B3B3522195A4CC0056415A /* AdmobTestDelegate.swift */; };
@@ -71,9 +77,6 @@
 		72EF2A092192EBC800DE1DB6 /* VungleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EF2A082192EBC800DE1DB6 /* VungleAdapterTests.swift */; };
 		72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F117FB218314FE00C3C805 /* AppDelegate.swift */; };
 		72F11806218314FF00C3C805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72F11804218314FF00C3C805 /* LaunchScreen.storyboard */; };
-		72F689852186D56A0035C76C /* VideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */; };
-		72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F689862186FE980035C76C /* VideoAdLoader.swift */; };
-		72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898A2187005C0035C76C /* VideoAdSettings.swift */; };
 		72F6898E218716A50035C76C /* AdColonyAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898D218716A50035C76C /* AdColonyAdapter.swift */; };
 		72F689902187175F0035C76C /* AppLovinAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6898F2187175F0035C76C /* AppLovinAdapter.swift */; };
 		72F68992218717B20035C76C /* AdMobAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F68991218717B20035C76C /* AdMobAdapter.swift */; };
@@ -89,6 +92,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		729AC6DD219AD7DF00488443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72F117F0218314FE00C3C805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 729AC6D7219AD7DF00488443;
+			remoteInfo = WaterfallKit;
+		};
 		72F1180D218314FF00C3C805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 72F117F0218314FE00C3C805 /* Project object */;
@@ -97,6 +107,20 @@
 			remoteInfo = "iOS Video Interstitial Advert Mediator";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		729AC6E4219AD7DF00488443 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				729AC6E0219AD7DF00488443 /* WaterfallKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		163F4FBAD3C0DE23A8970524 /* Pods-iOS Video Interstitial Advert Mediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Video Interstitial Advert Mediator.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Video Interstitial Advert Mediator/Pods-iOS Video Interstitial Advert Mediator.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +164,9 @@
 		72810B862194549400AB3757 /* MockAdColonyInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdColonyInterstitial.swift; sourceTree = "<group>"; };
 		728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactory.swift; sourceTree = "<group>"; };
 		7299B1412199DED3003ED83F /* iOS Video Interstitial Advert Mediator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Video Interstitial Advert Mediator-Bridging-Header.h"; sourceTree = "<group>"; };
+		729AC6D8219AD7DF00488443 /* WaterfallKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WaterfallKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		729AC6DA219AD7DF00488443 /* WaterfallKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterfallKit.h; sourceTree = "<group>"; };
+		729AC6DB219AD7DF00488443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		729B34FB2192D48F00DA33EE /* SortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FD2192D7C600DA33EE /* MockSortingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
 		729B34FF2192E26F00DA33EE /* SortingStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingStrategyTests.swift; sourceTree = "<group>"; };
@@ -190,10 +217,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		729AC6D5219AD7DF00488443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F117F5218314FE00C3C805 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729AC6DF219AD7DF00488443 /* WaterfallKit.framework in Frameworks */,
 				D6DEF7471C76D98DE6D681DD /* Pods_iOS_Video_Interstitial_Advert_Mediator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +353,22 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		729AC6D9219AD7DF00488443 /* WaterfallKit */ = {
+			isa = PBXGroup;
+			children = (
+				72F6898A2187005C0035C76C /* VideoAdSettings.swift */,
+				72F689862186FE980035C76C /* VideoAdLoader.swift */,
+				72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */,
+				728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */,
+				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
+				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
+				729B34FB2192D48F00DA33EE /* SortingStrategy.swift */,
+				729AC6DA219AD7DF00488443 /* WaterfallKit.h */,
+				729AC6DB219AD7DF00488443 /* Info.plist */,
+			);
+			path = WaterfallKit;
+			sourceTree = "<group>";
+		};
 		72B3B34A2195A42F0056415A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +451,7 @@
 			children = (
 				72F117FA218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */,
 				72F1180F218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */,
+				729AC6D9219AD7DF00488443 /* WaterfallKit */,
 				72F117F9218314FE00C3C805 /* Products */,
 				7203478A21885ACF00918FB5 /* Frameworks */,
 				1414290A0E75D18D698E6B76 /* Pods */,
@@ -411,6 +463,7 @@
 			children = (
 				72F117F8218314FE00C3C805 /* iOS Video Interstitial Advert Mediator.app */,
 				72F1180C218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests.xctest */,
+				729AC6D8219AD7DF00488443 /* WaterfallKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,7 +471,6 @@
 		72F117FA218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */ = {
 			isa = PBXGroup;
 			children = (
-				72FFD8602190202D002B1E28 /* Core */,
 				72FFD86521902088002B1E28 /* Vungle */,
 				72FFD8642190207D002B1E28 /* Chartboost */,
 				72FFD86321902073002B1E28 /* AdMob */,
@@ -448,20 +500,6 @@
 				72F11812218314FF00C3C805 /* Info.plist */,
 			);
 			path = "iOS Video Interstitial Advert MediatorTests";
-			sourceTree = "<group>";
-		};
-		72FFD8602190202D002B1E28 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				72F6898A2187005C0035C76C /* VideoAdSettings.swift */,
-				72F689862186FE980035C76C /* VideoAdLoader.swift */,
-				72F689842186D56A0035C76C /* VideoAdNetworkAdapter.swift */,
-				728C07C8218C417900225757 /* VideoAdNetworkAdapterFactory.swift */,
-				72AA361A2186CC45004A3ECB /* VideoAd.swift */,
-				724C0FE9218B097F004472DA /* TimeOutTimer.swift */,
-				729B34FB2192D48F00DA33EE /* SortingStrategy.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		72FFD8612190205D002B1E28 /* AdColony */ = {
@@ -521,7 +559,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		729AC6D3219AD7DF00488443 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729AC6DC219AD7DF00488443 /* WaterfallKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		729AC6D7219AD7DF00488443 /* WaterfallKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 729AC6E3219AD7DF00488443 /* Build configuration list for PBXNativeTarget "WaterfallKit" */;
+			buildPhases = (
+				729AC6D3219AD7DF00488443 /* Headers */,
+				729AC6D4219AD7DF00488443 /* Sources */,
+				729AC6D5219AD7DF00488443 /* Frameworks */,
+				729AC6D6219AD7DF00488443 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterfallKit;
+			productName = WaterfallKit;
+			productReference = 729AC6D8219AD7DF00488443 /* WaterfallKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72F11815218314FF00C3C805 /* Build configuration list for PBXNativeTarget "iOS Video Interstitial Advert Mediator" */;
@@ -531,10 +598,12 @@
 				72F117F5218314FE00C3C805 /* Frameworks */,
 				72F117F6218314FE00C3C805 /* Resources */,
 				72F6898C21870F650035C76C /* ShellScript */,
+				729AC6E4219AD7DF00488443 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				729AC6DE219AD7DF00488443 /* PBXTargetDependency */,
 			);
 			name = "iOS Video Interstitial Advert Mediator";
 			productName = "iOS Video Interstitial Advert Mediator";
@@ -570,6 +639,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Pete Morris";
 				TargetAttributes = {
+					729AC6D7219AD7DF00488443 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					72F117F7218314FE00C3C805 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
@@ -596,11 +668,19 @@
 			targets = (
 				72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */,
 				72F1180B218314FF00C3C805 /* iOS Video Interstitial Advert MediatorTests */,
+				729AC6D7219AD7DF00488443 /* WaterfallKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		729AC6D6219AD7DF00488443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F117F6218314FE00C3C805 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,13 +764,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		729AC6D4219AD7DF00488443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729AC6E9219AD7FD00488443 /* TimeOutTimer.swift in Sources */,
+				729AC6EA219AD7FD00488443 /* VideoAdNetworkAdapter.swift in Sources */,
+				729AC6EB219AD7FD00488443 /* VideoAd.swift in Sources */,
+				729AC6E6219AD7FD00488443 /* VideoAdNetworkAdapterFactory.swift in Sources */,
+				729AC6E8219AD7FD00488443 /* SortingStrategy.swift in Sources */,
+				729AC6E7219AD7FD00488443 /* VideoAdSettings.swift in Sources */,
+				729AC6E5219AD7FD00488443 /* VideoAdLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F117F4218314FE00C3C805 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7228F44D2192EEB300250B31 /* VungleSDKProtocol.swift in Sources */,
 				725B69232189971B0038FDD3 /* AdMobVideoAd.swift in Sources */,
-				729B34FC2192D48F00DA33EE /* SortingStrategy.swift in Sources */,
 				720347AB2188607D00918FB5 /* AdColonyVideoAd.swift in Sources */,
 				72810B61219420FA00AB3757 /* AdMobSDKProtocol.swift in Sources */,
 				72FFD86721902194002B1E28 /* CoreVungleExtensions.swift in Sources */,
@@ -699,17 +792,12 @@
 				72FFD86F21902467002B1E28 /* CoreAdColonyExtensions.swift in Sources */,
 				72529D8D2199651500297903 /* TableViewController.swift in Sources */,
 				72529D932199833F00297903 /* AdvertTableViewController.swift in Sources */,
-				724C0FEA218B097F004472DA /* TimeOutTimer.swift in Sources */,
-				72AA361B2186CC45004A3ECB /* VideoAd.swift in Sources */,
 				72F6899C218719680035C76C /* VungleAdapter.swift in Sources */,
 				72810B552194071100AB3757 /* ChartboostSDKProtocol.swift in Sources */,
 				72810B70219431E500AB3757 /* AppLovinSDKProtocol.swift in Sources */,
-				72F6898B2187005C0035C76C /* VideoAdSettings.swift in Sources */,
 				72FFD86B21902402002B1E28 /* CoreAdMobExtensions.swift in Sources */,
 				72529D912199699F00297903 /* AppFacade.swift in Sources */,
 				7209222121887F1600E6AC03 /* AppLovinVideoAd.swift in Sources */,
-				728C07C9218C417900225757 /* VideoAdNetworkAdapterFactory.swift in Sources */,
-				72F689872186FE980035C76C /* VideoAdLoader.swift in Sources */,
 				72810B7F219448E700AB3757 /* AdColonySDKProtocol.swift in Sources */,
 				724C0E38218AF1B7004472DA /* VungleVideoAd.swift in Sources */,
 				72F6898E218716A50035C76C /* AdColonyAdapter.swift in Sources */,
@@ -717,7 +805,6 @@
 				72F117FC218314FE00C3C805 /* AppDelegate.swift in Sources */,
 				72F689902187175F0035C76C /* AppLovinAdapter.swift in Sources */,
 				72F68994218718280035C76C /* ChartboostAdapter.swift in Sources */,
-				72F689852186D56A0035C76C /* VideoAdNetworkAdapter.swift in Sources */,
 				72FFD869219023BD002B1E28 /* CoreChartboostExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -776,6 +863,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		729AC6DE219AD7DF00488443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 729AC6D7219AD7DF00488443 /* WaterfallKit */;
+			targetProxy = 729AC6DD219AD7DF00488443 /* PBXContainerItemProxy */;
+		};
 		72F1180E218314FF00C3C805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 72F117F7218314FE00C3C805 /* iOS Video Interstitial Advert Mediator */;
@@ -795,6 +887,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		729AC6E1219AD7DF00488443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WaterfallKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.WaterfallKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		729AC6E2219AD7DF00488443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WaterfallKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.WaterfallKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		72F11813218314FF00C3C805 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -915,6 +1061,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C91D37BB0812D0A7C99871D /* Pods-iOS Video Interstitial Advert Mediator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -965,6 +1112,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 163F4FBAD3C0DE23A8970524 /* Pods-iOS Video Interstitial Advert Mediator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1060,6 +1208,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		729AC6E3219AD7DF00488443 /* Build configuration list for PBXNativeTarget "WaterfallKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729AC6E1219AD7DF00488443 /* Debug */,
+				729AC6E2219AD7DF00488443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		72F117F3218314FE00C3C805 /* Build configuration list for PBXProject "iOS Video Interstitial Advert Mediator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

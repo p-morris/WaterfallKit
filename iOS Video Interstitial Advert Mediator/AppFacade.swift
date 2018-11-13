@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 class AppFacade {
     /// The network settings object

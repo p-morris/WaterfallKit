@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WaterfallKit
 
 /// Used for displaying and invoking delegate callbacks for Vungle interstial videos ads.
 final class VungleVideoAd: NSObject, VideoAd {

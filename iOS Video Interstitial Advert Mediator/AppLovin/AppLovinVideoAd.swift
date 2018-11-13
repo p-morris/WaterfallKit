@@ -8,6 +8,7 @@
 
 import Foundation
 import AppLovinSDK
+import WaterfallKit
 
 /// Used for displaying and invoking delegate callbacks for AppLovin interstial videos ads.
 final class AppLovinVideoAd: NSObject, VideoAd {
