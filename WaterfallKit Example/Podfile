@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WaterfallKit Example' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for WaterfallKit Example
+  pod 'WaterfallKit/AdColony', :git => 'https://github.com/p-morris/WaterfallKit.git'
+  pod 'WaterfallKit/AppLovin', :git => 'https://github.com/p-morris/WaterfallKit.git'
+  pod 'WaterfallKit/AdMob', :git => 'https://github.com/p-morris/WaterfallKit.git'
+
+  target 'WaterfallKit ExampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

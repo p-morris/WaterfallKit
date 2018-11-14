@@ -6,5 +6,4 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <AdColony/AdColony.h>

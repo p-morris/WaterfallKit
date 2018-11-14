@@ -18,7 +18,7 @@ extension VideoAdNetworkSettings {
      - placementID: Your Vungle placement ID.
      - Returns: The VideoAdNetworkSettings object.
      */
-    func initializeVungle(appID: String, placementID: String) -> Self {
+    public func initializeVungle(appID: String, placementID: String) -> Self {
         networkTypes.append(.vungle(appID: appID, placementID: placementID))
         factoryType.register(adapterType: VungleAdapter.self)
         return self

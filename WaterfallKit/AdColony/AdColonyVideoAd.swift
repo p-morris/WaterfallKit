@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AdColony
 
 /// Used for displaying and invoking delegate callbacks for AdColony interstial videos ads.
 final class AdColonyVideoAd: NSObject, VideoAd {

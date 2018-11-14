@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AdColony
 
 protocol AdColonySDKProtocol {
     static func configure(withAppID appID: String,

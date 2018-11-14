@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AdColony
 
 /// Used for making interstitial video ad requests to the AdColony network
 final class AdColonyAdapter: NSObject, TimeOutableVideoAdNetworkAdapter {

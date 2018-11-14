@@ -16,10 +16,15 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdColony' do |adcolony|
-    adcolony.source_files = 'WaterfallKit/AdColony/*.swift', 'WaterfallKit/AdColony/*.h'
-    adcolony.public_header_files = 'WaterfallKit/AdColony/Headers.h'
+    adcolony.source_files = 'WaterfallKit/AdColony/*.swift'
     adcolony.dependency 'AdColony', '3.3.6'
     adcolony.dependency 'WaterfallKit/Core'
+  end
+
+  spec.subspec 'AdMob' do |admob|
+    admob.source_files = 'WaterfallKit/AdMob/*.swift'
+    admob.dependency 'Google-Mobile-Ads-SDK', '7.35.2'
+    admob.dependency 'WaterfallKit/Core'
   end
 
   spec.subspec 'AppLovin' do |applovin|
