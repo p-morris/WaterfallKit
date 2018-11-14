@@ -2,43 +2,35 @@ PODS:
   - AdColony (3.3.6)
   - AppLovinSDK (5.1.2)
   - Google-Mobile-Ads-SDK (7.35.2)
-  - WaterfallKit/AdColony (1.0.0):
+  - WaterfallKit/AdColony (1.0.1):
     - AdColony (= 3.3.6)
     - WaterfallKit/Core
-  - WaterfallKit/AdMob (1.0.0):
+  - WaterfallKit/AdMob (1.0.1):
     - Google-Mobile-Ads-SDK (= 7.35.2)
     - WaterfallKit/Core
-  - WaterfallKit/AppLovin (1.0.0):
+  - WaterfallKit/AppLovin (1.0.1):
     - AppLovinSDK (= 5.1.2)
     - WaterfallKit/Core
-  - WaterfallKit/Core (1.0.0)
+  - WaterfallKit/Core (1.0.1)
 
 DEPENDENCIES:
-  - WaterfallKit/AdColony (from `https://github.com/p-morris/WaterfallKit.git`)
-  - WaterfallKit/AdMob (from `https://github.com/p-morris/WaterfallKit.git`)
-  - WaterfallKit/AppLovin (from `https://github.com/p-morris/WaterfallKit.git`)
+  - WaterfallKit/AdColony
+  - WaterfallKit/AdMob
+  - WaterfallKit/AppLovin
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AdColony
     - AppLovinSDK
     - Google-Mobile-Ads-SDK
-
-EXTERNAL SOURCES:
-  WaterfallKit:
-    :git: https://github.com/p-morris/WaterfallKit.git
-
-CHECKOUT OPTIONS:
-  WaterfallKit:
-    :commit: d6f36cd7db7dd7e9cc2ba3fe2c43558b8cc6224e
-    :git: https://github.com/p-morris/WaterfallKit.git
+    - WaterfallKit
 
 SPEC CHECKSUMS:
   AdColony: 68473450de30de67154675c3512353a55c8f97cc
   AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
   Google-Mobile-Ads-SDK: 8f07cc8eac6649fe648cabc97d67c8d20173624a
-  WaterfallKit: 783df13480ddca9db5eae75fbbde600805b00b3d
+  WaterfallKit: 6cdea9580a9925279a8ef63ee31738618ddb0ff4
 
-PODFILE CHECKSUM: 39776b808690f09c3bcf8c52588cd1129d7910b0
+PODFILE CHECKSUM: 1f3a02dde367faad728e4ea4a3c86b0cc1e8d7bf
 
 COCOAPODS: 1.5.3

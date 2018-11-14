@@ -6,9 +6,9 @@ target 'WaterfallKit Example' do
   use_frameworks!
 
   # Pods for WaterfallKit Example
-  pod 'WaterfallKit/AdColony', :git => 'https://github.com/p-morris/WaterfallKit.git'
-  pod 'WaterfallKit/AppLovin', :git => 'https://github.com/p-morris/WaterfallKit.git'
-  pod 'WaterfallKit/AdMob', :git => 'https://github.com/p-morris/WaterfallKit.git'
+  pod 'WaterfallKit/AdColony'
+  pod 'WaterfallKit/AppLovin'
+  pod 'WaterfallKit/AdMob'
 
   target 'WaterfallKit ExampleTests' do
     inherit! :search_paths
