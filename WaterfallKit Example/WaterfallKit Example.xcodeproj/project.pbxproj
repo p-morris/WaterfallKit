@@ -7,9 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		729658F3219C2001009F5AB5 /* MockAdMobSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658B9219C2000009F5AB5 /* MockAdMobSDK.swift */; };
+		729658F4219C2001009F5AB5 /* MockAdMobInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658BA219C2000009F5AB5 /* MockAdMobInterstitial.swift */; };
+		729658F5219C2001009F5AB5 /* AdMobVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658BB219C2000009F5AB5 /* AdMobVideoAdTests.swift */; };
+		729658F6219C2001009F5AB5 /* AdmobAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658BC219C2000009F5AB5 /* AdmobAdapterTests.swift */; };
+		729658F7219C2001009F5AB5 /* AdmobExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658BD219C2000009F5AB5 /* AdmobExtensionsTests.swift */; };
+		729658F8219C2001009F5AB5 /* AdmobTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658BF219C2000009F5AB5 /* AdmobTestDelegate.swift */; };
+		729658F9219C2001009F5AB5 /* MockAdColonyInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C2219C2000009F5AB5 /* MockAdColonyInterstitial.swift */; };
+		729658FA219C2001009F5AB5 /* MockAdColonySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C3219C2000009F5AB5 /* MockAdColonySDK.swift */; };
+		729658FB219C2001009F5AB5 /* AdColonyNetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C4219C2000009F5AB5 /* AdColonyNetworkAdapterTests.swift */; };
+		729658FC219C2001009F5AB5 /* AdColonyExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C5219C2000009F5AB5 /* AdColonyExtensionsTests.swift */; };
+		729658FD219C2001009F5AB5 /* AdColonyVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C6219C2000009F5AB5 /* AdColonyVideoAdTests.swift */; };
+		729658FE219C2001009F5AB5 /* AdColonyTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658C8219C2000009F5AB5 /* AdColonyTestDelegate.swift */; };
+		729658FF219C2001009F5AB5 /* MockAppLovinInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658CB219C2000009F5AB5 /* MockAppLovinInterstitial.swift */; };
+		72965900219C2001009F5AB5 /* AppLovinExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658CC219C2000009F5AB5 /* AppLovinExtensionsTests.swift */; };
+		72965901219C2001009F5AB5 /* AppLovinVideoAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658CD219C2000009F5AB5 /* AppLovinVideoAdTests.swift */; };
+		72965902219C2001009F5AB5 /* AppLovinAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658CE219C2000009F5AB5 /* AppLovinAdapterTests.swift */; };
+		72965903219C2001009F5AB5 /* TimeOutTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D0219C2000009F5AB5 /* TimeOutTimerTests.swift */; };
+		72965904219C2001009F5AB5 /* MockAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D2219C2000009F5AB5 /* MockAd.swift */; };
+		72965905219C2001009F5AB5 /* MockFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D3219C2000009F5AB5 /* MockFactory.swift */; };
+		72965906219C2001009F5AB5 /* MockSortingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D4219C2000009F5AB5 /* MockSortingStrategy.swift */; };
+		72965907219C2001009F5AB5 /* MockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D5219C2000009F5AB5 /* MockTimer.swift */; };
+		72965908219C2001009F5AB5 /* MockNetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D6219C2000009F5AB5 /* MockNetworkDelegate.swift */; };
+		72965909219C2001009F5AB5 /* MockStandardTimeOutableNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D7219C2000009F5AB5 /* MockStandardTimeOutableNetwork.swift */; };
+		7296590A219C2001009F5AB5 /* MockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D8219C2000009F5AB5 /* MockSettings.swift */; };
+		7296590B219C2001009F5AB5 /* MockVideoAdNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658D9219C2000009F5AB5 /* MockVideoAdNetworkAdapter.swift */; };
+		7296590C219C2001009F5AB5 /* MockTimeOutableNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DA219C2000009F5AB5 /* MockTimeOutableNetwork.swift */; };
+		7296590D219C2001009F5AB5 /* MockAdDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DB219C2000009F5AB5 /* MockAdDelegate.swift */; };
+		7296590E219C2001009F5AB5 /* MockVideoAdLoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DC219C2000009F5AB5 /* MockVideoAdLoaderDelegate.swift */; };
+		7296590F219C2001009F5AB5 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DD219C2000009F5AB5 /* VideoAdNetworkAdapterFactoryTests.swift */; };
+		72965910219C2001009F5AB5 /* VideoAdSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DE219C2000009F5AB5 /* VideoAdSettingsTests.swift */; };
+		72965911219C2001009F5AB5 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658DF219C2000009F5AB5 /* ArrayExtensionTests.swift */; };
+		72965912219C2001009F5AB5 /* SortingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658E0219C2000009F5AB5 /* SortingStrategyTests.swift */; };
+		72965913219C2001009F5AB5 /* VideoAdLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658E1219C2000009F5AB5 /* VideoAdLoaderTests.swift */; };
+		72965914219C2001009F5AB5 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658E2219C2000009F5AB5 /* TimeOutableVideoAdNetworkAdapterTests.swift */; };
+		72965915219C2001009F5AB5 /* TestDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729658E4219C2000009F5AB5 /* TestDelegates.swift */; };
 		72E1DC37219ACDD40014F623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1DC36219ACDD40014F623 /* Assets.xcassets */; };
 		72E1DC3A219ACDD40014F623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E1DC38219ACDD40014F623 /* LaunchScreen.storyboard */; };
-		72E1DC45219ACDD50014F623 /* WaterfallKit_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC44219ACDD50014F623 /* WaterfallKit_ExampleTests.swift */; };
 		72F76B3B219C172F0085A999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B37219C172E0085A999 /* AppDelegate.swift */; };
 		72F76B3C219C172F0085A999 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B38219C172F0085A999 /* AdvertTableViewController.swift */; };
 		72F76B3D219C172F0085A999 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B39219C172F0085A999 /* AppFacade.swift */; };
@@ -31,12 +65,46 @@
 /* Begin PBXFileReference section */
 		06EAF2A3E01CE3F1D685BBB8 /* Pods-WaterfallKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterfallKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaterfallKit Example/Pods-WaterfallKit Example.release.xcconfig"; sourceTree = "<group>"; };
 		728E9BE25C347915E70D2E06 /* Pods_WaterfallKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterfallKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		729658B9219C2000009F5AB5 /* MockAdMobSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAdMobSDK.swift; sourceTree = "<group>"; };
+		729658BA219C2000009F5AB5 /* MockAdMobInterstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAdMobInterstitial.swift; sourceTree = "<group>"; };
+		729658BB219C2000009F5AB5 /* AdMobVideoAdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobVideoAdTests.swift; sourceTree = "<group>"; };
+		729658BC219C2000009F5AB5 /* AdmobAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobAdapterTests.swift; sourceTree = "<group>"; };
+		729658BD219C2000009F5AB5 /* AdmobExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobExtensionsTests.swift; sourceTree = "<group>"; };
+		729658BF219C2000009F5AB5 /* AdmobTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobTestDelegate.swift; sourceTree = "<group>"; };
+		729658C2219C2000009F5AB5 /* MockAdColonyInterstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAdColonyInterstitial.swift; sourceTree = "<group>"; };
+		729658C3219C2000009F5AB5 /* MockAdColonySDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAdColonySDK.swift; sourceTree = "<group>"; };
+		729658C4219C2000009F5AB5 /* AdColonyNetworkAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdColonyNetworkAdapterTests.swift; sourceTree = "<group>"; };
+		729658C5219C2000009F5AB5 /* AdColonyExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdColonyExtensionsTests.swift; sourceTree = "<group>"; };
+		729658C6219C2000009F5AB5 /* AdColonyVideoAdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdColonyVideoAdTests.swift; sourceTree = "<group>"; };
+		729658C8219C2000009F5AB5 /* AdColonyTestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdColonyTestDelegate.swift; sourceTree = "<group>"; };
+		729658CB219C2000009F5AB5 /* MockAppLovinInterstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAppLovinInterstitial.swift; sourceTree = "<group>"; };
+		729658CC219C2000009F5AB5 /* AppLovinExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinExtensionsTests.swift; sourceTree = "<group>"; };
+		729658CD219C2000009F5AB5 /* AppLovinVideoAdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinVideoAdTests.swift; sourceTree = "<group>"; };
+		729658CE219C2000009F5AB5 /* AppLovinAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLovinAdapterTests.swift; sourceTree = "<group>"; };
+		729658D0219C2000009F5AB5 /* TimeOutTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOutTimerTests.swift; sourceTree = "<group>"; };
+		729658D2219C2000009F5AB5 /* MockAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAd.swift; sourceTree = "<group>"; };
+		729658D3219C2000009F5AB5 /* MockFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFactory.swift; sourceTree = "<group>"; };
+		729658D4219C2000009F5AB5 /* MockSortingStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSortingStrategy.swift; sourceTree = "<group>"; };
+		729658D5219C2000009F5AB5 /* MockTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTimer.swift; sourceTree = "<group>"; };
+		729658D6219C2000009F5AB5 /* MockNetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkDelegate.swift; sourceTree = "<group>"; };
+		729658D7219C2000009F5AB5 /* MockStandardTimeOutableNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStandardTimeOutableNetwork.swift; sourceTree = "<group>"; };
+		729658D8219C2000009F5AB5 /* MockSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSettings.swift; sourceTree = "<group>"; };
+		729658D9219C2000009F5AB5 /* MockVideoAdNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVideoAdNetworkAdapter.swift; sourceTree = "<group>"; };
+		729658DA219C2000009F5AB5 /* MockTimeOutableNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTimeOutableNetwork.swift; sourceTree = "<group>"; };
+		729658DB219C2000009F5AB5 /* MockAdDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAdDelegate.swift; sourceTree = "<group>"; };
+		729658DC219C2000009F5AB5 /* MockVideoAdLoaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVideoAdLoaderDelegate.swift; sourceTree = "<group>"; };
+		729658DD219C2000009F5AB5 /* VideoAdNetworkAdapterFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAdNetworkAdapterFactoryTests.swift; sourceTree = "<group>"; };
+		729658DE219C2000009F5AB5 /* VideoAdSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAdSettingsTests.swift; sourceTree = "<group>"; };
+		729658DF219C2000009F5AB5 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		729658E0219C2000009F5AB5 /* SortingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingStrategyTests.swift; sourceTree = "<group>"; };
+		729658E1219C2000009F5AB5 /* VideoAdLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAdLoaderTests.swift; sourceTree = "<group>"; };
+		729658E2219C2000009F5AB5 /* TimeOutableVideoAdNetworkAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOutableVideoAdNetworkAdapterTests.swift; sourceTree = "<group>"; };
+		729658E4219C2000009F5AB5 /* TestDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegates.swift; sourceTree = "<group>"; };
 		72E1DC2C219ACDD40014F623 /* WaterfallKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaterfallKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1DC36219ACDD40014F623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E1DC39219ACDD40014F623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72E1DC3B219ACDD40014F623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E1DC40219ACDD50014F623 /* WaterfallKit ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WaterfallKit ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72E1DC44219ACDD50014F623 /* WaterfallKit_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallKit_ExampleTests.swift; sourceTree = "<group>"; };
 		72E1DC46219ACDD50014F623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E1DC4F219ACE0A0014F623 /* WaterfallKit Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaterfallKit Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		72F76B37219C172E0085A999 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +146,125 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		729658B7219C2000009F5AB5 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				729658B8219C2000009F5AB5 /* Mocks */,
+				729658BB219C2000009F5AB5 /* AdMobVideoAdTests.swift */,
+				729658BC219C2000009F5AB5 /* AdmobAdapterTests.swift */,
+				729658BD219C2000009F5AB5 /* AdmobExtensionsTests.swift */,
+				729658BE219C2000009F5AB5 /* Utility */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		729658B8219C2000009F5AB5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				729658B9219C2000009F5AB5 /* MockAdMobSDK.swift */,
+				729658BA219C2000009F5AB5 /* MockAdMobInterstitial.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		729658BE219C2000009F5AB5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				729658BF219C2000009F5AB5 /* AdmobTestDelegate.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		729658C0219C2000009F5AB5 /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				729658C1219C2000009F5AB5 /* Mocks */,
+				729658C4219C2000009F5AB5 /* AdColonyNetworkAdapterTests.swift */,
+				729658C5219C2000009F5AB5 /* AdColonyExtensionsTests.swift */,
+				729658C6219C2000009F5AB5 /* AdColonyVideoAdTests.swift */,
+				729658C7219C2000009F5AB5 /* Utility */,
+			);
+			path = AdColony;
+			sourceTree = "<group>";
+		};
+		729658C1219C2000009F5AB5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				729658C2219C2000009F5AB5 /* MockAdColonyInterstitial.swift */,
+				729658C3219C2000009F5AB5 /* MockAdColonySDK.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		729658C7219C2000009F5AB5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				729658C8219C2000009F5AB5 /* AdColonyTestDelegate.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		729658C9219C2000009F5AB5 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				729658CA219C2000009F5AB5 /* Mocks */,
+				729658CC219C2000009F5AB5 /* AppLovinExtensionsTests.swift */,
+				729658CD219C2000009F5AB5 /* AppLovinVideoAdTests.swift */,
+				729658CE219C2000009F5AB5 /* AppLovinAdapterTests.swift */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		729658CA219C2000009F5AB5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				729658CB219C2000009F5AB5 /* MockAppLovinInterstitial.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		729658CF219C2000009F5AB5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				729658D0219C2000009F5AB5 /* TimeOutTimerTests.swift */,
+				729658D1219C2000009F5AB5 /* Mocks */,
+				729658DD219C2000009F5AB5 /* VideoAdNetworkAdapterFactoryTests.swift */,
+				729658DE219C2000009F5AB5 /* VideoAdSettingsTests.swift */,
+				729658DF219C2000009F5AB5 /* ArrayExtensionTests.swift */,
+				729658E0219C2000009F5AB5 /* SortingStrategyTests.swift */,
+				729658E1219C2000009F5AB5 /* VideoAdLoaderTests.swift */,
+				729658E2219C2000009F5AB5 /* TimeOutableVideoAdNetworkAdapterTests.swift */,
+				729658E3219C2000009F5AB5 /* Utility */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		729658D1219C2000009F5AB5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				729658D2219C2000009F5AB5 /* MockAd.swift */,
+				729658D3219C2000009F5AB5 /* MockFactory.swift */,
+				729658D4219C2000009F5AB5 /* MockSortingStrategy.swift */,
+				729658D5219C2000009F5AB5 /* MockTimer.swift */,
+				729658D6219C2000009F5AB5 /* MockNetworkDelegate.swift */,
+				729658D7219C2000009F5AB5 /* MockStandardTimeOutableNetwork.swift */,
+				729658D8219C2000009F5AB5 /* MockSettings.swift */,
+				729658D9219C2000009F5AB5 /* MockVideoAdNetworkAdapter.swift */,
+				729658DA219C2000009F5AB5 /* MockTimeOutableNetwork.swift */,
+				729658DB219C2000009F5AB5 /* MockAdDelegate.swift */,
+				729658DC219C2000009F5AB5 /* MockVideoAdLoaderDelegate.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		729658E3219C2000009F5AB5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				729658E4219C2000009F5AB5 /* TestDelegates.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		72E1DC23219ACDD40014F623 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +303,10 @@
 		72E1DC43219ACDD50014F623 /* WaterfallKit ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				72E1DC44219ACDD50014F623 /* WaterfallKit_ExampleTests.swift */,
+				729658C0219C2000009F5AB5 /* AdColony */,
+				729658B7219C2000009F5AB5 /* Admob */,
+				729658C9219C2000009F5AB5 /* AppLovin */,
+				729658CF219C2000009F5AB5 /* Core */,
 				72E1DC46219ACDD50014F623 /* Info.plist */,
 			);
 			path = "WaterfallKit ExampleTests";
@@ -294,7 +484,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1DC45219ACDD50014F623 /* WaterfallKit_ExampleTests.swift in Sources */,
+				729658F8219C2001009F5AB5 /* AdmobTestDelegate.swift in Sources */,
+				72965912219C2001009F5AB5 /* SortingStrategyTests.swift in Sources */,
+				729658F5219C2001009F5AB5 /* AdMobVideoAdTests.swift in Sources */,
+				7296590F219C2001009F5AB5 /* VideoAdNetworkAdapterFactoryTests.swift in Sources */,
+				72965902219C2001009F5AB5 /* AppLovinAdapterTests.swift in Sources */,
+				72965906219C2001009F5AB5 /* MockSortingStrategy.swift in Sources */,
+				729658FF219C2001009F5AB5 /* MockAppLovinInterstitial.swift in Sources */,
+				729658F6219C2001009F5AB5 /* AdmobAdapterTests.swift in Sources */,
+				729658F7219C2001009F5AB5 /* AdmobExtensionsTests.swift in Sources */,
+				72965914219C2001009F5AB5 /* TimeOutableVideoAdNetworkAdapterTests.swift in Sources */,
+				729658FB219C2001009F5AB5 /* AdColonyNetworkAdapterTests.swift in Sources */,
+				7296590C219C2001009F5AB5 /* MockTimeOutableNetwork.swift in Sources */,
+				7296590A219C2001009F5AB5 /* MockSettings.swift in Sources */,
+				729658F3219C2001009F5AB5 /* MockAdMobSDK.swift in Sources */,
+				729658FD219C2001009F5AB5 /* AdColonyVideoAdTests.swift in Sources */,
+				72965909219C2001009F5AB5 /* MockStandardTimeOutableNetwork.swift in Sources */,
+				7296590D219C2001009F5AB5 /* MockAdDelegate.swift in Sources */,
+				72965907219C2001009F5AB5 /* MockTimer.swift in Sources */,
+				72965911219C2001009F5AB5 /* ArrayExtensionTests.swift in Sources */,
+				72965903219C2001009F5AB5 /* TimeOutTimerTests.swift in Sources */,
+				729658FC219C2001009F5AB5 /* AdColonyExtensionsTests.swift in Sources */,
+				729658FA219C2001009F5AB5 /* MockAdColonySDK.swift in Sources */,
+				72965901219C2001009F5AB5 /* AppLovinVideoAdTests.swift in Sources */,
+				72965913219C2001009F5AB5 /* VideoAdLoaderTests.swift in Sources */,
+				72965900219C2001009F5AB5 /* AppLovinExtensionsTests.swift in Sources */,
+				72965910219C2001009F5AB5 /* VideoAdSettingsTests.swift in Sources */,
+				72965915219C2001009F5AB5 /* TestDelegates.swift in Sources */,
+				729658FE219C2001009F5AB5 /* AdColonyTestDelegate.swift in Sources */,
+				729658F9219C2001009F5AB5 /* MockAdColonyInterstitial.swift in Sources */,
+				7296590B219C2001009F5AB5 /* MockVideoAdNetworkAdapter.swift in Sources */,
+				72965904219C2001009F5AB5 /* MockAd.swift in Sources */,
+				729658F4219C2001009F5AB5 /* MockAdMobInterstitial.swift in Sources */,
+				72965905219C2001009F5AB5 /* MockFactory.swift in Sources */,
+				7296590E219C2001009F5AB5 /* MockVideoAdLoaderDelegate.swift in Sources */,
+				72965908219C2001009F5AB5 /* MockNetworkDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
