@@ -117,14 +117,3 @@ extension AdvertTableViewController: VideoAdDelegate {
         }
     }
 }
-
-extension VideoAd {
-    var networkName: String {
-        switch self {
-        case is AdMobVideoAd: return "AdMob"
-        case is AppLovinVideoAd: return "AppLovin"
-        case is AdColonyVideoAd: return "AdColony"
-        default: return "Test"
-        }
-    }
-}
