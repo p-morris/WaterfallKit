@@ -16,7 +16,7 @@ extension VideoAdNetworkSettings {
      - Parameter sdkKey: Your AppLovin sdk key.
      - Returns: The VideoAdNetworkSettings object.
      */
-    func initializeAppLovin(sdkKey: String) -> Self {
+    public func initializeAppLovin(sdkKey: String) -> Self {
         networkTypes.append(.appLovin(sdkKey: sdkKey))
         factoryType.register(adapterType: AppLovinAdapter.self)
         return self
