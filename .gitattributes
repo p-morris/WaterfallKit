@@ -1,4 +1,0 @@
-AdColony.framework filter=lfs diff=lfs merge=lfs -text
-GoogleMobileAds.framework filter=lfs diff=lfs merge=lfs -text
-WaterfallKit/AdMob/GoogleMobileAds.framework filter=lfs diff=lfs merge=lfs -text
-WaterfallKit/AdColony/AdColony.framework filter=lfs diff=lfs merge=lfs -text
