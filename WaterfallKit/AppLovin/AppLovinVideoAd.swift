@@ -15,6 +15,7 @@ final class AppLovinVideoAd: NSObject, VideoAd {
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
     var priority = 0
+    public let networkName = "AppLovin"
     /// The AppLovin advert to display.
     private let appLovinAd: ALAd
     /// The AppLovin interstitial that will be reponsible for rendering the advert.

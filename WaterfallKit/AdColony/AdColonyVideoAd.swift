@@ -17,6 +17,7 @@ final class AdColonyVideoAd: NSObject, VideoAd {
     var priority = 0
     /// The AdColony interstial advert
     private let interstitial: AdColonyInterstitialProtocol
+    public let networkName = "AdColony"
     /**
      Initializes a new `AdColonyVideoAd` object.
      

@@ -15,6 +15,8 @@ import UIKit
     var delegate: VideoAdDelegate? { get set }
     /// The priority of ad for display.
     var priority: Int { get set }
+    /// The name of the network the ad belongs to
+    var networkName: String { get }
     /**
      Presents the interstial advert modally from the specified `UIViewController`, or `UIWindow`.
      

@@ -10,10 +10,12 @@
 		72E1DC37219ACDD40014F623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1DC36219ACDD40014F623 /* Assets.xcassets */; };
 		72E1DC3A219ACDD40014F623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E1DC38219ACDD40014F623 /* LaunchScreen.storyboard */; };
 		72E1DC45219ACDD50014F623 /* WaterfallKit_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC44219ACDD50014F623 /* WaterfallKit_ExampleTests.swift */; };
-		72E1DC54219ACE0B0014F623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC50219ACE0B0014F623 /* AppDelegate.swift */; };
-		72E1DC55219ACE0B0014F623 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC51219ACE0B0014F623 /* AppFacade.swift */; };
-		72E1DC56219ACE0B0014F623 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC52219ACE0B0014F623 /* AdvertTableViewController.swift */; };
-		72E1DC57219ACE0B0014F623 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1DC53219ACE0B0014F623 /* TableViewController.swift */; };
+		72F76B3B219C172F0085A999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B37219C172E0085A999 /* AppDelegate.swift */; };
+		72F76B3C219C172F0085A999 /* AdvertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B38219C172F0085A999 /* AdvertTableViewController.swift */; };
+		72F76B3D219C172F0085A999 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B39219C172F0085A999 /* AppFacade.swift */; };
+		72F76B3E219C172F0085A999 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B3A219C172F0085A999 /* TableViewController.swift */; };
+		87619A8DAFD020605D3AFE78 /* Pods_WaterfallKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E9BE25C347915E70D2E06 /* Pods_WaterfallKit_Example.framework */; };
+		90D81A0CE3452196148EE375 /* Pods_WaterfallKit_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935C0EF3D517EB8032E4B761 /* Pods_WaterfallKit_ExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06EAF2A3E01CE3F1D685BBB8 /* Pods-WaterfallKit Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterfallKit Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaterfallKit Example/Pods-WaterfallKit Example.release.xcconfig"; sourceTree = "<group>"; };
+		728E9BE25C347915E70D2E06 /* Pods_WaterfallKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterfallKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1DC2C219ACDD40014F623 /* WaterfallKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaterfallKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1DC36219ACDD40014F623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E1DC39219ACDD40014F623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,10 +39,14 @@
 		72E1DC44219ACDD50014F623 /* WaterfallKit_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallKit_ExampleTests.swift; sourceTree = "<group>"; };
 		72E1DC46219ACDD50014F623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E1DC4F219ACE0A0014F623 /* WaterfallKit Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaterfallKit Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		72E1DC50219ACE0B0014F623 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../iOS Video Interstitial Advert Mediator/AppDelegate.swift"; sourceTree = "<group>"; };
-		72E1DC51219ACE0B0014F623 /* AppFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppFacade.swift; path = "../../../iOS Video Interstitial Advert Mediator/AppFacade.swift"; sourceTree = "<group>"; };
-		72E1DC52219ACE0B0014F623 /* AdvertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertTableViewController.swift; path = "../../../iOS Video Interstitial Advert Mediator/AdvertTableViewController.swift"; sourceTree = "<group>"; };
-		72E1DC53219ACE0B0014F623 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "../../../iOS Video Interstitial Advert Mediator/TableViewController.swift"; sourceTree = "<group>"; };
+		72F76B37219C172E0085A999 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		72F76B38219C172F0085A999 /* AdvertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertTableViewController.swift; sourceTree = "<group>"; };
+		72F76B39219C172F0085A999 /* AppFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
+		72F76B3A219C172F0085A999 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		9231CA31A5D2CB3AC5E4844F /* Pods-WaterfallKit ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterfallKit ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaterfallKit ExampleTests/Pods-WaterfallKit ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		935C0EF3D517EB8032E4B761 /* Pods_WaterfallKit_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterfallKit_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B81EE37B6AF6583817B663F8 /* Pods-WaterfallKit ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterfallKit ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaterfallKit ExampleTests/Pods-WaterfallKit ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EFE384143D81020E890B965D /* Pods-WaterfallKit Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterfallKit Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaterfallKit Example/Pods-WaterfallKit Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87619A8DAFD020605D3AFE78 /* Pods_WaterfallKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,18 +62,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D81A0CE3452196148EE375 /* Pods_WaterfallKit_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17294CA93B04DB980FEEAC22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				728E9BE25C347915E70D2E06 /* Pods_WaterfallKit_Example.framework */,
+				935C0EF3D517EB8032E4B761 /* Pods_WaterfallKit_ExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		72E1DC23219ACDD40014F623 = {
 			isa = PBXGroup;
 			children = (
 				72E1DC2E219ACDD40014F623 /* WaterfallKit Example */,
 				72E1DC43219ACDD50014F623 /* WaterfallKit ExampleTests */,
 				72E1DC2D219ACDD40014F623 /* Products */,
+				B13A11F3B00357A6A92D85B7 /* Pods */,
+				17294CA93B04DB980FEEAC22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,10 +101,10 @@
 		72E1DC2E219ACDD40014F623 /* WaterfallKit Example */ = {
 			isa = PBXGroup;
 			children = (
-				72E1DC50219ACE0B0014F623 /* AppDelegate.swift */,
-				72E1DC51219ACE0B0014F623 /* AppFacade.swift */,
-				72E1DC53219ACE0B0014F623 /* TableViewController.swift */,
-				72E1DC52219ACE0B0014F623 /* AdvertTableViewController.swift */,
+				72F76B38219C172F0085A999 /* AdvertTableViewController.swift */,
+				72F76B37219C172E0085A999 /* AppDelegate.swift */,
+				72F76B39219C172F0085A999 /* AppFacade.swift */,
+				72F76B3A219C172F0085A999 /* TableViewController.swift */,
 				72E1DC36219ACDD40014F623 /* Assets.xcassets */,
 				72E1DC38219ACDD40014F623 /* LaunchScreen.storyboard */,
 				72E1DC3B219ACDD40014F623 /* Info.plist */,
@@ -101,6 +122,17 @@
 			path = "WaterfallKit ExampleTests";
 			sourceTree = "<group>";
 		};
+		B13A11F3B00357A6A92D85B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFE384143D81020E890B965D /* Pods-WaterfallKit Example.debug.xcconfig */,
+				06EAF2A3E01CE3F1D685BBB8 /* Pods-WaterfallKit Example.release.xcconfig */,
+				B81EE37B6AF6583817B663F8 /* Pods-WaterfallKit ExampleTests.debug.xcconfig */,
+				9231CA31A5D2CB3AC5E4844F /* Pods-WaterfallKit ExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,6 +140,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E1DC49219ACDD50014F623 /* Build configuration list for PBXNativeTarget "WaterfallKit Example" */;
 			buildPhases = (
+				7795D0E8A4BC0E3FB5DA1BB6 /* [CP] Check Pods Manifest.lock */,
 				72E1DC28219ACDD40014F623 /* Sources */,
 				72E1DC29219ACDD40014F623 /* Frameworks */,
 				72E1DC2A219ACDD40014F623 /* Resources */,
@@ -125,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E1DC4C219ACDD50014F623 /* Build configuration list for PBXNativeTarget "WaterfallKit ExampleTests" */;
 			buildPhases = (
+				A02ECB9948FE1E9408165F9F /* [CP] Check Pods Manifest.lock */,
 				72E1DC3C219ACDD50014F623 /* Sources */,
 				72E1DC3D219ACDD50014F623 /* Frameworks */,
 				72E1DC3E219ACDD50014F623 /* Resources */,
@@ -197,15 +231,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7795D0E8A4BC0E3FB5DA1BB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterfallKit Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A02ECB9948FE1E9408165F9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterfallKit ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		72E1DC28219ACDD40014F623 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1DC54219ACE0B0014F623 /* AppDelegate.swift in Sources */,
-				72E1DC56219ACE0B0014F623 /* AdvertTableViewController.swift in Sources */,
-				72E1DC55219ACE0B0014F623 /* AppFacade.swift in Sources */,
-				72E1DC57219ACE0B0014F623 /* TableViewController.swift in Sources */,
+				72F76B3B219C172F0085A999 /* AppDelegate.swift in Sources */,
+				72F76B3C219C172F0085A999 /* AdvertTableViewController.swift in Sources */,
+				72F76B3D219C172F0085A999 /* AppFacade.swift in Sources */,
+				72F76B3E219C172F0085A999 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +438,7 @@
 		};
 		72E1DC4A219ACDD50014F623 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE384143D81020E890B965D /* Pods-WaterfallKit Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -378,6 +460,7 @@
 		};
 		72E1DC4B219ACDD50014F623 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06EAF2A3E01CE3F1D685BBB8 /* Pods-WaterfallKit Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -398,6 +481,7 @@
 		};
 		72E1DC4D219ACDD50014F623 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81EE37B6AF6583817B663F8 /* Pods-WaterfallKit ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +503,7 @@
 		};
 		72E1DC4E219ACDD50014F623 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9231CA31A5D2CB3AC5E4844F /* Pods-WaterfallKit ExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

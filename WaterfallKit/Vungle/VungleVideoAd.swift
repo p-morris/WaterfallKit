@@ -17,6 +17,7 @@ final class VungleVideoAd: NSObject, VideoAd {
     /// The name of the network the ad belongs to
     /// The placementID of the Vungle ad
     let placementID: String
+    public let networkName = "Vungle"
     /// The Vungle SDK
     private let vungleSDK: VungleAdProtocol
     /**

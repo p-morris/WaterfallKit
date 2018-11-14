@@ -16,6 +16,7 @@ final class ChartboostVideoAd: NSObject, VideoAd {
     weak var delegate: VideoAdDelegate?
     /// The priority of the ad for display purposes
     var priority = 0
+    public let networkName = "Chartboost"
     /**
      Initializes a new `ChartboostVideoAd` object.
      

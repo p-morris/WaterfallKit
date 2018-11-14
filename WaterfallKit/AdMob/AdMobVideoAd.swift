@@ -17,6 +17,7 @@ final class AdMobVideoAd: NSObject, VideoAd {
     var priority = 0
     /// The `GADInterstitial` which contains the ad to be displayed.
     private (set) var interstitial: AdMobAdProtocol
+    public let networkName = "AdMob"
     /**
      Initializes a new `AdMobVideoAd` object.
      
