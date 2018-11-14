@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = '4.2'
   spec.platform = :ios, "12"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/p-morris/WaterfallKit.git", tag: "v#{spec.version}", submodules: true }
+  spec.source = { git: "https://github.com/p-morris/WaterfallKit.git", tag: "#{spec.version}", submodules: true }
   spec.static_framework = true
   spec.subspec 'Core' do |core|
     core.source_files = 'WaterfallKit/Core/*'
