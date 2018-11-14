@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WaterfallKit:
-    :commit: c539d27c5aceaf8b163be5f3442355fe0dd0e2b8
+    :commit: d6f36cd7db7dd7e9cc2ba3fe2c43558b8cc6224e
     :git: https://github.com/p-morris/WaterfallKit.git
 
 SPEC CHECKSUMS:

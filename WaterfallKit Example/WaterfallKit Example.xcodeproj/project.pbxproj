@@ -15,6 +15,7 @@
 		72F76B3D219C172F0085A999 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B39219C172F0085A999 /* AppFacade.swift */; };
 		72F76B3E219C172F0085A999 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76B3A219C172F0085A999 /* TableViewController.swift */; };
 		87619A8DAFD020605D3AFE78 /* Pods_WaterfallKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728E9BE25C347915E70D2E06 /* Pods_WaterfallKit_Example.framework */; };
+		A9904875C56D7CB49C8DC69A /* Pods_WaterfallKit_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935C0EF3D517EB8032E4B761 /* Pods_WaterfallKit_ExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9904875C56D7CB49C8DC69A /* Pods_WaterfallKit_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 726FE17C219C3664000FEDB6 /* Build configuration list for PBXNativeTarget "WaterfallKit ExampleTests" */;
 			buildPhases = (
+				5359FC0493F059B35E79244F /* [CP] Check Pods Manifest.lock */,
 				726FE16F219C3664000FEDB6 /* Sources */,
 				726FE170219C3664000FEDB6 /* Frameworks */,
 				726FE171219C3664000FEDB6 /* Resources */,
@@ -229,6 +232,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5359FC0493F059B35E79244F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterfallKit ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7795D0E8A4BC0E3FB5DA1BB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		726FE17A219C3664000FEDB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B81EE37B6AF6583817B663F8 /* Pods-WaterfallKit ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +343,7 @@
 		};
 		726FE17B219C3664000FEDB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9231CA31A5D2CB3AC5E4844F /* Pods-WaterfallKit ExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
