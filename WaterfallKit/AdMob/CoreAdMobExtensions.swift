@@ -18,7 +18,7 @@ extension VideoAdNetworkSettings {
      - adUnitID: Your Admob ad unit ID.
      - Returns: The VideoAdNetworkSettings object.
      */
-    func initializeAdMob(appID: String, adUnitID: String) -> Self {
+    public func initializeAdMob(appID: String, adUnitID: String) -> Self {
         networkTypes.append(.admob(appID: appID, adUnitID: adUnitID))
         factoryType.register(adapterType: AdMobAdapter.self)
         return self
