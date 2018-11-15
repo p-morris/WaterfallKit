@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name = "WaterfallKit"
-  spec.version = "1.0.1"
-  spec.summary = "A simple library for loading prioritising video adverts from multiple ad networks, ensuring maximum fill rate."
+  spec.version = "1.0.2"
+  spec.summary = "Prioritize and waterfall requests for interstitial video ads from AdColony, AppLovin, and Admob. Achieve 100% fill rate."
   spec.homepage = "https://github.com/p-morris/WaterfallKit"
   spec.license = { type: 'MIT', file: 'LICENSE' }
   spec.authors = { "Pete Morris" => 'pete@iosfaststart.com' }
