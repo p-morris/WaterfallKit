@@ -34,9 +34,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.test_spec do |test_spec|
-    test_spec.requires_app_host = true
     test_spec.source_files = 'Tests/*', 'WaterfallKit/*'
-    test_spec.pod_target_xcconfig = { 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'NO' }
   end
 
 end
