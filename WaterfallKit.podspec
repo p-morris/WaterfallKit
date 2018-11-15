@@ -7,7 +7,8 @@ Pod::Spec.new do |spec|
   spec.authors = { "Pete Morris" => 'pete@iosfaststart.com' }
   spec.social_media_url = "https://stackoverflow.com/users/10246061/pete-morris"
   spec.swift_version = '4.2'
-  spec.platform = :ios, "12"
+  spec.platform = :ios
+  spec.ios.deployment_target = '12.0'
   spec.requires_arc = true
   spec.source = { git: "https://github.com/p-morris/WaterfallKit.git", tag: "#{spec.version}", submodules: true }
   spec.static_framework = true
